@@ -1,0 +1,14 @@
+mcl_core
+pipeworks
+mcl_bucket?
+screwdriver?
+mesecons?
+mesecons_mvps?
+digilines?
+digiline_remote?
+intllib?
+mcl_dye?
+mcl_furnaces?
+mcl_hoppers?
+mcl_formspec
+
