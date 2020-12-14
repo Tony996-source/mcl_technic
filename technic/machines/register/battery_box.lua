@@ -113,7 +113,7 @@ function technic.register_battery_box(data)
 	local ltier = string.lower(tier)
 
 	local formspec =
-		"size[8,9]"..
+		"size[9,9]"..
 		"image[1,1;1,2;technic_power_meter_bg.png]"..
 		"list[context;src;3,1;1,1;]"..
 		mcl_formspec.get_itemslot_bg(3,1,1,1)..
@@ -124,8 +124,8 @@ function technic.register_battery_box(data)
 		"label[3,0;"..S("Charge").."]"..
 		"label[5,0;"..S("Discharge").."]"..
 		"label[1,3;"..S("Power level").."]"..
-		"list[current_player;main;0,5;8,4;]"..
-		mcl_formspec.get_itemslot_bg(0,5,8,4)..
+		"list[current_player;main;0,5;9,4;]"..
+		mcl_formspec.get_itemslot_bg(0,5,9,4)..
 		"listring[context;dst]"..
 		"listring[current_player;main]"..
 		"listring[context;src]"..

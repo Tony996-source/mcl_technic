@@ -19,7 +19,7 @@ minetest.register_craft({
 local workshop_demand = {5000, 3500, 2000}
 
 local workshop_formspec =
-	"size[8,9;]"..
+	"size[9,9;]"..
 	"list[current_name;src;3,1;1,1;]"..
 	mcl_formspec.get_itemslot_bg(3,1,1,1)..
 	"label[0,0;"..S("%s Tool Workshop"):format("MV").."]"..
@@ -28,8 +28,8 @@ local workshop_formspec =
 	"list[current_name;upgrade2;2,3;1,1;]"..
 	mcl_formspec.get_itemslot_bg(2,3,1,1)..
 	"label[1,4;"..S("Upgrade Slots").."]"..
-	"list[current_player;main;0,5;8,4;]"..
-	mcl_formspec.get_itemslot_bg(0,5,8,4)..
+	"list[current_player;main;0,5;9,4;]"..
+	mcl_formspec.get_itemslot_bg(0,5,9,4)..
 	"listring[current_player;main]"..
 	"listring[current_name;src]"..
 	"listring[current_player;main]"..

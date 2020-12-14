@@ -35,13 +35,13 @@ function technic.register_generator(data)
 	for k, v in pairs(groups) do active_groups[k] = v end
 
 	local generator_formspec =
-		"size[8,9;]"..
+		"size[9,9;]"..
 		"label[0,0;"..S("Fuel-Fired %s Generator"):format(tier).."]"..
 		"list[current_name;src;3,1;1,1;]"..
 		mcl_formspec.get_itemslot_bg(3,1,1,1)..
 		"image[4,1;1,1;default_furnace_fire_bg.png]"..
-		"list[current_player;main;0,5;8,4;]"..
-		mcl_formspec.get_itemslot_bg(0,5,8,4)..
+		"list[current_player;main;0,5;9,4;]"..
+		mcl_formspec.get_itemslot_bg(0,5,9,4)..
 		"listring[]"
 	
 	local desc = S("Fuel-Fired %s Generator"):format(tier)

@@ -134,8 +134,7 @@ local function update_meta(meta, can_receive)
 			"label[1.6,1.2;channels are public by default]" ..
 			"label[1.6,1.5;use <player>:<channel> for fully private channels]" ..
 			"label[1.6,1.8;use <player>\\;<channel> for private receivers]" ..
-			default.gui_bg..
-			default.gui_bg_img)
+	)
 end
 
 pipeworks.register_tube("pipeworks:teleport_tube", {

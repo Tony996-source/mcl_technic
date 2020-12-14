@@ -44,13 +44,13 @@ function technic.register_base_machine(data)
 	for k, v in pairs(groups) do active_groups[k] = v end
 
 	local formspec =
-		"size[8,9;]"..
+		"size[9,9;]"..
 		"list[current_name;src;"..(4-input_size)..",1;"..input_size..",1;]"..
 		mcl_formspec.get_itemslot_bg(4-input_size,1,input_size,1)..
 		"list[current_name;dst;5,1;2,2;]"..
 		mcl_formspec.get_itemslot_bg(5,1,2,2)..
-		"list[current_player;main;0,5;8,4;]"..
-		mcl_formspec.get_itemslot_bg(0,5,8,4)..
+		"list[current_player;main;0,5;9,4;]"..
+		mcl_formspec.get_itemslot_bg(0,5,9,4)..
 		"label[0,0;"..machine_desc:format(tier).."]"..
 		"listring[current_name;dst]"..
 		"listring[current_player;main]"..

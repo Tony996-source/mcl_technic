@@ -17,22 +17,22 @@ minetest.register_craft({
 })
 
 technic.chests:register("Iron", {
-	width = 9,
-	height = 5,
-	sort = true,
-	autosort = true,
+	width = 11,
+	height = 4,
+	sort = false,
+	autosort = false,
 	infotext = true,
-	color = true,
+	color = false,
 	locked = false,
 })
 
 technic.chests:register("Iron", {
-	width = 9,
-	height = 5,
-	sort = true,
-	autosort = true,
+	width = 11,
+	height = 4,
+	sort = false,
+	autosort = false,
 	infotext = true,
-	color = true,
+	color = false,
 	locked = true,
 })
 

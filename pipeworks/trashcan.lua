@@ -9,7 +9,7 @@ minetest.register_node("pipeworks:trashcan", {
 		"pipeworks_trashcan_side.png",
 		"pipeworks_trashcan_side.png",
 	}, 
-	groups = {snappy = 3, tubedevice = 1, tubedevice_receiver = 1}, 
+	groups = {pickaxey=1, axey=1, swordy=1, handy=1, tubedevice = 1, tubedevice_receiver = 1}, 
 	tube = {
 		insert_object = function(pos, node, stack, direction)
 			return ItemStack("")
@@ -20,13 +20,13 @@ minetest.register_node("pipeworks:trashcan", {
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("formspec",
-				"size[8,7]"..
+				"size[9,7]"..
 				"item_image[0,0;1,1;pipeworks:trashcan]"..
 				"label[1,0;Trash Can]"..
 				"list[context;trash;3.5,1;1,1;]"..
 				mcl_formspec.get_itemslot_bg(3.5,1,1,1)..
-				"list[current_player;main;0,3;8,4;]" ..
-				mcl_formspec.get_itemslot_bg(0,3,8,4)..
+				"list[current_player;main;0,3;9,4;]" ..
+				mcl_formspec.get_itemslot_bg(0,3,9,4)..
 				"listring[]")
 		meta:set_string("infotext", "Trash Can")
 		meta:get_inventory():set_size("trash", 1)
