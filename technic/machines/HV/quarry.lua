@@ -6,7 +6,7 @@ local cable_entry = "^technic_cable_connection_overlay.png"
 
 minetest.register_craft({
 	recipe = {
-	{"technic:carbon_plate", "technic:carbon_plate", "technic:carbon_plate"},
+	{"technic:carbon_plate", "pipeworks:tube_1", "technic:carbon_plate"},
 	{"technic:carbon_plate", "mcl_core:gold_ingot", "technic:diamond_drill_head"},
 	{"technic:carbon_plate", "technic:hv_cable", "technic:carbon_plate"}},
 	output = "technic:hv_quarry",

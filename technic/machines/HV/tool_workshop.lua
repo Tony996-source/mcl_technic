@@ -11,7 +11,7 @@ minetest.register_craft({
 	output = 'technic:tool_workshop_hv',
 	recipe = {
 	{'mcl_core:iron_ingot', 'mcl_core:diamond', 'mcl_core:iron_ingot'},
-	{'technic:carbon_plate', 'mcl_core:gold_ingot', 'technic:carbon_plate'},
+	{'pipeworks:tube_1', 'mcl_core:gold_ingot', 'pipeworks:tube_1'},
 	{'mcl_core:ironblock', 'technic:hv_cable', 'mcl_core:ironblock'},
 	}
 })

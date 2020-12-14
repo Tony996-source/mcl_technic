@@ -4,7 +4,7 @@ minetest.register_craft({
 	output = 'technic:hv_freezer',
 	recipe = {
 	{'technic:carbon_plate', 'technic:carbon_plate', 'technic:carbon_plate'},
-	{'mcl_core:ironblock', 'mcl_core:gold_ingot',    'mcl_core:ironblock'},
+	{'pipeworks:tube_1', 'mcl_core:gold_ingot',    'pipeworks:tube_1'},
 	{'mcl_core:ironblock', 'technic:hv_cable', 'mcl_core:ironblock'},
 	}
 })

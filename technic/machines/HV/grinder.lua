@@ -4,7 +4,7 @@ minetest.register_craft({
 	output = 'technic:hv_grinder',
 	recipe = {
 	{'technic:carbon_plate', 'mcl_core:iron_ingot', 'technic:carbon_plate'},
-	{'mcl_core:ironblock', 'mcl_core:gold_ingot', 'mcl_core:ironblock'},
+	{'pipeworks:tube_1', 'mcl_core:gold_ingot', 'pipeworks:tube_1'},
 	{'mcl_core:iron_ingot', 'technic:hv_cable', 'mcl_core:iron_ingot'},
 	}
 })

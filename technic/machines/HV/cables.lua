@@ -2,9 +2,9 @@
 minetest.register_craft({
 	output = 'technic:hv_cable 3',
 	recipe = {
-	{'mcl_core:gold_ingot', 'technic:rubber', 'mcl_core:gold_ingot'},
+	{'pipeworks:plastic_sheet', 'technic:rubber', 'pipeworks:plastic_sheet'},
 	{'mesecons:redstone', 'mesecons:redstone', 'mesecons:redstone'},
-	{'mcl_core:gold_ingot', 'technic:rubber', 'mcl_core:gold_ingot'},
+	{'pipeworks:plastic_sheet', 'technic:rubber', 'pipeworks:plastic_sheet'},
 	}
 }) 
 
