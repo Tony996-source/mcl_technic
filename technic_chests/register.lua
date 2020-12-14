@@ -103,13 +103,13 @@ local function set_formspec(pos, data, page)
 	if data.infotext then
 		local formspec_infotext = minetest.formspec_escape(meta:get_string("infotext"))
 		if page == "main" then
-			formspec = formspec.."image_button["..(shift_edit_field+data.hileft+4.1)..",0.1;0.8,0.8;"
+			formspec = formspec.."image_button["..(shift_edit_field+data.hileft+3.5)..",0.1;0.8,0.8;"
 					.."technic_pencil_icon.png;edit_infotext;]"
-					.."label["..(shift_edit_field+data.hileft+5)..",0;"..formspec_infotext.."]"
+					.."label["..(shift_edit_field+data.hileft+4.5)..",0;"..formspec_infotext.."]"
 		elseif page == "edit_infotext" then
-			formspec = formspec.."image_button["..(shift_edit_field+data.hileft+2.1)..",0.1;0.8,0.8;"
+			formspec = formspec.."image_button["..(shift_edit_field+data.hileft+3.5)..",0.1;0.8,0.8;"
 					.."technic_checkmark_icon.png;save_infotext;]"
-					.."field["..(shift_edit_field+data.hileft+3.3)..",0.2;4.8,1;"
+					.."field["..(shift_edit_field+data.hileft+4.5)..",0.4;4.8,1;"
 					.."infotext_box;"..S("Edit chest description:")..";"
 					..formspec_infotext.."]"
 		end
