@@ -463,7 +463,7 @@ if pipeworks.enable_dispenser then
 	minetest.register_craft({
 		output = "pipeworks:dispenser_off",
 		recipe = {
-			{ "mcl_core:redsandstone", "default:chest",    "mcl_core:redsandstone" },
+			{ "mcl_core:redsandstone", "mcl_chests:chest",    "mcl_core:redsandstone" },
 			{ "mcl_core:stone",       "mesecons_pistons:piston_normal_off",  "mcl_core:stone"       },
 			{ "mcl_core:stone",       "mesecons:redstone", "mcl_core:stone"       },
 		}
