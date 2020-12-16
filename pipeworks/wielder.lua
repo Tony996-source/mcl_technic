@@ -10,11 +10,13 @@ end
 
 local function set_wielder_formspec(data, meta)
 	meta:set_string("formspec",
-			"invsize[8,"..(6+data.wield_inv_height)..";]"..
+			"invsize[9,"..(6+data.wield_inv_height)..";]"..
 			"item_image[0,0;1,1;"..data.name_base.."_off]"..
 			"label[1,0;"..minetest.formspec_escape(data.description).."]"..
 			"list[current_name;"..minetest.formspec_escape(data.wield_inv_name)..";"..((8-data.wield_inv_width)*0.5)..",1;"..data.wield_inv_width..","..data.wield_inv_height..";]"..
-			"list[current_player;main;0,"..(2+data.wield_inv_height)..";8,4;]" ..
+			mcl_formspec.get_itemslot_bg(4-data.wield_inv_width*0.5,1,data.wield_inv_width,data.wield_inv_height)..
+			"list[current_player;main;0,"..(2+data.wield_inv_height)..";9,4;]" ..
+			mcl_formspec.get_itemslot_bg(0,2+data.wield_inv_height,9,4)..
 			"listring[]")
 	meta:set_string("infotext", data.description)
 end
@@ -306,6 +308,7 @@ if pipeworks.enable_node_breaker then
 			-- of the form, and sets infotext where it was
 			-- missing for early with-form node breakers.
 			set_wielder_formspec(data, meta)
+			
 		end,
 		fixup_oldmetadata = function (oldmetadata)
 			-- Node breakers predating the visible pick slot,
