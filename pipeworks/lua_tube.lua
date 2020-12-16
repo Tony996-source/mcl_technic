@@ -26,8 +26,6 @@
 -- (see where local env is defined)
 -- Something nice to play is is appending minetest.env to it.
 
-local BASENAME = "pipeworks:lua_tube"
-
 local rules = {
 	red    = {x = -1, y =  0, z =  0, name = "red"},
 	blue   = {x =  1, y =  0, z =  0, name = "blue"},
@@ -127,7 +125,7 @@ local function generate_name(ports)
 	local green  = ports.green  and 1 or 0
 	local black  = ports.black  and 1 or 0
 	local white  = ports.white  and 1 or 0
-	return BASENAME..white..black..green..yellow..blue..red
+	return "pipeworks:lua_tube" ..white..black..green..yellow..blue..red
 end
 
 
@@ -194,7 +192,7 @@ end
 -----------------
 local function burn_controller(pos)
 	local node = minetest.get_node(pos)
-	node.name = BASENAME.."_burnt"
+	node.name = "pipeworks:lua_tube_burnt"
 	minetest.swap_node(pos, node)
 	minetest.get_meta(pos):set_string("lc_memory", "");
 	-- Wait for pending operations
@@ -614,7 +612,7 @@ for black  = 0, 1 do
 for white  = 0, 1 do
 	local cid = tostring(white)..tostring(black)..tostring(green)..
 			tostring(yellow)..tostring(blue)..tostring(red)
-	local node_name = BASENAME..cid
+	local node_name = "pipeworks:lua_tube" ..cid
 	local tiles = table.copy(tiles_base)
 	if red == 1 then
 		tiles[1] = tiles[1].."^(pipeworks_lua_tube_port_on.png^[transformR90)"
@@ -683,7 +681,7 @@ for white  = 0, 1 do
 		tiles[4] = tiles[4].."^(pipeworks_lua_tube_port_off.png^[transformR90)"
 	end
 
-	local groups = {snappy = 3, tube = 1, tubedevice = 1, overheat = 1}
+	local groups = {pickaxey=1,axey=1, handy=1, swordy=1, tube = 1, tubedevice = 1, overheat = 1}
 	if red + blue + yellow + green + black + white ~= 0 then
 		groups.not_in_creative_inventory = 1
 	end
@@ -718,13 +716,13 @@ for white  = 0, 1 do
 		}
 	}
 
-	minetest.register_node(node_name, {
+	minetest.register_node("pipeworks:lua_tube", {
 		description = "Lua controlled Tube",
 		drawtype = "nodebox",
 		tiles = tiles,
 		paramtype = "light",
 		groups = groups,
-		drop = BASENAME.."000000",
+		drop = "pipeworks:lua_tube",
 		sunlight_propagates = true,
 		selection_box = selection_box,
 		node_box = node_box,
@@ -831,13 +829,13 @@ tiles_burnt[2] = tiles_burnt[2].."^(pipeworks_lua_tube_port_burnt.png^[transform
 tiles_burnt[3] = tiles_burnt[3].."^(pipeworks_lua_tube_port_burnt.png^[transformR270)"
 tiles_burnt[4] = tiles_burnt[4].."^(pipeworks_lua_tube_port_burnt.png^[transformR90)"
 
-minetest.register_node(BASENAME .. "_burnt", {
+minetest.register_node("pipeworks:lua_tube_burnt", {
 	drawtype = "nodebox",
 	tiles = tiles_burnt,
 	is_burnt = true,
 	paramtype = "light",
-	groups = {snappy = 3, tube = 1, tubedevice = 1, not_in_creative_inventory=1},
-	drop = BASENAME.."000000",
+	groups = {pickaxey=1,axey=1, handy=1, swordy=1, tube = 1, tubedevice = 1, not_in_creative_inventory=1},
+	drop = "pipeworks:lua_tube",
 	sunlight_propagates = true,
 	selection_box = selection_box,
 	node_box = node_box,
@@ -877,6 +875,6 @@ minetest.register_node(BASENAME .. "_burnt", {
 
 minetest.register_craft({
 	type = "shapeless",
-	output = BASENAME.."000000",
+	output = "pipeworks:lua_tube",
 	recipe = {"mesecons:redstone", "pipeworks:tube_1", "mesecons:redstone"},
 })
