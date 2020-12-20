@@ -1,11 +1,5 @@
 local path = technic.modpath.."/tools"
 
-if technic.config:get_bool("enable_mining_drill") then
-	dofile(path.."/mining_drill.lua")
-end
-if technic.config:get_bool("enable_mining_laser") then
-	dofile(path.."/mining_lasers.lua")
-end
 if technic.config:get_bool("enable_flashlight") then
 	dofile(path.."/flashlight.lua")
 end

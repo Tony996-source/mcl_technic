@@ -46,6 +46,9 @@ dofile(modpath.."/legacy.lua")
 
 dofile(modpath.."/craftguide.lua")
 
+dofile(modpath.."/redef.lua")
+
+
 if minetest.settings:get_bool("log_mods") then
 	print(S("[Technic] Loaded in %f seconds"):format(os.clock() - load_start))
 end

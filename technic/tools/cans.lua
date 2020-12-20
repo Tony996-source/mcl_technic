@@ -82,8 +82,8 @@ technic.register_can({
 	can_description = S("Water Can"),
 	can_inventory_image = "technic_water_can.png",
 	can_capacity = 16,
-	liquid_source_name = "default:water_source",
-	liquid_flowing_name = "default:water_flowing",
+	liquid_source_name = "mcl_core:water_source",
+	liquid_flowing_name = "mcl_core:water_flowing",
 })
 
 minetest.register_craft({
@@ -100,8 +100,8 @@ technic.register_can({
 	can_description = S("Lava Can"),
 	can_inventory_image = "technic_lava_can.png",
 	can_capacity = 8,
-	liquid_source_name = "default:lava_source",
-	liquid_flowing_name = "default:lava_flowing",
+	liquid_source_name = "mcl_core:lava_source",
+	liquid_flowing_name = "mcl_core:lava_flowing",
 })
 
 minetest.register_craft({

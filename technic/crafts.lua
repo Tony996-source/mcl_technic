@@ -33,3 +33,5 @@ minetest.register_craft({
 	output = "technic:rubber",
 	recipe = "technic:oil",
 })
+
+

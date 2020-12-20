@@ -103,7 +103,7 @@ end
 
 -- This function does all the hard work. Recursively we dig the node at hand
 -- if it is in the table and then search the surroundings for more stuff to dig.
-local function recursive_dig(pos, remaining_charge)
+local function drill_dig_it(pos, remaining_charge)
 	if remaining_charge < chainsaw_charge_per_node then
 		return remaining_charge
 	end
