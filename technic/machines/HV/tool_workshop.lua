@@ -106,6 +106,8 @@ minetest.register_node("technic:tool_workshop_hv", {
 		technic_machine=1, technic_hv=1, tubedevice=1, tubedevice_receiver=1},
 	connect_sides = {"bottom", "back", "left", "right"},
 	sounds = mcl_sounds.node_sound_wood_defaults(),
+	_mcl_blast_resistance = 6,
+	_mcl_hardness = 1.5,
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("infotext", S("%s Tool Workshop"):format("HV"))

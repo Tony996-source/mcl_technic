@@ -97,6 +97,8 @@ local register_one_tube = function(name, tname, dropname, desc, plain, noctrs, e
 		},
 		groups = tgroups,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 		walkable = true,
 		stack_max = 99,
 		basename = name,

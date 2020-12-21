@@ -389,6 +389,8 @@ for _, data in ipairs({
 		groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, mesecon = 2},
 		legacy_facedir_simple = true,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 		on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
 			set_filter_formspec(data, meta)

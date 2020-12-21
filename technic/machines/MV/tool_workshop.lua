@@ -104,6 +104,8 @@ minetest.register_node("technic:tool_workshop_mv", {
 	},
 	groups = {pickaxey=1,axey=1, handy=1, swordy=1,
 		technic_machine=1, technic_mv=1, tubedevice=1, tubedevice_receiver=1},
+		_mcl_blast_resistance = 6,
+	_mcl_hardness = 1.5,
 	connect_sides = {"bottom", "back", "left", "right"},
 	sounds = mcl_sounds.node_sound_wood_defaults(),
 	on_construct = function(pos)

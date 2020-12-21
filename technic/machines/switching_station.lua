@@ -39,6 +39,8 @@ minetest.register_node("technic:switching_station",{
 	groups = {pickaxey=1,axey=1, handy=1, swordy=1, technic_all_tiers=1},
 	connect_sides = {"bottom"},
 	sounds = mcl_sounds.node_sound_wood_defaults(),
+	_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
 		meta:set_string("infotext", S("Switching Station"))

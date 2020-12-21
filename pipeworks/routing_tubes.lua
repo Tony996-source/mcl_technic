@@ -148,6 +148,8 @@ if pipeworks.enable_one_way_tube then
 			fixed = {{-1/2, -9/64, -9/64, 1/2, 9/64, 9/64}}},
 		groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, tubedevice = 1},
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 		tube = {
 			connect_sides = {left = 1, right = 1},
 			can_go = function(pos, node, velocity, stack)

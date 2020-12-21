@@ -729,6 +729,8 @@ for white  = 0, 1 do
 		on_construct = reset_meta,
 		on_receive_fields = on_receive_fields,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 		mesecons = mesecons,
 		digiline = digiline,
 		-- Virtual portstates are the ports that

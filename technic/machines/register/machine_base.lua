@@ -165,6 +165,8 @@ function technic.register_base_machine(data)
 		connect_sides = data.connect_sides or connect_default,
 		legacy_facedir_simple = true,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 		on_construct = function(pos)
 			local node = minetest.get_node(pos)
 			local meta = minetest.get_meta(pos)
@@ -235,6 +237,8 @@ function technic.register_base_machine(data)
 		connect_sides = data.connect_sides or connect_default,
 		legacy_facedir_simple = true,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 		tube = data.tube and tube or nil,
 		can_dig = technic.machine_can_dig,
 		allow_metadata_inventory_put = technic.machine_inventory_put,

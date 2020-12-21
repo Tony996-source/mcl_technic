@@ -67,6 +67,8 @@ minetest.register_node("technic:coal_alloy_furnace_active", {
 	groups = {pickaxey=1,axey=1, handy=1, swordy=1, not_in_creative_inventory=1},
 	legacy_facedir_simple = true,
 	sounds = mcl_sounds.node_sound_wood_defaults(),
+	_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 	can_dig = technic.machine_can_dig,
 	allow_metadata_inventory_put = technic.machine_inventory_put,
 	allow_metadata_inventory_take = technic.machine_inventory_take,

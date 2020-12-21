@@ -179,6 +179,8 @@ minetest.register_node("technic:supply_converter", {
 		technic_machine=1, technic_all_tiers=1},
 	connect_sides = {"top", "bottom"},
 	sounds = mcl_sounds.node_sound_wood_defaults(),
+	_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 	on_receive_fields = supply_converter_receive_fields,
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)

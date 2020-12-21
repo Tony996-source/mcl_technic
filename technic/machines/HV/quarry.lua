@@ -216,6 +216,8 @@ minetest.register_node("technic:hv_quarry", {
 	},
 	paramtype2 = "facedir",
 	groups = {pickaxey=1,axey=1, handy=1, swordy=1, tubedevice=1, technic_machine=1, technic_hv=1},
+	_mcl_blast_resistance = 6,
+	_mcl_hardness = 1.5,
 	connect_sides = {"bottom", "front", "left", "right"},
 	tube = {
 		connect_sides = {top = 1},

@@ -272,6 +272,8 @@ function technic.chests:definition(name, data)
 		tube = self.tube,
 		legacy_facedir_simple = true,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 2.5,
+	_mcl_hardness = 2.5,
 		after_place_node = locked_after_place,
 		after_dig_node = pipeworks.after_dig,
 
