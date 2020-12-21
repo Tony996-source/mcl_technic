@@ -21,6 +21,7 @@ end
 	{"mcl_flowers:tulip_pink", "mcl_dye:pink 4"},
 	{"mcl_flowers:tulip_red", "mcl_dye:red 4"},
 	{"mcl_flowers:tulip_white", "mcl_dye:white 4"},
+	{"mcl_flowers:tulip_orange", "mcl_dye:orange 4"},
 	{"technic:oil", "pipeworks:oil_extract 6"},
 	{"technic:sawdust", "technic:oil 2"},
 	{"technic:stone_dust 5", "technic:iron_dust"},

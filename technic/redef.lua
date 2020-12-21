@@ -17,7 +17,28 @@ minetest.override_item("mcl_core:bedrock", {
 	_mcl_hardness = -1,
 	diggable = false,
 })
- 
+
+minetest.override_item("mcl_core:ice", {
+	description = S("Ice"),
+	_doc_items_longdesc = S("Ice is a solid block usually found in cold areas. It melts near block light sources at a light level of 12 or higher. When it melts or is broken while resting on top of another block, it will turn into a water source."),
+	drawtype = "glasslike",
+	tiles = {"default_ice.png"},
+	is_ground_content = true,
+	paramtype = "light",
+	sunlight_propagates = true,
+	use_texture_alpha = true,
+	stack_max = 64,
+	groups = {handy=1,pickaxey=1, slippery=3, building_block=1},
+	drop = "",
+	sounds = mcl_sounds.node_sound_glass_defaults(),
+	node_dig_prediction = "mcl_core:water_source",
+	after_dig_node = function(pos, oldnode)
+		mcl_core.melt_ice(pos)
+	end,
+	_mcl_blast_resistance = 0.5,
+	_mcl_hardness = 0.5,
+})
+
 minetest.override_item("mcl_core:reeds", {
     description = "Sugar Canes",
 	tiles = {"default_papyrus_3d.png"},
@@ -114,32 +135,52 @@ minetest.override_item("mcl_core:ladder", {
 
 
 local colour = {
-	{"white",      "white"},
-	{"silver",     "silver"},
-	{"grey",       "grey"},
-	{"black",      "black"},
-	{"purple",     "purple"},
-	{"blue",       "blue"},
-	{"cyan",       "cyan"},
-	{"green",      "green"},
-	{"lime",       "lime"},
-	{"yellow",     "yellow"},
-	{"brown",      "brown"},
-	{"orange",     "orange"},
-	{"red",        "red"},
-	{"magenta",    "magenta"},
-	{"pink",       "pink"},
-    {"light_blue", "lightblue"},
+	{"white",      "white",     "White"},
+	{"silver",     "silver",    "Silver"},
+	{"grey",       "grey",      "Grey"},
+	{"black",      "black",     "Black"},
+	{"purple",     "purple",    "Purple"},
+	{"blue",       "blue",      "Blue"},
+	{"cyan",       "cyan",      "Cyan"},
+	{"green",      "green",     "Green"},
+	{"lime",       "lime",      "Lime"},
+	{"yellow",     "yellow",    "Yellow"},
+	{"brown",      "brown",     "Brown"},
+	{"orange",     "orange",    "Orange"},
+	{"red",        "red",       "Red"},
+	{"magenta",    "magenta",   "Magenta"},
+	{"pink",       "pink",      "Pink"},
+    {"light_blue", "lightblue", "Light Blue"},
 }
 
 for _, colour in pairs(colour) do
 
-mcl_stairs.register_stair_and_slab_simple(colour[1].."concrete", "mcl_colorblocks:concrete_"..colour[1], colour[1].."concrete Stair", colour[1].."concrete Slab", colour[1].."Double concrete Slab")
+mcl_stairs.register_stair_and_slab_simple(colour[1].."concrete", "mcl_colorblocks:concrete_"..colour[1], colour[3].."Concrete Stair", colour[3].."concrete Slab", colour[3].."Double concrete Slab")
+
+mcl_stairs.register_stair_and_slab_simple(colour[1].."hardened_clay", "mcl_colorblocks:hardened_clay_"..colour[1], colour[3].."hardened_clay Stair", colour[3].."hardened_clay Slab", colour[3].."Double hardened_clay Slab")
 
 minetest.register_craft({
 	type = "shapeless",
 	output = "mcl_colorblocks:concrete_" .. colour[1],
 	recipe = { "group:concrete", "mcl_dye:" .. colour[2] },
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "mcl_colorblocks:concrete_powder_" .. colour[1],
+	recipe = { "group:concrete_powder", "mcl_dye:" .. colour[2] },
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "mcl_colorblocks:hardened_clay_" .. colour[1],
+	recipe = { "group:hardened_clay", "mcl_dye:" .. colour[2] },
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "mcl_colorblocks_glazed_terracotta_" .. colour[1],
+	recipe = { "group:glazed_terracotta", "mcl_dye:" .. colour[2] },
 })
 end
 
@@ -285,3 +326,36 @@ minetest.register_craft({
 		replacements = {{"mcl_tools:axe_"..axe[1], "mcl_tools:axe_"..axe[1]}}
 })
 end
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_core:stone_with_lapis",
+	wherein         = stonelike,
+	clust_scarcity = 1000,
+	clust_num_ores = 4,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(20),
+})
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_core:stone_with_diamond",
+	wherein         = stonelike,
+	clust_scarcity = 1000,
+	clust_num_ores = 4,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(20),
+})
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_core:stone_with_gold",
+	wherein         = stonelike,
+	clust_scarcity = 1000,
+	clust_num_ores = 4,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(20),
+})
