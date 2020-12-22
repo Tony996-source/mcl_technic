@@ -93,10 +93,12 @@ local extract_recipe = {
 	{"mcl_flowers:tulip_pink", "mcl_dye:pink 4"},
 	{"mcl_flowers:tulip_red", "mcl_dye:red 4"},
 	{"mcl_flowers:tulip_white", "mcl_dye:white 4"},
+	{"mcl_flowers:tulip_orange", "mcl_dye:orange 4"},
+	{"mcl_end:chorus_fruit_popped", "mcl_dye:purple 6"},
 	{"technic:oil", "pipeworks:oil_extract 6"},
 	{"technic:sawdust", "technic:oil 2"},
-	{"mcl_core:gravel", "technic:gold_dust"},
-	{"technic:stone_dust", "technic:iron_dust"},
+	{"mcl_core:gravel", "technic:lowgrade_gold_dust"},
+	{"technic:stone_dust", "technic:lowgrade_iron_dust"},
 }
 
 for _, extract_recipe in pairs(extract_recipe) do

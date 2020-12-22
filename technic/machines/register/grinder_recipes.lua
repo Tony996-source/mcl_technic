@@ -13,6 +13,8 @@ local recipes = {
 	{"mcl_core:coal_lump",         "technic:coal_dust 2"},
 	{"mcl_core:stone_with_iron",   "technic:iron_dust 2"},
 	{"mcl_core:stone_with_gold",   "technic:gold_dust 2"},
+	
+	
 -- Trees
     {"mcl_core:tree",              "technic:sawdust 4"},
     {"mcl_core:jungletree",        "technic:sawdust 4"},
@@ -68,4 +70,26 @@ minetest.register_craft({
 	type = "fuel",
 	recipe = "technic:coal_dust",
 	burntime = 50,
+})
+
+minetest.register_craftitem("technic:lowgrade_gold_dust", {
+	description = ("Lowgrade Gold Dust"),
+	inventory_image = "technic_lowgrade_gold_dust.png",
+})
+	
+minetest.register_craft({
+	type = "cooking",
+	recipe = "technic:lowgrade_gold_dust",
+	output = "mcl_core:gold_nugget",
+})
+
+minetest.register_craftitem("technic:lowgrade_iron_dust", {
+	description = ("Lowgrade Iron Dust"),
+	inventory_image = "technic_lowgrade_iron_dust.png",
+})
+	
+minetest.register_craft({
+	type = "cooking",
+	recipe = "technic:lowgrade_iron_dust",
+	output = "mcl_core:iron_nugget",
 })
