@@ -11,6 +11,9 @@ local grind_recipe = {
 	{"mcl_core:coal_lump",         "technic:coal_dust 2"},
 	{"mcl_core:stone_with_iron",   "technic:iron_dust 2"},
 	{"mcl_core:stone_with_gold",   "technic:gold_dust 2"},
+	{"mcl_core:iron_ingot",        "technic:iron_dust"},
+	{"mcl_core:gold_ingot",        "technic:gold_dust"},
+	
 -- Trees
     {"mcl_core:tree",              "technic:sawdust 4"},
     {"mcl_core:jungletree",        "technic:sawdust 4"},
@@ -24,13 +27,13 @@ local grind_recipe = {
     {"mcl_core:birchwood",         "technic:sawdust 2"},
     {"mcl_core:darkwood",          "technic:sawdust 2"},
     {"mcl_core:acaciawood",        "technic:sawdust 2"},
+    
 	-- Other
 	{"mcl_mobitems:bone",          "mcl_dye:white 2"},
-	{"mcl_core:cobble",            "mcl_core:gravel 2"},
-	
-	{"mcl_core:sandstone",         "mcl_core:sand 2"},
-	{"mcl_core:redsandstone",      "mcl_core:redsand 2"},
-    {"mcl_core:stone",             "technic:stone_dust 2"},
+	{"mcl_core:cobble",            "mcl_core:gravel"},
+	{"mcl_core:sandstone",         "mcl_core:sand"},
+	{"mcl_core:redsandstone",      "mcl_core:redsand"},
+    {"mcl_core:stone",             "technic:stone_dust"},
 }
 
 for _, grind_recipe in pairs(grind_recipe) do
@@ -57,9 +60,9 @@ local compress_recipe = {
 	{"mcl_core:sand",               "mcl_core:sandstone"},
 	{"mcl_core:redsand",            "mcl_core:redsandstone"},
 	{"technic:coal_dust",           "technic:graphite"},
-	{"technic:carbon_cloth",        "technic:carbon_plate 2"},
-    {"mcl_core:coalblock",          "mcl_core:diamond 2"},
-    {"technic:sawdust",             "mcl_core:paper 2"},
+	{"technic:carbon_cloth",        "technic:carbon_plate"},
+    {"mcl_core:coalblock",          "mcl_core:diamond"},
+    {"technic:sawdust",             "mcl_core:paper"},
 }
 
 for _, compress_recipe in pairs(compress_recipe) do
