@@ -46,6 +46,8 @@ function technic.register_solar_array(data)
 		groups = {pickaxey=1,axey=1, handy=1, swordy=1, technic_machine=1, ["technic_"..ltier]=1},
 		connect_sides = {"bottom"},
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 		description = S("Arrayed Solar %s Generator"):format(tier),
 		active = false,
 		drawtype = "nodebox",

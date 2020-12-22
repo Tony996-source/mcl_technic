@@ -143,6 +143,8 @@ pipeworks.register_tube("pipeworks:teleport_tube", {
 	noctr = { "pipeworks_teleport_tube_noctr.png" },
 	plain = { "pipeworks_teleport_tube_plain.png" },
 	ends = { "pipeworks_teleport_tube_end.png" },
+	_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 	short = "pipeworks_teleport_tube_short.png",
 	node_def = {
 		is_teleport_tube = true,

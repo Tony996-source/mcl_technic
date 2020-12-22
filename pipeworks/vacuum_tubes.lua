@@ -6,6 +6,8 @@ if pipeworks.enable_sand_tube then
 		noctr = {"pipeworks_sand_tube_noctr.png"},
 		plain = {"pipeworks_sand_tube_plain.png"},
 		ends  = {"pipeworks_sand_tube_end.png"},
+		_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 		node_def = {groups = {vacuum_tube = 1}},
 	})
 
@@ -34,6 +36,8 @@ if pipeworks.enable_mese_sand_tube then
 			noctr = {"pipeworks_mese_sand_tube_noctr.png"},
 			plain = {"pipeworks_mese_sand_tube_plain.png"},
 			ends  = {"pipeworks_mese_sand_tube_end.png"},
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			node_def = {
 				groups = {vacuum_tube = 1},
 				on_construct = function(pos)

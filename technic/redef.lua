@@ -1,4 +1,7 @@
 -- MineClone2 Redefinitions and Additions.
+
+-- Unbreakable Bedrock
+
 local S = technic.getter
 minetest.override_item("mcl_core:bedrock", {
     description = S("Bedrock"),
@@ -17,6 +20,8 @@ minetest.override_item("mcl_core:bedrock", {
 	_mcl_hardness = -1,
 	diggable = false,
 })
+
+-- Transparent Ice
 
 minetest.override_item("mcl_core:ice", {
 	description = S("Ice"),
@@ -38,6 +43,8 @@ minetest.override_item("mcl_core:ice", {
 	_mcl_blast_resistance = 0.5,
 	_mcl_hardness = 0.5,
 })
+
+-- 3D Papyrus
 
 minetest.override_item("mcl_core:reeds", {
     description = "Sugar Canes",
@@ -110,6 +117,8 @@ minetest.override_item("mcl_core:reeds", {
 	_mcl_hardness = 0,
 })
 
+-- 3D Ladder
+
 minetest.override_item("mcl_core:ladder", {
     tiles = {"default_wood.png", "default_wood.png", "default_wood.png", "default_wood.png"},
 	inventory_image = "default_ladder.png",
@@ -133,6 +142,7 @@ minetest.override_item("mcl_core:ladder", {
     }
 })
 
+-- Register Stairs and new craft recipes
 
 local colour = {
 	{"white",      "white",     "White"},
@@ -326,6 +336,8 @@ minetest.register_craft({
 		replacements = {{"mcl_tools:axe_"..axe[1], "mcl_tools:axe_"..axe[1]}}
 })
 end
+
+-- Register Extra ore gen.
 
 minetest.register_ore({
 	ore_type       = "scatter",

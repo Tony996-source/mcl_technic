@@ -258,6 +258,8 @@ function technic.register_battery_box(data)
 			tube = data.tube and tube or nil,
 			paramtype2 = "facedir",
 			sounds = mcl_sounds.node_sound_wood_defaults(),
+			_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 			drop = "technic:"..ltier.."_battery_box0",
 			on_construct = function(pos)
 				local meta = minetest.get_meta(pos)

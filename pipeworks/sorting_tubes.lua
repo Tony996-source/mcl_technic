@@ -69,6 +69,8 @@ if pipeworks.enable_mese_tube then
 			plain = {"pipeworks_mese_tube_plain_1.png", "pipeworks_mese_tube_plain_2.png", "pipeworks_mese_tube_plain_3.png",
 				"pipeworks_mese_tube_plain_4.png", "pipeworks_mese_tube_plain_5.png", "pipeworks_mese_tube_plain_6.png"},
 			ends = { "pipeworks_mese_tube_end.png" },
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			short = "pipeworks_mese_tube_short.png",
 			no_facedir = true,  -- Must use old tubes, since the textures are rotated with 6d ones
 			node_def = {

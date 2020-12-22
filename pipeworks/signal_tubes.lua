@@ -43,6 +43,8 @@ if pipeworks.enable_detector_tube then
 			description = "Detecting Pneumatic Tube Segment",
 			inventory_image = "pipeworks_detector_tube_inv.png",
 			plain = { "pipeworks_detector_tube_plain.png" },
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			node_def = {
 				tube = {can_go = function(pos, node, velocity, stack)
 						local node = minetest.get_node(pos)
@@ -128,6 +130,8 @@ if pipeworks.enable_conductor_tube then
 			plain = { "pipeworks_conductor_tube_plain.png" },
 			noctr = { "pipeworks_conductor_tube_noctr.png" },
 			ends = { "pipeworks_conductor_tube_end.png" },
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			node_def = {
 				groups = {mesecon = 2},
 				mesecons = {conductor = {state = "off",
@@ -142,6 +146,8 @@ if pipeworks.enable_conductor_tube then
 			plain = { "pipeworks_conductor_tube_on_plain.png" },
 			noctr = { "pipeworks_conductor_tube_on_noctr.png" },
 			ends = { "pipeworks_conductor_tube_on_end.png" },
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			node_def = {
 				groups = {mesecon = 2, not_in_creative_inventory = 1},
 				drop = "pipeworks:conductor_tube_off_1",
@@ -184,6 +190,8 @@ if digiline_enabled and pipeworks.enable_digiline_conductor_tube and
 		plain = {"pipeworks_conductor_tube_plain.png^pipeworks_digiline_conductor_tube_plain.png"},
 		noctr = {"pipeworks_conductor_tube_noctr.png^pipeworks_digiline_conductor_tube_noctr.png"},
 		ends = {"pipeworks_conductor_tube_end.png^pipeworks_digiline_conductor_tube_end.png"},
+		_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 		node_def = {
 			digiline = {wire = {rules = pipeworks.digilines_rules}},
 			groups = {mesecon = 2},
@@ -201,6 +209,8 @@ if digiline_enabled and pipeworks.enable_digiline_conductor_tube and
 		plain = {"pipeworks_conductor_tube_on_plain.png^pipeworks_digiline_conductor_tube_plain.png"},
 		noctr = {"pipeworks_conductor_tube_on_noctr.png^pipeworks_digiline_conductor_tube_noctr.png"},
 		ends = {"pipeworks_conductor_tube_on_end.png^pipeworks_digiline_conductor_tube_end.png"},
+		_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 		node_def = {
 			digiline = {wire = {rules = pipeworks.digilines_rules}},
 			groups = {mesecon = 2, not_in_creative_inventory = 1},

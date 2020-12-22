@@ -21,6 +21,8 @@ pipeworks.register_tube("pipeworks:broken_tube", {
 	node_def = {
 		drop = "pipeworks:tube_1",
 		groups = {not_in_creative_inventory = 1, tubedevice_receiver = 1},
+		_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 		tube = {
 			insert_object = function(pos, node, stack, direction)
 				minetest.item_drop(stack, nil, pos)
@@ -75,6 +77,8 @@ if pipeworks.enable_priority_tube then
 			noctr = { { name = "pipeworks_tube_noctr.png", color = nodecolor } },
 			ends  = { { name = "pipeworks_tube_end.png",   color = nodecolor } },
 			short =   { name = "pipeworks_tube_short.png", color = nodecolor },
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			node_def = {
 				tube = { priority = 150 } -- higher than tubedevices (100)
 			},

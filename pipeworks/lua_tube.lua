@@ -844,6 +844,8 @@ minetest.register_node("pipeworks:lua_tube_burnt", {
 	on_construct = reset_meta,
 	on_receive_fields = on_receive_fields,
 	sounds = mcl_sounds.node_sound_wood_defaults(),
+	_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 	virtual_portstates = {red = false, blue = false, yellow = false,
 		green = false, black = false, white = false},
 	mesecons = {

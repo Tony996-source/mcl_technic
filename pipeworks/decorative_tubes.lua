@@ -11,6 +11,8 @@ minetest.register_node("pipeworks:steel_block_embedded_tube", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky=1, oddly_breakable_by_hand = 1, tubedevice = 1},
+	_mcl_blast_resistance = 6,
+	_mcl_hardness = 5,
 	legacy_facedir_simple = true,
 	sounds = mcl_sounds.node_sound_stone_defaults(),
 	tube = {
@@ -59,6 +61,8 @@ minetest.register_node("pipeworks:steel_pane_embedded_tube", {
 	paramtype = "light",
 	paramtype2 = "facedir",
 	groups = {cracky=1, oddly_breakable_by_hand = 1, tubedevice = 1},
+	_mcl_blast_resistance = 6,
+	_mcl_hardness = 5,
 	legacy_facedir_simple = true,
 	sounds = mcl_sounds.node_sound_stone_defaults(),
 	tube = {
