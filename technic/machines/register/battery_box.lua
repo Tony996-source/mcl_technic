@@ -222,7 +222,7 @@ function technic.register_battery_box(data)
 	end
 
 	for i = 0, 8 do
-		local groups = {snappy=2, choppy=2, oddly_breakable_by_hand=2,
+		local groups = {pickaxey=1,axey=1, handy=1, swordy=1,
 				technic_machine=1, ["technic_"..ltier]=1}
 		if i ~= 0 then
 			groups.not_in_creative_inventory = 1
@@ -259,7 +259,7 @@ function technic.register_battery_box(data)
 			paramtype2 = "facedir",
 			sounds = mcl_sounds.node_sound_wood_defaults(),
 			_mcl_blast_resistance = 6,
-	    _mcl_hardness = 1.5,
+	        _mcl_hardness = 1.5,
 			drop = "technic:"..ltier.."_battery_box0",
 			on_construct = function(pos)
 				local meta = minetest.get_meta(pos)
