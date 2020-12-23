@@ -145,22 +145,23 @@ minetest.override_item("mcl_core:ladder", {
 -- Register Stairs and new craft recipes
 
 local colour = {
-	{"white",      "white",     "White"},
-	{"silver",     "silver",    "Silver"},
-	{"grey",       "grey",      "Grey"},
-	{"black",      "black",     "Black"},
-	{"purple",     "purple",    "Purple"},
-	{"blue",       "blue",      "Blue"},
-	{"cyan",       "cyan",      "Cyan"},
-	{"green",      "green",     "Green"},
-	{"lime",       "lime",      "Lime"},
-	{"yellow",     "yellow",    "Yellow"},
-	{"brown",      "brown",     "Brown"},
-	{"orange",     "orange",    "Orange"},
-	{"red",        "red",       "Red"},
-	{"magenta",    "magenta",   "Magenta"},
-	{"pink",       "pink",      "Pink"},
-    {"light_blue", "lightblue", "Light Blue"},
+--     Node          dye       Description
+	{"white",      "white",      "White"},
+	{"silver",     "grey",       "Silver"},
+	{"grey",       "dark_grey",  "Grey"},
+	{"black",      "black",      "Black"},
+	{"purple",     "violet",     "Purple"},
+	{"blue",       "blue",       "Blue"},
+	{"cyan",       "cyan",       "Cyan"},
+	{"green",      "dark_green", "Green"},
+	{"lime",       "green",      "Lime"},
+	{"yellow",     "yellow",     "Yellow"},
+	{"brown",      "brown",      "Brown"},
+	{"orange",     "orange",     "Orange"},
+	{"red",        "red",        "Red"},
+	{"magenta",    "magenta",    "Magenta"},
+	{"pink",       "pink",       "Pink"},
+    {"light_blue", "lightblue",  "Light Blue"},
 }
 
 for _, colour in pairs(colour) do
@@ -168,6 +169,22 @@ for _, colour in pairs(colour) do
 mcl_stairs.register_stair_and_slab_simple(colour[1].."concrete", "mcl_colorblocks:concrete_"..colour[1], colour[3].."Concrete Stair", colour[3].."concrete Slab", colour[3].."Double concrete Slab")
 
 mcl_stairs.register_stair_and_slab_simple(colour[1].."hardened_clay", "mcl_colorblocks:hardened_clay_"..colour[1], colour[3].."hardened_clay Stair", colour[3].."hardened_clay Slab", colour[3].."Double hardened_clay Slab")
+
+minetest.register_craft({
+	output = 'mcl_colorblocks:concrete_' .. colour[1],
+	recipe = {
+		{'mcl_stairs:slab_' .. colour[1] .. 'concrete'},
+		{'mcl_stairs:slab_' .. colour[1] .. 'concrete'},
+	}
+})
+
+minetest.register_craft({
+	output = 'mcl_colorblocks:hardened_clay_' .. colour[1],
+	recipe = {
+		{'mcl_stairs:slab_' .. colour[1] .. 'hardened_clay'},
+		{'mcl_stairs:slab_' .. colour[1] .. 'hardened_clay'},
+	}
+})
 
 minetest.register_craft({
 	type = "shapeless",
@@ -189,132 +206,116 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_colorblocks_glazed_terracotta_" .. colour[1],
+	output = "mcl_colorblocks:glazed_terracotta_" .. colour[1],
 	recipe = { "group:glazed_terracotta", "mcl_dye:" .. colour[2] },
 })
-end
-
-local dye = {
-	{"white",      "white"},
-	{"silver",     "silver"},
-	{"grey",       "grey"},
-	{"black",      "black"},
-	{"purple",     "purple"},
-	{"blue",       "blue"},
-	{"cyan",       "cyan"},
-	{"green",      "green"},
-	{"lime",       "lime"},
-	{"yellow",     "yellow"},
-	{"brown",      "brown"},
-	{"orange",     "orange"},
-	{"red",        "red"},
-	{"magenta",    "magenta"},
-	{"pink",       "pink"},
-    {"lightblue",  "light_blue"},
-}
-
-for _, dye in pairs(dye) do
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_core:glass_" .. dye[2],
-	recipe = { "group:glass", "mcl_dye:" .. dye[1] },
+	output = "mcl_wool:" .. colour[1],
+	recipe = { "group:wool", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_white_flat", "mcl_dye:" .. dye[1] },
+	output = "mcl_core:glass_" .. colour[1],
+	recipe = { "group:glass", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_silver_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_white_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_grey_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_silver_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_black_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_grey_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_purple_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_black_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_blue_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_purple_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_cyan_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_blue_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_green_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_cyan_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_lime_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_green_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_yellow_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_lime_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_brown_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_yellow_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_orange_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_brown_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_red_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_orange_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_magenta_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_red_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_pink_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_magenta_flat", "mcl_dye:" .. colour[2] },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. dye[2] .. "_flat",
-	recipe = { "xpanes:pane_light_blue_flat", "mcl_dye:" .. dye[1] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_pink_flat", "mcl_dye:" .. colour[2] },
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = "xpanes:pane_" .. colour[1] .. "_flat",
+	recipe = { "xpanes:pane_light_blue_flat", "mcl_dye:" .. colour[2] },
 })
 end
 
@@ -371,3 +372,5 @@ minetest.register_ore({
 	y_min          = mcl_vars.mg_overworld_min,
 	y_max          = mcl_worlds.layer_to_y(20),
 })
+
+

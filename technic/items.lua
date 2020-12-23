@@ -53,3 +53,5 @@ minetest.register_node("technic:cracked_stone", {
 	_mcl_blast_resistance = 6,
 	_mcl_hardness = 1.5,
 })
+
+mcl_stairs.register_stair_and_slab_simple("cracked_stone", "technic:cracked_stone", "Cracked Stone Stair", "Cracked Stone Slab", "Double Cracked Stone Slab")
