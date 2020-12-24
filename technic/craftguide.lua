@@ -11,8 +11,8 @@ local grind_recipe = {
 	{"mcl_core:coal_lump",         "technic:coal_dust 2"},
 	{"mcl_core:stone_with_iron",   "technic:iron_dust 2"},
 	{"mcl_core:stone_with_gold",   "technic:gold_dust 2"},
-	{"mcl_core:iron_ingot",        "technic:iron_dust"},
 	{"mcl_core:gold_ingot",        "technic:gold_dust"},
+	{"mcl_core:iron_ingot",        "technic:iron_dust"},
 	
 -- Trees
     {"mcl_core:tree",              "technic:sawdust 4"},
@@ -31,6 +31,7 @@ local grind_recipe = {
 	-- Other
 	{"mcl_mobitems:bone",          "mcl_dye:white 2"},
 	{"mcl_core:cobble",            "mcl_core:gravel"},
+	{"mcl_core:gravel",            "mcl_core:sand"},
 	{"mcl_core:sandstone",         "mcl_core:sand"},
 	{"mcl_core:redsandstone",      "mcl_core:redsand"},
     {"mcl_core:stone",             "technic:stone_dust"},
@@ -59,10 +60,10 @@ local compress_recipe = {
 	{"mcl_core:snowblock",          "mcl_core:ice"},
 	{"mcl_core:sand",               "mcl_core:sandstone"},
 	{"mcl_core:redsand",            "mcl_core:redsandstone"},
-	{"technic:coal_dust",           "technic:graphite"},
-	{"technic:carbon_cloth",        "technic:carbon_plate"},
-    {"mcl_core:coalblock",          "mcl_core:diamond"},
-    {"technic:sawdust",             "mcl_core:paper"},
+	{"technic:coal_dust 2",         "technic:graphite"},
+	{"technic:carbon_cloth",        "technic:carbon_plate 2"},
+    {"mcl_core:coalblock",          "mcl_core:diamond 2"},
+    {"technic:sawdust",             "mcl_core:paper 2"},
 }
 
 for _, compress_recipe in pairs(compress_recipe) do
@@ -100,8 +101,8 @@ local extract_recipe = {
 	{"mcl_end:chorus_fruit_popped", "mcl_dye:purple 6"},
 	{"technic:oil", "pipeworks:oil_extract 6"},
 	{"technic:sawdust", "technic:oil 2"},
-	{"mcl_core:gravel", "technic:lowgrade_gold_dust"},
-	{"technic:stone_dust", "technic:lowgrade_iron_dust"},
+	{"technic:stone_dust 5", "technic:lowgrade_iron_dust"},
+	{"mcl_core:gravel 5", "technic:lowgrade_gold_dust"},
 }
 
 for _, extract_recipe in pairs(extract_recipe) do
@@ -125,17 +126,17 @@ mcl_craftguide.register_craft_type("cutting", {
 
 local cut_recipe = {
 	{"mcl_core:tree",                 "mcl_core:wood 6"},
-	{"mcl_core:jungletree",           "mcl_core:junglewood 6"},
-    {"mcl_core:birchtree",            "mcl_core:birchwood 6"},
-    {"mcl_core:sprucetree",           "mcl_core:sprucewood 6"},
-    {"mcl_core:acaciatree",           "mcl_core:acaciawood 6"},
-    {"mcl_core:darktree",             "mcl_core:darkwood 6"},
-    {"mcl_core:wood",                 "mcl_core:stick 6"},
-	{"mcl_core:junglewood",           "mcl_core:stick 6"},
-    {"mcl_core:birchwood",            "mcl_core:stick 6"},
-    {"mcl_core:sprucewood",           "mcl_core:stick 6"},
-    {"mcl_core:acaciawood",           "mcl_core:stick 6"},
-    {"mcl_core:darkwood",             "mcl_core:stick 6"},
+		{"mcl_core:jungletree",           "mcl_core:junglewood 6"},
+        {"mcl_core:birchtree",            "mcl_core:birchwood 6"},
+        {"mcl_core:sprucetree",           "mcl_core:sprucewood 6"},
+        {"mcl_core:acaciatree",           "mcl_core:acaciawood 6"},
+        {"mcl_core:darktree",             "mcl_core:darkwood 6"},
+        {"mcl_core:wood",                 "mcl_core:stick 6"},
+		{"mcl_core:junglewood",           "mcl_core:stick 6"},
+        {"mcl_core:birchwood",            "mcl_core:stick 6"},
+        {"mcl_core:sprucewood",           "mcl_core:stick 6"},
+        {"mcl_core:acaciawood",           "mcl_core:stick 6"},
+        {"mcl_core:darkwood",             "mcl_core:stick 6"},
 }
 
 for _, cut_recipe in pairs(cut_recipe) do

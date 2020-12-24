@@ -124,6 +124,13 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = 'mcl_mobitems:string',
+	recipe = {
+		{'mcl_core:reeds', 'mcl_core:reeds'}
+	}
+})
+
 -- 3D Ladder
 
 minetest.override_item("mcl_core:ladder", {

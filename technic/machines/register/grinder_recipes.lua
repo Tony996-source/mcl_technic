@@ -14,7 +14,7 @@ local recipes = {
 	{"mcl_core:stone_with_iron",   "technic:iron_dust 2"},
 	{"mcl_core:stone_with_gold",   "technic:gold_dust 2"},
 	{"mcl_core:gold_ingot",        "technic:gold_dust"},
-	{"mcl_core:iron_ingot",        "technic:gold_dust"},
+	{"mcl_core:iron_ingot",        "technic:iron_dust"},
 	
 -- Trees
     {"mcl_core:tree",              "technic:sawdust 4"},
