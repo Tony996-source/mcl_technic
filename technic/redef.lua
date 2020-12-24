@@ -117,6 +117,13 @@ minetest.override_item("mcl_core:reeds", {
 	_mcl_hardness = 0,
 })
 
+minetest.register_craft({
+	output = 'mcl_core:paper',
+	recipe = {
+		{'mcl_core:reeds', 'mcl_core:reeds', 'mcl_core:reeds'}
+	}
+})
+
 -- 3D Ladder
 
 minetest.override_item("mcl_core:ladder", {
