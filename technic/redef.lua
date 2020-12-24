@@ -202,138 +202,79 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_colorblocks:concrete_" .. colour[1],
-	recipe = { "group:concrete", "mcl_dye:" .. colour[2] },
+	output = "mcl_colorblocks:concrete_" .. colour[1] .. " 8",
+	recipe = { "group:concrete", "mcl_dye:" .. colour[2], "group:concrete",
+	           "group:concrete", "group:concrete", "group:concrete",
+	           "group:concrete", "group:concrete", "group:concrete"
+	},
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_colorblocks:concrete_powder_" .. colour[1],
-	recipe = { "group:concrete_powder", "mcl_dye:" .. colour[2] },
+	output = "mcl_colorblocks:concrete_powder_" .. colour[1] .. " 8",
+	recipe = { "group:concrete_powder", "mcl_dye:" .. colour[2], "group:concrete_powder",
+	           "group:concrete_powder", "group:concrete_powder", "group:concrete_powder",
+	           "group:concrete_powder", "group:concrete_powder", "group:concrete_powder"
+    },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_colorblocks:hardened_clay_" .. colour[1],
-	recipe = { "group:hardened_clay", "mcl_dye:" .. colour[2] },
+	output = "mcl_colorblocks:hardened_clay_" .. colour[1] .. " 8",
+	recipe = { "group:hardened_clay", "mcl_dye:" .. colour[2], "group:hardened_clay",
+	           "group:hardened_clay", "group:hardened_clay", "group:hardened_clay",
+	           "group:hardened_clay", "group:hardened_clay", "group:hardened_clay"
+    },
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_colorblocks:glazed_terracotta_" .. colour[1],
-	recipe = { "group:glazed_terracotta", "mcl_dye:" .. colour[2] },
+	output = "mcl_colorblocks:glazed_terracotta_" .. colour[1] .. " 8",
+	recipe = { "group:glazed_terracotta", "mcl_dye:" .. colour[2], "group:glazed_terracotta",
+	           "group:glazed_terracotta", "group:glazed_terracotta", "group:glazed_terracotta",
+	           "group:glazed_terracotta", "group:glazed_terracotta", "group:glazed_terracotta"
+	},
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_wool:" .. colour[1],
-	recipe = { "group:wool", "mcl_dye:" .. colour[2] },
+	output = "mcl_wool:" .. colour[1] .. " 8",
+	recipe = { "group:wool", "mcl_dye:" .. colour[2], "group:wool",
+	           "group:wool", "group:wool", "group:wool",
+	           "group:wool", "group:wool", "group:wool"
+	},
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_core:glass_" .. colour[1],
-	recipe = { "group:glass", "mcl_dye:" .. colour[2] },
+	output = "mcl_wool:" .. colour[1] .. "_carpet 8",
+	recipe = { "group:carpet", "mcl_dye:" .. colour[2], "group:carpet",
+	           "group:carpet", "group:carpet", "group:carpet",
+	           "group:carpet", "group:carpet", "group:carpet"
+	},
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_white_flat", "mcl_dye:" .. colour[2] },
+	output = "mcl_core:glass_" .. colour[1] .. " 8",
+	recipe = { "group:glass", "mcl_dye:" .. colour[2], "group:glass",
+	           "group:glass", "group:glass", "group:glass",
+	           "group:glass", "group:glass", "group:glass"
+	},
 })
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_silver_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_grey_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_black_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_purple_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_blue_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_cyan_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_green_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_lime_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_yellow_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_brown_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_orange_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_red_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_magenta_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_pink_flat", "mcl_dye:" .. colour[2] },
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "xpanes:pane_" .. colour[1] .. "_flat",
-	recipe = { "xpanes:pane_light_blue_flat", "mcl_dye:" .. colour[2] },
+	output = "xpanes:pane_" .. colour[1] .. "_flat 8",
+	recipe = { "group:pane", "mcl_dye:" .. colour[2], "group:pane",
+	           "group:pane", "group:pane", "group:pane",
+	           "group:pane", "group:pane", "group:pane"
+   },
 })
 end
 
-local axe = {   -- , Description , Image
+local axe = {   
+ -- material,         Description
 	{"wood",          "Axe Wood"},
 	{"stone",         "Axe Stone"},
 	{"iron",          "Axe Iron"},

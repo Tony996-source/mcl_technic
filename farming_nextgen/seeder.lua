@@ -12,12 +12,6 @@ if not farmingNG.havetech then
       farmingNG.seeder_charge_per_node = math.floor(65535 / farmingNG.seeder_max_charge * farmingNG.seeder_charge_per_node)
       farmingNG.seeder_max_charge = 65535
 end
-
---check for farming redo mod
-if minetest.global_exists("farming") then
-    if farming.mod == "redo" then farm_redo = true end
-end
-
 -- The default soils
 local soil_nodenames = {
 	["mcl_farming:soil"] 	 	= true,
