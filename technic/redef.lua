@@ -7,7 +7,7 @@ minetest.override_item("mcl_core:bedrock", {
     description = S("Bedrock"),
 	_doc_items_longdesc = ("Bedrock is a very hard type of rock. It can not be broken, destroyed, collected or moved by normal means, unless in Creative Mode.").."\n"..
 		S("In the End dimension, starting a fire on this block will create an eternal fire."),
-	tiles = {"mcl_core_bedrock.png"},
+	tiles = {"bedrock.png"},
 	stack_max = 64,
 	groups = {creative_breakable=1, building_block=1, material_stone=1, immortal=1},
 	sounds = mcl_sounds.node_sound_stone_defaults(),
@@ -21,13 +21,27 @@ minetest.override_item("mcl_core:bedrock", {
 	diggable = false,
 })
 
+-- Obsidian retexture
+
+minetest.override_item("mcl_core:obsidian", {
+	description = S("Obsidian"),
+	_doc_items_longdesc = S("Obsidian is an extremely hard mineral with an enourmous blast-resistance. Obsidian is formed when water meets lava."),
+	tiles = {"obsidian.png"},
+	is_ground_content = true,
+	sounds = mcl_sounds.node_sound_stone_defaults(),
+	stack_max = 64,
+	groups = {pickaxey=5, building_block=1, material_stone=1},
+	_mcl_blast_resistance = 1200,
+	_mcl_hardness = 50,
+})
+
 -- Transparent Ice
 
 minetest.override_item("mcl_core:ice", {
 	description = S("Ice"),
 	_doc_items_longdesc = S("Ice is a solid block usually found in cold areas. It melts near block light sources at a light level of 12 or higher. When it melts or is broken while resting on top of another block, it will turn into a water source."),
 	drawtype = "glasslike",
-	tiles = {"default_ice.png"},
+	tiles = {"ice.png"},
 	is_ground_content = true,
 	paramtype = "light",
 	sunlight_propagates = true,
@@ -159,23 +173,23 @@ minetest.override_item("mcl_core:ladder", {
 -- Register Stairs and new craft recipes
 
 local colour = {
---     Node          dye       Description
-	{"white",      "white",      "White"},
-	{"silver",     "grey",       "Silver"},
-	{"grey",       "dark_grey",  "Grey"},
-	{"black",      "black",      "Black"},
-	{"purple",     "violet",     "Purple"},
-	{"blue",       "blue",       "Blue"},
-	{"cyan",       "cyan",       "Cyan"},
-	{"green",      "dark_green", "Green"},
-	{"lime",       "green",      "Lime"},
-	{"yellow",     "yellow",     "Yellow"},
-	{"brown",      "brown",      "Brown"},
-	{"orange",     "orange",     "Orange"},
-	{"red",        "red",        "Red"},
-	{"magenta",    "magenta",    "Magenta"},
-	{"pink",       "pink",       "Pink"},
-    {"light_blue", "lightblue",  "Light Blue"},
+--     Node          dye       Description    Glass Colour
+	{"white",      "white",      "White",      "white"},
+	{"silver",     "grey",       "Silver",     "silver"},
+	{"grey",       "dark_grey",  "Grey",       "gray"},
+	{"black",      "black",      "Black",      "black"},
+	{"purple",     "violet",     "Purple",     "purple"},
+	{"blue",       "blue",       "Blue",       "blue"},
+	{"cyan",       "cyan",       "Cyan",       "cyan"},
+	{"green",      "dark_green", "Green",      "green"},
+	{"lime",       "green",      "Lime",       "lime"},
+	{"yellow",     "yellow",     "Yellow",     "yellow"},
+	{"brown",      "brown",      "Brown",      "brown"},
+	{"orange",     "orange",     "Orange",     "orange"},
+	{"red",        "red",        "Red",        "red"},
+	{"magenta",    "magenta",    "Magenta",    "magenta"},
+	{"pink",       "pink",       "Pink",       "pink"},
+    {"light_blue", "lightblue",  "Light Blue", "light_blue"},
 }
 
 for _, colour in pairs(colour) do
@@ -270,6 +284,116 @@ minetest.register_craft({
 	           "group:pane", "group:pane", "group:pane",
 	           "group:pane", "group:pane", "group:pane"
    },
+})
+
+minetest.override_item("mcl_core:glass", {
+	description = ("Glass"),
+	_doc_items_longdesc = S("A decorative and mostly transparent block."),
+	drawtype = "glasslike",
+	is_ground_content = false,
+	tiles = {"coloured_glass_clear_framed.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	stack_max = 64,
+	groups = {handy=1, glass=1, building_block=1, material_glass=1},
+	sounds = mcl_sounds.node_sound_glass_defaults(),
+	drop = "mcl_core:glass",
+	_mcl_blast_resistance = 0.3,
+	_mcl_hardness = 0.3,
+	_mcl_silk_touch_drop = true,
+})
+
+minetest.override_item("mcl_core:glass_" .. colour[4], {
+	description = colour[3].. (" Glass"),
+	_doc_items_longdesc = S("A decorative and mostly transparent block."),
+	drawtype = "glasslike",
+	is_ground_content = false,
+	tiles = {"coloured_glass_".. colour[1] .. ".png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	stack_max = 64,
+	groups = {handy=1, glass=1, building_block=1, material_glass=1},
+	sounds = mcl_sounds.node_sound_glass_defaults(),
+	drop = "mcl_core:glass_" .. colour[4],
+	_mcl_blast_resistance = 0.3,
+	_mcl_hardness = 0.3,
+	_mcl_silk_touch_drop = true,
+})
+
+minetest.override_item("xpanes:pane_" .. colour[4] .. "_flat", {
+	description = colour[3] .. ("Glass Pane"),
+	_doc_items_longdesc = S("A decorative and mostly transparent block."),
+	inventory_image = "coloured_glass_".. colour[1] .. ".png",
+	wield_image = "coloured_glass_".. colour[1] .. ".png",
+	drawtype = "nodebox",
+	is_ground_content = false,
+	tiles = {"coloured_glass_".. colour[1] .. ".png", "coloured_glass_".. colour[1] .. ".png", "xpanes_top_glass_"..colour[4]..".png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	stack_max = 64,
+	groups = {handy=1, pane = 1, building_block=1, material_glass=1},
+	sounds = mcl_sounds.node_sound_glass_defaults(),
+	drop = "xpanes:pane_" .. colour[4] .. "_flat",
+	_mcl_blast_resistance = 0.3,
+	_mcl_hardness = 0.3,
+	_mcl_silk_touch_drop = true,
+})
+
+minetest.override_item("xpanes:pane_" .. colour[4], {
+	description = colour[3] .. ("Glass Pane"),
+	_doc_items_longdesc = S("A decorative and mostly transparent block."),
+	inventory_image = "coloured_glass_".. colour[1] .. ".png",
+	wield_image = "coloured_glass_".. colour[1] .. ".png",
+	drawtype = "nodebox",
+	is_ground_content = false,
+	tiles = {"coloured_glass_".. colour[1] .. ".png", "coloured_glass_".. colour[1] .. ".png", "xpanes_top_glass_"..colour[4]..".png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	stack_max = 64,
+	groups = {handy=1, pane = 1, building_block=1, material_glass=1, not_in_creative_inventory = 1},
+	sounds = mcl_sounds.node_sound_glass_defaults(),
+	drop = "xpanes:pane_" .. colour[4] .. "_flat",
+	_mcl_blast_resistance = 0.3,
+	_mcl_hardness = 0.3,
+	_mcl_silk_touch_drop = true,
+})
+
+minetest.override_item("xpanes:pane_natural_flat", {
+	description = ("Glass Pane"),
+	_doc_items_longdesc = S("A decorative and mostly transparent block."),
+	inventory_image = "coloured_glass_clear_framed.png",
+	wield_image = "coloured_glass_clear_framed.png",
+	drawtype = "nodebox",
+	is_ground_content = false,
+	tiles = {"coloured_glass_clear_framed.png", "coloured_glass_clear_framed.png", "xpanes_top_glass_natural.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	stack_max = 64,
+	groups = {handy=1, pane = 1, building_block=1, material_glass=1},
+	sounds = mcl_sounds.node_sound_glass_defaults(),
+	drop = "xpanes:pane_natural_flat",
+	_mcl_blast_resistance = 0.3,
+	_mcl_hardness = 0.3,
+	_mcl_silk_touch_drop = true,
+})
+
+minetest.override_item("xpanes:pane_natural", {
+	description = ("Glass Pane"),
+	_doc_items_longdesc = S("A decorative and mostly transparent block."),
+	inventory_image = "coloured_glass_clear_framed.png",
+	wield_image = "coloured_glass_clear_framed.png",
+	drawtype = "nodebox",
+	is_ground_content = false,
+	tiles = {"coloured_glass_clear_framed.png", "coloured_glass_clear_framed.png", "xpanes_top_glass_natural.png"},
+	paramtype = "light",
+	sunlight_propagates = true,
+	stack_max = 64,
+	groups = {handy=1, pane = 1, building_block=1, material_glass=1, not_in_creative_inventory = 1},
+	sounds = mcl_sounds.node_sound_glass_defaults(),
+	drop = "xpanes:pane_natural_flat",
+	_mcl_blast_resistance = 0.3,
+	_mcl_hardness = 0.3,
+	_mcl_silk_touch_drop = true,
 })
 end
 

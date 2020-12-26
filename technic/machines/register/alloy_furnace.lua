@@ -7,4 +7,3 @@ function technic.register_alloy_furnace(data)
 	data.machine_desc = S("%s Alloy Furnace")
 	technic.register_base_machine(data)
 end
-
