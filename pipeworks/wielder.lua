@@ -136,7 +136,7 @@ local function register_wielder(data)
 	data.fixup_node = data.fixup_node or function (pos, node) end
 	data.fixup_oldmetadata = data.fixup_oldmetadata or function (m) return m end
 	for _, state in ipairs({ "off", "on" }) do
-		local groups = { snappy=2, choppy=2, oddly_breakable_by_hand=2, mesecon=2, tubedevice=1, tubedevice_receiver=1 }
+		local groups = {pickaxey=1,axey=1, handy=1, swordy=1, mesecon=2, tubedevice=1, tubedevice_receiver=1 }
 		if state == "on" then groups.not_in_creative_inventory = 1 end
 		local tile_images = {}
 		for _, face in ipairs({ "top", "bottom", "side2", "side1", "back", "front" }) do
@@ -265,8 +265,8 @@ if pipeworks.enable_node_breaker then
 		texture_base = "pipeworks_nodebreaker",
 		texture_stateful = { top = true, bottom = true, side2 = true, side1 = true, front = true },
 		tube_connect_sides = { top=1, bottom=1, left=1, right=1, back=1 },
-		_mcl_blast_resistance = 2,
-		_mcl_hardness = 2,
+		_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 		tube_permit_anteroposterior_insert = false,
 		wield_inv_name = wield_inv_name,
 		wield_inv_width = 1,
@@ -418,8 +418,8 @@ if pipeworks.enable_deployer then
 		texture_stateful = { front = true },
 		tube_connect_sides = { back=1 },
 		tube_permit_anteroposterior_insert = true,
-		_mcl_blast_resistance = 2,
-		_mcl_hardness = 2,
+		_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 		wield_inv_name = "main",
 		wield_inv_width = 3,
 		wield_inv_height = 3,
@@ -453,8 +453,8 @@ if pipeworks.enable_dispenser then
 		texture_stateful = { front = true },
 		tube_connect_sides = { back=1 },
 		tube_permit_anteroposterior_insert = true,
-		_mcl_blast_resistance = 2,
-		_mcl_hardness = 2,
+		_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 		wield_inv_name = "main",
 		wield_inv_width = 3,
 		wield_inv_height = 3,
