@@ -10,6 +10,7 @@ minetest.register_node("pipeworks:trashcan", {
 		"pipeworks_trashcan_side.png",
 	}, 
 	groups = {pickaxey=1, axey=1, swordy=1, handy=1, tubedevice = 1, tubedevice_receiver = 1}, 
+	stack_max = 64,
 	_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
 	tube = {

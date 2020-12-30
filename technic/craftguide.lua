@@ -35,6 +35,10 @@ local grind_recipe = {
 	{"mcl_core:sandstone",         "mcl_core:sand"},
 	{"mcl_core:redsandstone",      "mcl_core:redsand"},
     {"mcl_core:stone",             "technic:stone_dust"},
+    {"technic:steel_ingot",        "technic:steel_dust"},
+    {"technic:copper_ingot",       "technic:copper_dust"},
+    {"technic:mineral_copper",     "technic:copper_dust 2"},
+    {"technic:mineral_sulfur",     "technic:sulfur_dust 2"},
 }
 
 for _, grind_recipe in pairs(grind_recipe) do
@@ -197,6 +201,20 @@ mcl_craftguide.register_craft({
 	width  = 3,
 	output = "mcl_buckets:bucket_water",
 	items  = {"mcl_core:snow 9", "mcl_buckets:bucket_empty"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "alloying",
+	width  = 3,
+	output = "technic:steel_ingot",
+	items  = {"mcl_core:iron_ingot", "technic:coal_dust"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "alloying",
+	width  = 3,
+	output = "technic:steel_ingot",
+	items  = {"technic:iron_dust", "technic:coal_dust"},
 })
 
 -- Freezing Guide

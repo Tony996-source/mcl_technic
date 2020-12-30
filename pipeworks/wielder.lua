@@ -190,6 +190,7 @@ local function register_wielder(data)
 			tubelike = 1,
 			groups = groups,
 			sounds = mcl_sounds.node_sound_stone_defaults(),
+			stack_max = 64,
 			drop = data.name_base.."_off",
 			on_construct = function(pos)
 				local meta = minetest.get_meta(pos)
@@ -265,6 +266,7 @@ if pipeworks.enable_node_breaker then
 		texture_base = "pipeworks_nodebreaker",
 		texture_stateful = { top = true, bottom = true, side2 = true, side1 = true, front = true },
 		tube_connect_sides = { top=1, bottom=1, left=1, right=1, back=1 },
+		stack_max = 64,
 		_mcl_blast_resistance = 6,
 	    _mcl_hardness = 1.5,
 		tube_permit_anteroposterior_insert = false,
@@ -418,6 +420,7 @@ if pipeworks.enable_deployer then
 		texture_stateful = { front = true },
 		tube_connect_sides = { back=1 },
 		tube_permit_anteroposterior_insert = true,
+		stack_max = 64,
 		_mcl_blast_resistance = 6,
 	    _mcl_hardness = 1.5,
 		wield_inv_name = "main",
@@ -453,6 +456,7 @@ if pipeworks.enable_dispenser then
 		texture_stateful = { front = true },
 		tube_connect_sides = { back=1 },
 		tube_permit_anteroposterior_insert = true,
+		stack_max = 64,
 		_mcl_blast_resistance = 6,
 	    _mcl_hardness = 1.5,
 		wield_inv_name = "main",

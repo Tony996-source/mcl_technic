@@ -23,6 +23,21 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'technic:steel_block',
+	recipe = {
+		{'technic:steel_ingot', 'technic:steel_ingot', 'technic:steel_ingot'},
+		{'technic:steel_ingot', 'technic:steel_ingot', 'technic:steel_ingot'},
+		{'technic:steel_ingot', 'technic:steel_ingot', 'technic:steel_ingot'},
+	}
+})
+
+minetest.register_craft({
+    type = 'shapeless',
+	output = 'technic:steel_ingot 9',
+	recipe = {'technic:steel_ingot'},
+})
+
+minetest.register_craft({
 	type = "fuel",
 	recipe = "technic:oil",
 	burntime = 400,

@@ -18,6 +18,8 @@ local recipes = {
 {"mcl_core:ice", "mcl_buckets:bucket_empty", "mcl_buckets:bucket_water"},
 {"mcl_core:snowblock", "mcl_buckets:bucket_empty", "mcl_buckets:bucket_water"},
 {"mcl_core:snow 9", "mcl_buckets:bucket_empty", "mcl_buckets:bucket_water"},
+{"mcl_core:iron_ingot", "technic:coal_dust", "technic:steel_ingot"},
+{"technic:iron_dust", "technic:coal_dust", "technic:steel_ingot"},
 }
 
 for _, data in pairs(recipes) do

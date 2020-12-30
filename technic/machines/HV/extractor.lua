@@ -3,9 +3,9 @@
 minetest.register_craft({
 	output = 'technic:hv_extractor',
 	recipe = {
-	{'mcl_core:ironblock', 'mcl_core:ironblock', 'mcl_core:ironblock'},
+	{'technic:steel_block', 'technic:steel_ingot', 'technic:steel_block'},
 	{'pipeworks:tube_1', 'mcl_core:gold_ingot', 'pipeworks:tube_1'},
-	{'mcl_core:ironblock', 'technic:hv_cable', 'mcl_core:ironblock'},
+	{'technic:steel_block', 'technic:hv_cable', 'technic:steel_block'},
 	}
 })
 

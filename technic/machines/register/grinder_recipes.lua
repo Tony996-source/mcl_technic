@@ -37,6 +37,10 @@ local recipes = {
 	{"mcl_core:sandstone",         "mcl_core:sand"},
 	{"mcl_core:redsandstone",      "mcl_core:redsand"},
     {"mcl_core:stone",             "technic:stone_dust"},
+    {"technic:steel_ingot",        "technic:steel_dust"},
+    {"technic:copper_ingot",       "technic:copper_dust"},
+    {"technic:mineral_copper",     "technic:copper_dust 2"},
+    {"technic:mineral_sulfur",     "technic:sulfur_dust 2"},
 }
 
 for _, data in pairs(recipes) do
@@ -87,6 +91,11 @@ minetest.register_craft({
 minetest.register_craftitem("technic:lowgrade_iron_dust", {
 	description = ("Lowgrade Iron Dust"),
 	inventory_image = "technic_lowgrade_iron_dust.png",
+})
+
+minetest.register_craftitem("technic:steel_dust", {
+	description = ("Steel Dust"),
+	inventory_image = "technic_steel_dust.png",
 })
 	
 minetest.register_craft({

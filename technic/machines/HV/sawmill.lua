@@ -3,7 +3,7 @@
 minetest.register_craft({
 	output = 'technic:hv_sawmill',
 	recipe = {
-	{'mcl_core:ironblock', 'mcl_core:ironblock', 'mcl_core:ironblock'},
+	{'technic:steel_block', 'technic:diamond_drill_head', 'technic:steel_block'},
 	{'pipeworks:tube_1', 'mcl_core:gold_ingot', 'pipeworks:tube_1'},
 	{'technic:carbon_plate', 'technic:hv_cable', 'technic:carbon_plate'},
 	}

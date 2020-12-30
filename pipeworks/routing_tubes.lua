@@ -77,6 +77,7 @@ if pipeworks.enable_priority_tube then
 			noctr = { { name = "pipeworks_tube_noctr.png", color = nodecolor } },
 			ends  = { { name = "pipeworks_tube_end.png",   color = nodecolor } },
 			short =   { name = "pipeworks_tube_short.png", color = nodecolor },
+			stack_max = 64,
 			_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
 			node_def = {
@@ -101,6 +102,9 @@ if pipeworks.enable_accelerator_tube then
 			noctr = { "pipeworks_accelerator_tube_noctr.png" },
 			ends = { "pipeworks_accelerator_tube_end.png" },
 			short = "pipeworks_accelerator_tube_short.png",
+			stack_max = 64,
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			node_def = {
 				tube = {can_go = function(pos, node, velocity, stack)
 						 velocity.speed = velocity.speed+1
@@ -126,6 +130,9 @@ if pipeworks.enable_crossing_tube then
 			noctr = { "pipeworks_crossing_tube_noctr.png" },
 			ends = { "pipeworks_crossing_tube_end.png" },
 			short = "pipeworks_crossing_tube_short.png",
+			stack_max = 64,
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			node_def = {
 				tube = {can_go = function(pos, node, velocity, stack) return {velocity} end }
 			},

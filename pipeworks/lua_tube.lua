@@ -725,6 +725,7 @@ for white  = 0, 1 do
 		drop = "pipeworks:lua_tube",
 		sunlight_propagates = true,
 		selection_box = selection_box,
+		stack_max = 64,
 		node_box = node_box,
 		on_construct = reset_meta,
 		on_receive_fields = on_receive_fields,

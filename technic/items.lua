@@ -43,6 +43,11 @@ minetest.register_craftitem("technic:rubber", {
 	inventory_image = "technic_rubber.png",
 })
 
+minetest.register_craftitem("technic:steel_ingot", {
+	description = S("Steel Ingot"),
+	inventory_image = "technic_steel_ingot.png",
+})
+
 minetest.register_node("technic:cracked_stone", {
 	description = "Cracked Stone",
 	tiles = {"technic_cracked_stone.png"},
@@ -52,6 +57,17 @@ minetest.register_node("technic:cracked_stone", {
 	sounds = mcl_sounds.node_sound_stone_defaults(),
 	_mcl_blast_resistance = 6,
 	_mcl_hardness = 1.5,
+})
+
+minetest.register_node("technic:steel_block", {
+	description = "Steel Block",
+	tiles = {"technic_steel_block.png"},
+	is_ground_content = false,
+	stack_max = 64,
+	groups = {pickaxey=2, building_block=1},
+	sounds = mcl_sounds.node_sound_metal_defaults(),
+	_mcl_blast_resistance = 6,
+	_mcl_hardness = 5,
 })
 
 mcl_stairs.register_stair_and_slab_simple("cracked_stone", "technic:cracked_stone", "Cracked Stone Stair", "Cracked Stone Slab", "Double Cracked Stone Slab")

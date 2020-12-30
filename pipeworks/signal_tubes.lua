@@ -4,6 +4,9 @@ if pipeworks.enable_detector_tube then
 			description = "Detecting Pneumatic Tube Segment on (you hacker you)",
 			inventory_image = "pipeworks_detector_tube_inv.png",
 			plain = { "pipeworks_detector_tube_plain.png" },
+			stack_max = 64,
+			_mcl_blast_resistance = 0.3,
+	    _mcl_hardness = 0.3,
 			node_def = {
 				tube = {can_go = function(pos, node, velocity, stack)
 						 local meta = minetest.get_meta(pos)
@@ -43,6 +46,7 @@ if pipeworks.enable_detector_tube then
 			description = "Detecting Pneumatic Tube Segment",
 			inventory_image = "pipeworks_detector_tube_inv.png",
 			plain = { "pipeworks_detector_tube_plain.png" },
+			stack_max = 64,
 			_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
 			node_def = {
