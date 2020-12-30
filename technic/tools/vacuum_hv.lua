@@ -55,7 +55,7 @@ minetest.register_craft({
 	output = 'technic:vacuum_hv',
 	recipe = {
 	{'technic:rubber', 'technic:carbon_plate', 'group:button'},
-	{'technic:rubber', 'mesecons:redstone', 'technic:battery'},
+	{'technic:rubber', 'mcl_core:gold_ingot', 'technic:battery'},
 	{'mcl_core:iron_ingot', 'mcl_core:iron_ingot', ''},
 	}
 })

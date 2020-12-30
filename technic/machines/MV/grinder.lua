@@ -4,7 +4,7 @@ minetest.register_craft({
 	output = 'technic:mv_grinder',
 	recipe = {
 	{'mcl_core:redsandstone', 'default:diamond', 'mcl_core:redsandstone'},
-	{'mcl_core:redsandstone', 'mcl_core:gold_ingot', 'mcl_core:redsandstone'},
+	{'mcl_core:redsandstone', 'technic:copper_ingot', 'mcl_core:redsandstone'},
 	{'mcl_core:granite', 'technic:mv_cable', 'mcl_core:granite'},
 	}
 })

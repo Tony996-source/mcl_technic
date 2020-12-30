@@ -9,7 +9,7 @@ minetest.register_craft({
 	output = 'technic:mv_electric_furnace',
 	recipe = {
 	{'mcl_core:cobble', 'mcl_core:cobble', 'mcl_core:cobble'},
-	{'mcl_core:cobble', 'mcl_core:gold_ingot', 'mcl_core:cobble'},
+	{'mcl_core:cobble', 'technic:copper_ingot', 'mcl_core:cobble'},
 	{'mcl_core:cobble', 'technic:mv_cable', 'mcl_core:cobble'},
 	}
 })

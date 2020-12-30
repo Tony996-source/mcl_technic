@@ -230,7 +230,7 @@ minetest.register_craft({
 	output = "technic:chainsaw_lv",
 	recipe = {
 	{"mcl_core:iron_ingot", "group:button", "technic:battery"},
-	{"mcl_core:iron_ingot", "mcl_core:gold_ingot",  "technic:lv_cable"},
+	{"mcl_core:iron_ingot", "mcl_core:iron_ingot",  "technic:lv_cable"},
 	{"",                "",         "mcl_core:iron_ingot"},
 	},
 

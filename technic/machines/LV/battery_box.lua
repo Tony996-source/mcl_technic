@@ -4,7 +4,7 @@ minetest.register_craft({
 	output = 'technic:lv_battery_box0',
 	recipe = {
 		{'group:wood', 'group:wood', 'group:wood'},
-		{'technic:battery', 'mcl_core:gold_ingot', 'technic:battery'},
+		{'technic:battery', 'mcl_core:iron_ingot', 'technic:battery'},
 		{'technic:battery', 'technic:lv_cable', 'technic:battery'},
 	}
 })

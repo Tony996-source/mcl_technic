@@ -38,7 +38,6 @@ local grind_recipe = {
     {"technic:steel_ingot",        "technic:steel_dust"},
     {"technic:copper_ingot",       "technic:copper_dust"},
     {"technic:mineral_copper",     "technic:copper_dust 2"},
-    {"technic:mineral_sulfur",     "technic:sulfur_dust 2"},
 }
 
 for _, grind_recipe in pairs(grind_recipe) do

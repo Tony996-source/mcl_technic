@@ -4,7 +4,7 @@ minetest.register_craft({
 	output = 'technic:mv_alloy_furnace',
 	recipe = {
 	{'mcl_core:brick', 'mcl_core:brick', 'mcl_core:brick'},
-	{'mcl_core:brick', 'mcl_core:gold_ingot', 'mcl_core:brick'},
+	{'mcl_core:brick', 'technic:copper_ingot', 'mcl_core:brick'},
 	{'mcl_core:brick', 'technic:mv_cable', 'mcl_core:brick'},
 	}
 })

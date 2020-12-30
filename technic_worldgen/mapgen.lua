@@ -22,37 +22,3 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
-
--- Sulfur
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "technic:mineral_sulfur",
-	wherein         = stonelike,
-	clust_scarcity = 4775,
-	clust_num_ores = 5,
-	clust_size     = 3,
-	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(30),
-})
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "technic:mineral_sulfur",
-	wherein         = stonelike,
-	clust_scarcity = 6560,
-	clust_num_ores = 7,
-	clust_size     = 3,
-	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(30),
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "technic:mineral_sulfur",
-	wherein         = stonelike,
-	clust_scarcity = 13000,
-	clust_num_ores = 4,
-	clust_size     = 2,
-	y_min          = mcl_worlds.layer_to_y(31),
-	y_max          = mcl_worlds.layer_to_y(33),
-})

@@ -39,21 +39,3 @@ minetest.register_node(":technic:copper_block", {
 	_mcl_hardness = 5,
 })
 
--- Sulfur
-
-minetest.register_craftitem(":technic:sulfur_dust", {
-	description = ("Sulfur Dust"),
-	inventory_image = "technic_sulfur_dust.png",
-})
-
-minetest.register_node( ":technic:mineral_sulfur", {
-	description = ("Sulfur Ore"),
-	tiles = { "default_stone.png^technic_mineral_sulfur.png" },
-	is_ground_content = true,
-	stack_max = 64,
-	groups = {pickaxey=3, building_block=1, material_stone=1},
-	sounds = mcl_sounds.node_sound_stone_defaults(),
-	drop = "technic:mineral_sulfur",
-	_mcl_blast_resistance = 3,
-	_mcl_hardness = 3,
-})

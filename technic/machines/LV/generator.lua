@@ -9,7 +9,7 @@ minetest.register_craft({
 	output = 'technic:lv_generator',
 	recipe = {
 		{'mcl_core:stone', 'mcl_furnaces:furnace', 'mcl_core:stone'},
-		{'mcl_core:stone', 'mcl_core:gold_ingot', 'mcl_core:stone'},
+		{'mcl_core:stone', 'mcl_core:iron_ingot', 'mcl_core:stone'},
 		{'mcl_core:stone', 'technic:lv_cable', 'mcl_core:stone'},
 	}
 })
