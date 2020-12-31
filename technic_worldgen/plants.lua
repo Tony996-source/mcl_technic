@@ -86,14 +86,14 @@ minetest.register_node(":mcl_farming:carrot", {
  node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.375, -0.5, 0.125, -0.125, -0.375, 0.375}, -- 1 bottom
-			{-0.3125, -0.375, 0.1875, -0.1875, -0.1875, 0.3125}, -- 1 top
-			{0.125, -0.5, 0.125, 0.375, -0.375, 0.375}, -- 2 bottom
-			{0.1875, -0.375, 0.1875, 0.3125, -0.1875, 0.3125}, -- 2 top
-			{0.125, -0.5, -0.375, 0.375, -0.375, -0.125}, -- 3 bottom
-			{0.1875, -0.375, -0.3125, 0.3125, -0.1875, -0.1875}, -- 3 top
-			{-0.375, -0.5, -0.375, -0.125, -0.375, -0.125}, -- 4 bottom
-			{-0.3125, -0.375, -0.3125, -0.1875, -0.1875, -0.1875}, -- 4 top
+			{-0.375, -0.5, 0.125, -0.125, -0.375, 0.375},
+			{-0.3125, -0.375, 0.1875, -0.1875, -0.1875, 0.3125},
+			{0.125, -0.5, 0.125, 0.375, -0.375, 0.375},
+			{0.1875, -0.375, 0.1875, 0.3125, -0.1875, 0.3125},
+			{0.125, -0.5, -0.375, 0.375, -0.375, -0.125},
+			{0.1875, -0.375, -0.3125, 0.3125, -0.1875, -0.1875},
+			{-0.375, -0.5, -0.375, -0.125, -0.375, -0.125},
+			{-0.3125, -0.375, -0.3125, -0.1875, -0.1875, -0.1875},
 		},
 	},	
 	
@@ -284,13 +284,13 @@ minetest.register_node(":mcl_farming:potato", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-		{-0.3125, -0.5, 0.0625, -0.0625, -0.4375, 0.375}, -- potato 1
+		{-0.3125, -0.5, 0.0625, -0.0625, -0.4375, 0.375},
 		{-0.25, -0.4375, 0.125, -0.125, -0.375, 0.3125},
-		{0.0625, -0.5, 0.0625, 0.375, -0.4375, 0.3125}, -- potato 2
+		{0.0625, -0.5, 0.0625, 0.375, -0.4375, 0.3125},
 		{0.125, -0.4375, 0.125, 0.3125, -0.375, 0.25},
-		{0.0625, -0.5, -0.375, 0.3125, -0.4375, -0.0625}, -- potato 3
+		{0.0625, -0.5, -0.375, 0.3125, -0.4375, -0.0625},
 		{0.125, -0.4375, -0.3125, 0.25, -0.375, -0.125},
-		{-0.375, -0.5, -0.3125, -0.0625, -0.4375, -0.0625}, -- potato 4	
+		{-0.375, -0.5, -0.3125, -0.0625, -0.4375, -0.0625},
 		{-0.3125, -0.4375, -0.25, -0.125, -0.375, -0.125},
 		},
 	},	
@@ -305,3 +305,158 @@ minetest.register_node(":mcl_farming:potato", {
 	_mcl_blast_resistance = 0,
 })
 
+--
+-- 3d beetroot
+--
+
+minetest.register_node(":mcl_farming:beetroot_0", {
+	description = ("Premature Beetroot Plant (Stage 1)"),
+	_doc_items_longdesc = ("Beetroot plants are plants which grow on farmland under sunlight in 4 stages. On hydrated farmland, they grow a bit faster. They can be harvested at any time but will only yield a profit when mature."),
+	_doc_items_entry_name = ("Premature Beetroot Plant"),
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	drawtype = "nodebox",
+	drop = "mcl_farming:beetroot_seeds",
+	tiles = {"mcl_farming_beetroot_1_3d.png"},
+	inventory_image = "mcl_farming_beetroot_0.png",
+	wield_image = "mcl_farming_beetroot_0.png",
+node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.5, 0.1875, -0.1875, -0.4375, 0.25},
+			{0.1875, -0.5, 0.1875, 0.25, -0.4375, 0.25},
+			{0.1875, -0.5, -0.25, 0.25, -0.4375, -0.1875},
+			{-0.25, -0.5, -0.25, -0.1875, -0.4375, -0.1875},
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, -5/16, 0.5}
+		},
+	},
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
+
+minetest.register_node(":mcl_farming:beetroot_1", {
+	description = ("Premature Beetroot Plant (Stage 2)"),
+	_doc_items_create_entry = false,
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	drawtype = "nodebox",
+	drop = "mcl_farming:beetroot_seeds",
+	tiles = {"mcl_farming_beetroot_1_3d.png"},
+	inventory_image = "mcl_farming_beetroot_1.png",
+	wield_image = "mcl_farming_beetroot_1.png",
+node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.5, 0.1875, -0.1875, -0.375, 0.25},
+			{0.1875, -0.5, 0.1875, 0.25, -0.375, 0.25},
+			{0.1875, -0.5, -0.25, 0.25, -0.375, -0.1875},
+			{-0.25, -0.5, -0.25, -0.1875, -0.375, -0.1875},
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, -3/16, 0.5}
+		},
+	},
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
+
+minetest.register_node(":mcl_farming:beetroot_2", {
+	description = ("Premature Beetroot Plant (Stage 3)"),
+	_doc_items_create_entry = false,
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	drawtype = "nodebox",
+	drop = "mcl_farming:beetroot_seeds",
+	tiles = {"mcl_farming_beetroot_2_3d.png"},
+	inventory_image = "mcl_farming_beetroot_2.png",
+	wield_image = "mcl_farming_beetroot_2.png",
+node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.3125, -0.5, 0.125, -0.125, -0.4375, 0.3125},
+			{-0.25, -0.5, 0.1875, -0.1875, -0.3125, 0.25},
+			{0.125, -0.5, 0.125, 0.3125, -0.4375, 0.3125},
+			{0.1875, -0.5, 0.1875, 0.25, -0.3125, 0.25},
+			{0.125, -0.5, -0.3125, 0.3125, -0.4375, -0.125},
+			{0.1875, -0.5, -0.25, 0.25, -0.3125, -0.1875},
+			{-0.3125, -0.5, -0.3125, -0.125, -0.4375, -0.125},
+			{-0.25, -0.5, -0.25, -0.1875, -0.3125, -0.1875},
+		},
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, 2/16, 0.5}
+		},
+	},
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
+
+minetest.register_node(":mcl_farming:beetroot", {
+	description = ("Mature Beetroot Plant"),
+	_doc_items_longdesc = ("A mature beetroot plant is a farming plant which is ready to be harvested for a beetroot and some beetroot seeds. It won't grow any further."),
+	_doc_items_create_entry = true,
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	drawtype = "nodebox",
+	drop = {
+		--[[ drops 1 beetroot guaranteed.
+		drops 0-3 beetroot seeds:
+		0 seeds: 42.18%
+		1 seed:  14.06%
+		2 seeds: 18.75%
+		3 seeds: 25% ]]
+		max_items = 2,
+		items = {
+			{ items = {"mcl_farming:beetroot_item"}, rarity = 1 },
+			{ items = {"mcl_farming:beetroot_seeds 3"}, rarity = 4 },
+			{ items = {"mcl_farming:beetroot_seeds 2"}, rarity = 4 },
+			{ items = {"mcl_farming:beetroot_seeds 1"}, rarity = 4 },
+		},
+	},
+	tiles = {"mcl_farming_beetroot_3_3d.png"},
+	inventory_image = "mcl_farming_beetroot_3.png",
+	wield_image = "mcl_farming_beetroot_3.png",
+node_box = {
+		type = "fixed",
+		fixed = {
+		    {-0.375, -0.5, 0.0625, -0.0625, -0.375, 0.375},
+			{-0.3125, -0.375, 0.125, -0.125, -0.3125, 0.3125},
+			{-0.25, -0.3125, 0.1875, -0.1875, -0.125, 0.25},
+			{0.0625, -0.5, 0.0625, 0.375, -0.375, 0.375},
+			{0.125, -0.375, 0.125, 0.3125, -0.3125, 0.3125},
+			{0.1875, -0.3125, 0.1875, 0.25, -0.125, 0.25},
+			{0.0625, -0.5, -0.375, 0.375, -0.375, -0.0625},
+			{0.125, -0.375, -0.3125, 0.3125, -0.3125, -0.125},
+			{0.1875, -0.3125, -0.25, 0.25, -0.125, -0.1875},
+			{-0.375, -0.5, -0.375, -0.0625, -0.375, -0.0625},
+			{-0.3125, -0.375, -0.3125, -0.125, -0.3125, -0.125},
+			{-0.25, -0.3125, -0.25, -0.1875, -0.125, -0.1875},
+		},
+	},	
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, 3/16, 0.5}
+		},
+	},
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,beetroot=4},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
