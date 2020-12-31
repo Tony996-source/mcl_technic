@@ -50,26 +50,6 @@ minetest.register_globalstep(function(dtime)
 	end
 end)
 
-
-
--- tube overload mechanism:
--- when the tube's item count (tracked in the above tube_item_count table)
--- exceeds the limit configured per tube, replace it with a broken one.
-local crunch_tube = function(pos, cnode, cmeta)
-	if enable_max_limit then
-		local h = minetest.hash_node_position(pos)
-		local itemcount = tube_item_count[h] or 0
-		if itemcount > max_tube_limit then
-			cmeta:set_string("the_tube_was", minetest.serialize(cnode))
-			print("[Pipeworks] Warning - a tube at "..minetest.pos_to_string(pos).." broke due to too many items ("..itemcount..")")
-			minetest.swap_node(pos, {name = "pipeworks:broken_tube_1"})
-			pipeworks.scan_for_tube_objects(pos)
-		end
-	end
-end
-
-
-
 -- compatibility behaviour for the existing can_go() callbacks,
 -- which can only specify a list of possible positions.
 local function go_next_compat(pos, cnode, cmeta, cycledir, vel, stack, owner)
@@ -151,7 +131,6 @@ local function go_next(pos, velocity, stack, owner)
 	end
 	vel.speed = speed
 
-	crunch_tube(pos, cnode, cmeta)
 	-- cycling of outputs:
 	-- an integer counter is kept in each pipe's metadata,
 	-- which allows tracking which output was previously chosen.

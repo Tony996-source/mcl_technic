@@ -407,7 +407,7 @@ if pipeworks.enable_node_breaker then
 		action = function(pos, node)
 			pipeworks.logger(lbm_id.." entry, nodename="..node.name)
 			local invref = minetest.get_meta(pos):get_inventory()
-			invref:add_item(wield_inv_name, ItemStack("default:pick_mese"))
+			invref:add_item(wield_inv_name, ItemStack("mcl_core:pick_iron"))
 		end
 	})
 end
@@ -424,8 +424,8 @@ if pipeworks.enable_deployer then
 		_mcl_blast_resistance = 6,
 	    _mcl_hardness = 1.5,
 		wield_inv_name = "main",
-		wield_inv_width = 3,
-		wield_inv_height = 3,
+		wield_inv_width = 1,
+		wield_inv_height = 1,
 		can_dig_nonempty_wield_inv = false,
 		masquerade_as_owner = true,
 		sneak = false,
@@ -460,8 +460,8 @@ if pipeworks.enable_dispenser then
 		_mcl_blast_resistance = 6,
 	    _mcl_hardness = 1.5,
 		wield_inv_name = "main",
-		wield_inv_width = 3,
-		wield_inv_height = 3,
+		wield_inv_width = 1,
+		wield_inv_height = 1,
 		can_dig_nonempty_wield_inv = false,
 		masquerade_as_owner = false,
 		sneak = true,
