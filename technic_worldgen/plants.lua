@@ -191,30 +191,29 @@ minetest.register_node(":mcl_farming:carrot", {
 --
 -- 3D Potatoes
 --
-for a=1, 7 do
-  if a < 3 then
-minetest.register_node(":mcl_farming:potato_" .. a, {
-	description = ("Premature Potato Plant (Stage 0)"),
+
+for k=1, 7 do
+if k < 2 then
+minetest.register_node(":mcl_farming:potato_" .. k, {
+	description = ("Premature Potato Plant (Stage 1)"),
 	_doc_items_create_entry = create,
 	_doc_items_entry_name = name,
 	_doc_items_longdesc = longdesc,
 	paramtype = "light",
-	paramtype2 = "meshoptions",
 	sunlight_propagates = true,
-	place_param2 = 3,
 	walkable = false,
 	drawtype = "nodebox",
 	drop = "mcl_farming:potato_item",
 	tiles = { "mcl_farming_potatoes_stage_3_3d.png" },
-	inventory_image = "mcl_farming_potatoes_stage_0",
-	wield_image = "mcl_farming_potatoes_stage_0",
+	inventory_image = "mcl_farming_potatoes_stage_" .. k,
+	wield_image = "mcl_farming_potatoes_stage_" .. k,
 	node_box = {
 		type = "fixed",
 		fixed = { 
-		{-0.25, -0.5, 0.0625, -0.125, -0.4375, 0.25},
-		{-0.25, -0.5, -0.25, -0.0625, -0.4375, -0.125},
-		{0.0625, -0.5, 0.125, 0.25, -0.4375, 0.25},
-		{0.125, -0.5, -0.25, 0.25, -0.4375, -0.0625},
+		{-0.25, -0.5, 0.125, -0.1875, -0.4375, 0.25},
+			{0.125, -0.5, 0.1875, 0.25, -0.4375, 0.25},
+			{0.1875, -0.5, -0.25, 0.25, -0.4375, -0.125},
+			{-0.25, -0.5, -0.25, -0.125, -0.4375, -0.1875},
 		},
 	},	
 	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
@@ -222,29 +221,57 @@ minetest.register_node(":mcl_farming:potato_" .. a, {
 	_mcl_blast_resistance = 0,
 })
 
-elseif a < 5 then
-minetest.register_node(":mcl_farming:potato_" .. a, {
-	description = ("Premature Potato Plant (Stage 1)"),
+elseif k < 4 then
+
+minetest.register_node(":mcl_farming:potato_" .. k, {
+	description = ("Premature Potato Plant (Stage 3)"),
 	_doc_items_create_entry = create,
 	_doc_items_entry_name = name,
 	_doc_items_longdesc = longdesc,
 	paramtype = "light",
-	paramtype2 = "meshoptions",
 	sunlight_propagates = true,
-	place_param2 = 3,
 	walkable = false,
 	drawtype = "nodebox",
 	drop = "mcl_farming:potato_item",
 	tiles = { "mcl_farming_potatoes_stage_3_3d.png" },
-	inventory_image = "mcl_farming_potatoes_stage_1",
-	wield_image = "mcl_farming_potatoes_stage_1",
+	inventory_image = "mcl_farming_potatoes_stage_" .. k,
+	wield_image = "mcl_farming_potatoes_stage_" .. k,
+	node_box = {
+		type = "fixed",
+		fixed = { 
+		{-0.25, -0.5, 0.0625, -0.125, -0.4375, 0.25},
+		{0.0625, -0.5, 0.125, 0.25, -0.4375, 0.25},
+		{0.125, -0.5, -0.25, 0.25, -0.4375, -0.0625},
+		{-0.25, -0.5, -0.25, -0.0625, -0.4375, -0.125},
+		},
+	},	
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
+
+elseif k < 6 then
+
+minetest.register_node(":mcl_farming:potato_" .. k, {
+	description = ("Premature Potato Plant (Stage 5)"),
+	_doc_items_create_entry = create,
+	_doc_items_entry_name = name,
+	_doc_items_longdesc = longdesc,
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	drawtype = "nodebox",
+	drop = "mcl_farming:potato_item",
+	tiles = { "mcl_farming_potatoes_stage_3_3d.png" },
+	inventory_image = "mcl_farming_potatoes_stage_" .. k,
+	wield_image = "mcl_farming_potatoes_stage_" .. k,
 	node_box = {
 		type = "fixed",
 		fixed = { 
 		{-0.3125, -0.5, 0.0625, -0.125, -0.4375, 0.3125},
-		{-0.3125, -0.5, -0.3125, -0.0625, -0.4375, -0.125},
 		{0.0625, -0.5, 0.125, 0.3125, -0.4375, 0.3125},
 		{0.125, -0.5, -0.3125, 0.3125, -0.4375, -0.0625},
+		{-0.3125, -0.5, -0.3125, -0.0625, -0.4375, -0.125},
 		},
 	},	
 	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
@@ -254,28 +281,26 @@ minetest.register_node(":mcl_farming:potato_" .. a, {
 
 else
 
-minetest.register_node(":mcl_farming:potato_".. a, {
-	description = ("Premature Potato Plant (Stage 2)"),
+minetest.register_node(":mcl_farming:potato_" .. k, {
+	description = ("Premature Potato Plant (Stage 7)"),
 	_doc_items_create_entry = create,
 	_doc_items_entry_name = name,
 	_doc_items_longdesc = longdesc,
 	paramtype = "light",
-	paramtype2 = "meshoptions",
 	sunlight_propagates = true,
-	place_param2 = 3,
 	walkable = false,
 	drawtype = "nodebox",
 	drop = "mcl_farming:potato_item",
 	tiles = { "mcl_farming_potatoes_stage_3_3d.png" },
-	inventory_image = "mcl_farming_potatoes_stage_2",
-	wield_image = "mcl_farming_potatoes_stage_2",
+	inventory_image = "mcl_farming_potatoes_stage_" .. k,
+	wield_image = "mcl_farming_potatoes_stage_" .. k,
 	node_box = {
 		type = "fixed",
 		fixed = { 
-		{-0.375, -0.5, 0.0625, -0.125, -0.4375, 0.375},
-		{-0.375, -0.5, -0.375, -0.0625, -0.4375, -0.125},
-		{0.0625, -0.5, 0.125, 0.375, -0.4375, 0.375},
-		{0.125, -0.5, -0.375, 0.375, -0.4375, -0.0625},
+		{-0.3125, -0.5, 0, -0.0625, -0.4375, 0.3125},
+		{0, -0.5, 0.0625, 0.3125, -0.4375, 0.3125},
+		{0.0625, -0.5, -0.3125, 0.3125, -0.4375, 0},
+		{-0.3125, -0.5, -0.3125, 0, -0.4375, -0.0625},
 		},
 	},	
 	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
