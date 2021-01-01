@@ -1,21 +1,113 @@
 --
--- 3d Carrots
+-- 3D Papyrus
+--
+
+minetest.override_item("mcl_core:reeds", {
+    description = "Sugar Canes",
+	tiles = {"default_papyrus_3d.png"},
+	inventory_image = "mcl_core_reeds.png",
+	wield_image = "mcl_core_reeds.png",
+	paramtype = "light",
+	walkable = false,
+	is_ground_content = true,
+	groups = {snappy=3,flammable=2},
+	stack_max = 64,
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, 0.25, -0.25, 0.5, 0.375},
+			{0.25, -0.5, 0.25, 0.375, 0.5, 0.375},
+			{0.25, -0.5, -0.375, 0.375, 0.5, -0.25},
+			{-0.375, -0.5, -0.375, -0.25, 0.5, -0.25},
+			{-0.0625, -0.5, -0.0625, 0.0625, 0.5, 0.0625},
+			{0.0625, -0.0625, 0, 0.1875, 0.0625, 0},
+			{-0.1875, 0.1875, 0, -0.0625, 0.3125, 0},
+			{-0.3125, 0.125, -0.5, -0.3125, 0.25, -0.375},
+			{-0.3125, -0.1875, -0.25, -0.3125, -0.0625, -0.125},
+			{0.3125, 0.0625, -0.25, 0.3125, 0.1875, -0.125},
+			{0.3125, -0.25, -0.5, 0.3125, -0.125, -0.375},
+			{0.125, -0.125, 0.3125, 0.3125, 0, 0.3125},
+			{0.25, 0.1875, 0.3125, 0.5, 0.3125, 0.3125},
+			{-0.25, 0.125, 0.3125, -0.125, 0.25, 0.3125},
+			{-0.5, -0.25, 0.3125, -0.375, -0.125, 0.3125},
+		}
+	},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, 0.25, -0.25, 0.5, 0.375},
+			{0.25, -0.5, 0.25, 0.375, 0.5, 0.375},
+			{0.25, -0.5, -0.375, 0.375, 0.5, -0.25},
+			{-0.375, -0.5, -0.375, -0.25, 0.5, -0.25},
+			{-0.0625, -0.5, -0.0625, 0.0625, 0.5, 0.0625},
+			{0.0625, -0.0625, 0, 0.1875, 0.0625, 0},
+			{-0.1875, 0.1875, 0, -0.0625, 0.3125, 0},
+			{-0.3125, 0.125, -0.5, -0.3125, 0.25, -0.375},
+			{-0.3125, -0.1875, -0.25, -0.3125, -0.0625, -0.125},
+			{0.3125, 0.0625, -0.25, 0.3125, 0.1875, -0.125},
+			{0.3125, -0.25, -0.5, 0.3125, -0.125, -0.375},
+			{0.125, -0.125, 0.3125, 0.3125, 0, 0.3125},
+			{0.25, 0.1875, 0.3125, 0.5, 0.3125, 0.3125},
+			{-0.25, 0.125, 0.3125, -0.125, 0.25, 0.3125},
+			{-0.5, -0.25, 0.3125, -0.375, -0.125, 0.3125},
+		}
+	},
+	groups = {dig_immediate=3, craftitem=1, deco_block=1, plant=1, non_mycelium_plant=1, dig_by_piston=1},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	node_placement_prediction = "",
+	on_place = mcl_util.generate_on_place_plant_function(function(place_pos, place_node)
+		local soil_pos = {x=place_pos.x, y=place_pos.y-1, z=place_pos.z}
+		local soil_node = minetest.get_node_or_nil(soil_pos)
+		if not soil_node then return false end
+		local snn = soil_node.name -- soil node name
+
+		-- Placement rules:
+		-- * On top of group:soil_sugarcane AND next to water or frosted ice. OR
+		-- * On top of sugar canes
+		if snn == "mcl_core:reeds" then
+			return true
+		elseif minetest.get_item_group(snn, "soil_sugarcane") == 0 then
+			return false
+		end
+
+		local posses = {
+			{ x=0, y=0, z=1},
+			{ x=0, y=0, z=-1},
+			{ x=1, y=0, z=0},
+			{ x=-1, y=0, z=0},
+		}
+		for p=1, #posses do
+			local checknode = minetest.get_node(vector.add(soil_pos, posses[p]))
+			if minetest.get_item_group(checknode.name, "water") ~= 0 or minetest.get_item_group(checknode.name, "frosted_ice") ~= 0 then
+				-- Water found! Sugar canes are happy! :-)
+				return true
+			end
+		end
+
+		-- No water found! Sugar canes are not amuzed and refuses to be placed. :-(
+		return false
+
+	end),
+	_mcl_blast_resistance = 0,
+	_mcl_hardness = 0,
+})
+
+--
+-- 3D Carrots
 --
 
 for i=1, 7 do
 	local texture, sel_height
 	if i < 3 then
-		sel_height = -7/16
 		sel_height1 = -0.4375
 		texture = "farming_carrot_1.png"
 		texture1 = "farming_carrot_1_3d.png"
 	elseif i < 5 then
-		sel_height = -6/16
 		sel_height1 = -0.375
 		texture = "farming_carrot_2.png"
 		texture1 = "farming_carrot_2_3d.png"
 	else
-		sel_height = -5/16
 		sel_height1 = -0.3125
 		texture = "farming_carrot_3.png"
 		texture1 = "farming_carrot_3_3d.png"
@@ -51,12 +143,6 @@ for i=1, 7 do
 			{-0.3125, -0.5, -0.3125, -0.1875, sel_height1, -0.1875},
 		},
 	},	
-		selection_box = {
-			type = "fixed",
-			fixed = {
-				{-0.5, -0.5, -0.5, 0.5, sel_height, 0.5}
-			},
-		},
 		groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
 		sounds = mcl_sounds.node_sound_leaves_defaults(),
 		_mcl_blast_resistance = 0,
@@ -96,172 +182,112 @@ minetest.register_node(":mcl_farming:carrot", {
 			{-0.3125, -0.375, -0.3125, -0.1875, -0.1875, -0.1875},
 		},
 	},	
-	
-	selection_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, -2/16, 0.5}
-		},
-	},
+
 	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	_mcl_blast_resistance = 0,
 })
 
 --
--- 3d Potatoes
+-- 3D Potatoes
 --
-
 for a=1, 7 do
-	local texture, selbox
-	if a < 3 then
-		texture = "mcl_farming_potatoes_stage_0.png"
-		texture1 = "mcl_farming_potatoes_stage_3_3d.png"
-		
-		p1x1 = -0.3125
-		p1y1 = -0.5
-		p1z1 = 0.125
-		p1x2 = -0.1875
-		p1y2 = -0.4375
-		p1z2 = 0.3125
-		
-		p2x1 = 0.0625
-		p2y1 = -0.5
-		p2z1 = 0.1875
-		p2x2 = 0.20
-		p2y2 = -0.4375
-		p2z2 = 0.3125
-		
-		p3x1 = 0.125
-		p3y1 = -0.5
-		p3z1 = -0.25
-		p3x2 = 0.25
-		p3y2 = -0.4375
-		p3z2 = -0.0625
-		
-		p4x1 = -0.3125
-		p4y1 = -0.5
-		p4z1 = -0.25
-		p4x2 = -0.125
-		p4y2 = -0.4375
-		p4z2 = -0.125
-			
-selbox = { -0.5, -0.5, -0.5, 0.5, -0.4375, 0.5 }
-	elseif a < 5 then
-		texture = "mcl_farming_potatoes_stage_1.png"
-		texture1 = "mcl_farming_potatoes_stage_3_3d.png"
-		
-		p1x1 = -0.375
-		p1y1 = -0.5
-		p1z1 = 0.0625
-		p1x2 = -0.125
-		p1y2 = -0.4375
-		p1z2 = 0.375
-		
-		p2x1 = 0.0
-		p2y1 = -0.5
-		p2z1 = 0.125
-		p2x2 = 0.3125
-		p2y2 = -0.4375
-		p2z2 = 0.375
-		
-		p3x1 = 0.0625
-		p3y1 = -0.5
-		p3z1 = -0.3125
-		p3x2 = 0.3125
-		p3y2 = -0.4375
-		p3z2 = 0
-		
-		p4x1 = -0.375
-		p4y1 = -0.5
-		p4z1 = -0.3125
-		p4x2 = -0.0625
-		p4y2 = -0.4375
-		p4z2 = -0.0625
-		
-selbox = { -0.5, -0.5, -0.5, 0.5, -0.4375, 0.5 }
-	else
-		texture = "mcl_farming_potatoes_stage_2.png"
-		texture1 = "mcl_farming_potatoes_stage_3_3d.png"
-		
-		p1x1 = -0.3125
-		p1y1 = -0.5
-		p1z1 = 0.0625
-		p1x2 = -0.0625
-		p1y2 = -0.4375
-		p1z2 = 0.375
-		
-		p2x1 = 0.0625
-		p2y1 = -0.5
-		p2z1 = 0.0625
-		p2x2 = 0.375
-		p2y2 = -0.4375
-		p2z2 = 0.3125
-		
-		p3x1 = 0.0625
-		p3y1 = -0.5
-		p3z1 = -0.375
-		p3x2 = 0.3125
-		p3y2 = -0.4375
-		p3z2 = -0.0625
-		
-		p4_x1 = -0.375
-		p4_y1 = -0.5
-		p4_z1 = -0.3125
-		p4_x2 = -0.0625
-		p4_y2 = -0.4375
-		p4_z2 = -0.0625
-		
-selbox = { -0.5, -0.5, -0.5, 0.5, -0.375, 0.5 }
-	end
-
-	local create, name, longdesc
-	if a==1 then
-		create = true
-		name = ("Premature Potato Plant")
-		longdesc = ("Potato plants are plants which grow on farmland under sunlight in 8 stages, but only 4 stages can be visually told apart. On hydrated farmland, they grow a bit faster. They can be harvested at any time but will only yield a profit when mature.")
-	else
-		create = false
-		if minetest.get_modpath("doc") then
-			doc.add_entry_alias("nodes", "mcl_farming:potato_1", "nodes", "mcl_farming:potato_"..a)
-		end
-	end
-
-	minetest.register_node(":mcl_farming:potato_"..a, {
-		description = ("Premature Potato Plant (Stage @1)"),
-		_doc_items_create_entry = create,
-		_doc_items_entry_name = name,
-		_doc_items_longdesc = longdesc,
-		paramtype = "light",
-		paramtype2 = "meshoptions",
-		sunlight_propagates = true,
-		place_param2 = 3,
-		walkable = false,
-		drawtype = "nodebox",
-		drop = "mcl_farming:potato_item",
-		tiles = { texture1 },
-		inventory_image = texture,
-		wield_image = texture,
+  if a < 3 then
+minetest.register_node(":mcl_farming:potato_" .. a, {
+	description = ("Premature Potato Plant (Stage 0)"),
+	_doc_items_create_entry = create,
+	_doc_items_entry_name = name,
+	_doc_items_longdesc = longdesc,
+	paramtype = "light",
+	paramtype2 = "meshoptions",
+	sunlight_propagates = true,
+	place_param2 = 3,
+	walkable = false,
+	drawtype = "nodebox",
+	drop = "mcl_farming:potato_item",
+	tiles = { "mcl_farming_potatoes_stage_3_3d.png" },
+	inventory_image = "mcl_farming_potatoes_stage_0",
+	wield_image = "mcl_farming_potatoes_stage_0",
 	node_box = {
 		type = "fixed",
 		fixed = { 
-		{p1x1, p1y1, p1z1, p1x2, p1y2, p1z2},
-		{p2x1, p2y1, p2z1, p2x2, p2y2, p2z2},
-		{p3x1, p3y1, p3z1, p3x2, p3y2, p3z2},
-		{p4x1, p4y1, p4z1, p4x2, p4y2, p4z2},
-		 },
-	},	
-		selection_box = {
-			type = "fixed",
-			fixed = { selbox },
+		{-0.25, -0.5, 0.0625, -0.125, -0.4375, 0.25},
+		{-0.25, -0.5, -0.25, -0.0625, -0.4375, -0.125},
+		{0.0625, -0.5, 0.125, 0.25, -0.4375, 0.25},
+		{0.125, -0.5, -0.25, 0.25, -0.4375, -0.0625},
 		},
-		groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
-		sounds = mcl_sounds.node_sound_leaves_defaults(),
-		_mcl_blast_resistance = 0,
-	})
+	},	
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
+
+elseif a < 5 then
+minetest.register_node(":mcl_farming:potato_" .. a, {
+	description = ("Premature Potato Plant (Stage 1)"),
+	_doc_items_create_entry = create,
+	_doc_items_entry_name = name,
+	_doc_items_longdesc = longdesc,
+	paramtype = "light",
+	paramtype2 = "meshoptions",
+	sunlight_propagates = true,
+	place_param2 = 3,
+	walkable = false,
+	drawtype = "nodebox",
+	drop = "mcl_farming:potato_item",
+	tiles = { "mcl_farming_potatoes_stage_3_3d.png" },
+	inventory_image = "mcl_farming_potatoes_stage_1",
+	wield_image = "mcl_farming_potatoes_stage_1",
+	node_box = {
+		type = "fixed",
+		fixed = { 
+		{-0.3125, -0.5, 0.0625, -0.125, -0.4375, 0.3125},
+		{-0.3125, -0.5, -0.3125, -0.0625, -0.4375, -0.125},
+		{0.0625, -0.5, 0.125, 0.3125, -0.4375, 0.3125},
+		{0.125, -0.5, -0.3125, 0.3125, -0.4375, -0.0625},
+		},
+	},	
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
+
+else
+
+minetest.register_node(":mcl_farming:potato_".. a, {
+	description = ("Premature Potato Plant (Stage 2)"),
+	_doc_items_create_entry = create,
+	_doc_items_entry_name = name,
+	_doc_items_longdesc = longdesc,
+	paramtype = "light",
+	paramtype2 = "meshoptions",
+	sunlight_propagates = true,
+	place_param2 = 3,
+	walkable = false,
+	drawtype = "nodebox",
+	drop = "mcl_farming:potato_item",
+	tiles = { "mcl_farming_potatoes_stage_3_3d.png" },
+	inventory_image = "mcl_farming_potatoes_stage_2",
+	wield_image = "mcl_farming_potatoes_stage_2",
+	node_box = {
+		type = "fixed",
+		fixed = { 
+		{-0.375, -0.5, 0.0625, -0.125, -0.4375, 0.375},
+		{-0.375, -0.5, -0.375, -0.0625, -0.4375, -0.125},
+		{0.0625, -0.5, 0.125, 0.375, -0.4375, 0.375},
+		{0.125, -0.5, -0.375, 0.375, -0.4375, -0.0625},
+		},
+	},	
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
+
+end
 end
 
 -- Mature plant
+
 minetest.register_node(":mcl_farming:potato", {
 	description = ("Mature Potato Plant"),
 	_doc_items_longdesc = ("Mature potato plants are ready to be harvested for potatoes. They won't grow any further."),
@@ -284,29 +310,23 @@ minetest.register_node(":mcl_farming:potato", {
 	node_box = {
 		type = "fixed",
 		fixed = {
-		{-0.3125, -0.5, 0.0625, -0.0625, -0.4375, 0.375},
-		{-0.25, -0.4375, 0.125, -0.125, -0.375, 0.3125},
-		{0.0625, -0.5, 0.0625, 0.375, -0.4375, 0.3125},
-		{0.125, -0.4375, 0.125, 0.3125, -0.375, 0.25},
-		{0.0625, -0.5, -0.375, 0.3125, -0.4375, -0.0625},
-		{0.125, -0.4375, -0.3125, 0.25, -0.375, -0.125},
-		{-0.375, -0.5, -0.3125, -0.0625, -0.4375, -0.0625},
-		{-0.3125, -0.4375, -0.25, -0.125, -0.375, -0.125},
+		{-0.375, -0.5, 0, -0.0625, -0.4375, 0.375},
+			{-0.3125, -0.4375, 0.0625, -0.125, -0.375, 0.3125},
+			{-0.375, -0.5, -0.375, 0, -0.4375, -0.0625},
+			{0, -0.5, 0.0625, 0.375, -0.4375, 0.375},
+			{0.0625, -0.5, -0.375, 0.375, -0.4375, 0},
+			{-0.3125, -0.4375, -0.3125, -0.0625, -0.375, -0.125},
+			{0.125, -0.4375, -0.3125, 0.3125, -0.375, -0.0625},
+			{0.0625, -0.4375, 0.125, 0.3125, -0.375, 0.3125},
 		},
 	},	
-	selection_box = {
-		type = "fixed",
-		fixed = {
-			{ -0.5, -0.5, -0.5, 0.5, -0.375, 0.5 }
-		}
-	},
 	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	_mcl_blast_resistance = 0,
 })
 
 --
--- 3d beetroot
+-- 3D Beetroot
 --
 
 minetest.register_node(":mcl_farming:beetroot_0", {
@@ -328,12 +348,6 @@ node_box = {
 			{0.1875, -0.5, 0.1875, 0.25, -0.4375, 0.25},
 			{0.1875, -0.5, -0.25, 0.25, -0.4375, -0.1875},
 			{-0.25, -0.5, -0.25, -0.1875, -0.4375, -0.1875},
-		},
-	},
-	selection_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, -5/16, 0.5}
 		},
 	},
 	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
@@ -359,12 +373,6 @@ node_box = {
 			{0.1875, -0.5, 0.1875, 0.25, -0.375, 0.25},
 			{0.1875, -0.5, -0.25, 0.25, -0.375, -0.1875},
 			{-0.25, -0.5, -0.25, -0.1875, -0.375, -0.1875},
-		},
-	},
-	selection_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, -3/16, 0.5}
 		},
 	},
 	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
@@ -394,12 +402,6 @@ node_box = {
 			{0.1875, -0.5, -0.25, 0.25, -0.3125, -0.1875},
 			{-0.3125, -0.5, -0.3125, -0.125, -0.4375, -0.125},
 			{-0.25, -0.5, -0.25, -0.1875, -0.3125, -0.1875},
-		},
-	},
-	selection_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, 2/16, 0.5}
 		},
 	},
 	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1},
@@ -450,13 +452,333 @@ node_box = {
 			{-0.25, -0.3125, -0.25, -0.1875, -0.125, -0.1875},
 		},
 	},	
-	selection_box = {
+	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,beetroot=4},
+	sounds = mcl_sounds.node_sound_leaves_defaults(),
+	_mcl_blast_resistance = 0,
+})
+
+--
+-- 3D Wheat
+--
+
+
+for b=1, 7 do
+    local texture, selbox
+	  if b < 2 then
+		texture = "mcl_farming_wheat_stage_1.png"
+		texture1 = "mcl_farming_wheat_stage_1_3d.png"
+		
+	w1y2 = -0.4375
+	w2y2 = -0.4375
+	w3y2 = -0.4375
+	w4y2 = -0.4375
+	w5y2 = -0.4375
+	w6y2 = -0.4375
+	w7y2 = -0.4375
+	w8y2 = -0.4375
+	w9y2 = -0.4375
+	w10y2 = -0.4375
+	w11y2 = -0.4375
+	w12y2 = -0.4375
+	w13y2 = -0.4375
+	w14y2 = -0.4375
+	w15y2 = -0.4375
+	w16y2 = -0.4375
+	w17y2 = -0.4375
+	w18y2 = -0.4375
+	w19y2 = -0.4375
+	w20y2 = -0.4375
+	w21y2 = -0.4375
+	w22y2 = -0.4375
+	w23y2 = -0.4375
+	w24y2 = -0.4375
+	w25y2 = -0.4375
+		
+	  elseif b == 2 then
+	    texture = "mcl_farming_wheat_stage_2.png"
+		texture1 = "mcl_farming_wheat_stage_2_3d.png"
+		
+	w1y2 = -0.375
+	w2y2 = -0.4375
+	w3y2 = -0.375
+	w4y2 = -0.4375
+	w5y2 = -0.375
+	w6y2 = -0.4375
+	w7y2 = -0.375
+	w8y2 = -0.4375
+	w9y2 = -0.375
+	w10y2 = -0.4375
+	w11y2 = -0.375
+	w12y2 = -0.4375
+	w13y2 = -0.375
+	w14y2 = -0.4375
+	w15y2 = -0.375
+	w16y2 = -0.4375
+	w17y2 = -0.375
+	w18y2 = -0.4375
+	w19y2 = -0.375
+	w20y2 = -0.4375
+	w21y2 = -0.375
+	w22y2 = -0.4375
+	w23y2 = -0.375
+	w24y2 = -0.4375
+	w25y2 = -0.375
+		
+	  elseif b == 3 then
+		texture = "mcl_farming_wheat_stage_3.png"
+		texture1 = "mcl_farming_wheat_stage_3_3d.png"
+		
+	w1y2 = -0.25
+	w2y2 = -0.3125
+	w3y2 = -0.25
+	w4y2 = -0.3125
+	w5y2 = -0.25
+	w6y2 = -0.3125
+	w7y2 = -0.25
+	w8y2 = -0.3125
+	w9y2 = -0.25
+	w10y2 = -0.3125
+	w11y2 = -0.25
+	w12y2 = -0.3125
+	w13y2 = -0.25
+	w14y2 = -0.3125
+	w15y2 = -0.25
+	w16y2 = -0.3125
+	w17y2 = -0.25
+	w18y2 = -0.3125
+	w19y2 = -0.25
+	w20y2 = -0.3125
+	w21y2 = -0.25
+	w22y2 = -0.3125
+	w23y2 = -0.25
+	w24y2 = -0.3125
+	w25y2 = -0.25
+	  
+	  elseif b == 4 then
+		texture = "mcl_farming_wheat_stage_4.png"
+		texture1 = "mcl_farming_wheat_stage_4_3d.png"
+		
+	w1y2 = -0.125
+	w2y2 = -0.1875
+	w3y2 = -0.125
+	w4y2 = -0.1875
+	w5y2 = -0.125
+	w6y2 = -0.1875
+	w7y2 = -0.125
+	w8y2 = -0.1875
+	w9y2 = -0.125
+	w10y2 = -0.1875
+	w11y2 = -0.125
+	w12y2 = -0.1875
+	w13y2 = -0.125
+	w14y2 = -0.1875
+	w15y2 = -0.125
+	w16y2 = -0.1875
+	w17y2 = -0.125
+	w18y2 = -0.1875
+	w19y2 = -0.125
+	w20y2 = -0.1875
+	w21y2 = -0.125
+	w22y2 = -0.1875
+	w23y2 = -0.125
+	w24y2 = -0.1875
+	w25y2 = -0.125
+		
+	  elseif b == 5 then
+		texture = "mcl_farming_wheat_stage_5.png"
+		texture1 = "mcl_farming_wheat_stage_5_3d.png"
+		
+	w1y2 = 0
+	w2y2 = -0.0625
+	w3y2 = 0
+	w4y2 = -0.0625
+	w5y2 = 0
+	w6y2 = -0.0625
+	w7y2 = 0
+	w8y2 = -0.0625
+	w9y2 = 0
+	w10y2 = -0.0625
+	w11y2 = 0
+	w12y2 = -0.0625
+	w13y2 = 0
+	w14y2 = -0.0625
+	w15y2 = 0
+	w16y2 = -0.0625
+	w17y2 = 0
+	w18y2 = -0.0625
+	w19y2 = 0
+	w20y2 = -0.0625
+	w21y2 = 0
+	w22y2 = -0.0625
+	w23y2 = 0
+	w24y2 = -0.0625
+	w25y2 = 0
+		
+	  elseif b == 6 then
+		texture = "mcl_farming_wheat_stage_6.png"
+		texture1 = "mcl_farming_wheat_stage_6_3d.png"
+		
+	w1y2 = 0.125
+	w2y2 = 0.0625
+	w3y2 = 0.125
+	w4y2 = 0.0625
+	w5y2 = 0.125
+	w6y2 = 0.0625
+	w7y2 = 0.125
+	w8y2 = 0.0625
+	w9y2 = 0.125
+	w10y2 = 0.0625
+	w11y2 = 0.125
+	w12y2 = 0.0625
+	w13y2 = 0.125
+	w14y2 = 0.0625
+	w15y2 = 0.125
+	w16y2 = 0.0625
+	w17y2 = 0.125
+	w18y2 = 0.0625
+	w19y2 = 0.125
+	w20y2 = 0.0625
+	w21y2 = 0.125
+	w22y2 = 0.0625
+	w23y2 = 0.125
+	w24y2 = 0.0625
+	w25y2 = 0.125
+	
+	end
+
+	local create, name, longdesc
+	  if b == 1 then
+		create = true
+		name = ("Premature Wheat Plant")
+		longdesc = ("Premature wheat plants grow on farmland under sunlight in 8 stages. On hydrated farmland, they grow faster. They can be harvested at any time but will only yield a profit when mature.")
+	else
+		create = false
+	end
+
+	minetest.register_node(":mcl_farming:wheat_"..b, {
+		description = ("Premature Wheat Plant (Stage @1)"),
+		_doc_items_create_entry = create,
+		_doc_items_entry_name = name,
+		_doc_items_longdesc = longdesc,
+		paramtype = "light",
+		sunlight_propagates = true,
+		walkable = false,
+		drawtype = "nodebox",
+		drop = "mcl_farming:wheat_seeds",
+		tiles = {texture1},
+		inventory_image = texture,
+		wield_image = texture,
+node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, 3/16, 0.5}
+			{-0.375, -0.5, 0.3125, -0.3125, w1y2, 0.375},
+			{-0.1875, -0.5, 0.3125, -0.125, w2y2, 0.375},
+			{0, -0.5, 0.3125, 0.0625, w3y2, 0.375},
+			{0.1875, -0.5, 0.3125, 0.25, w4y2, 0.375},
+			{0.375, -0.5, 0.3125, 0.4375, w5y2, 0.375},
+			{-0.4375, -0.5, 0.125, -0.375, w6y2, 0.1875},
+			{-0.25, -0.5, 0.125, -0.1875, w7y2, 0.1875},
+			{-0.0625, -0.5, 0.125, 0, w8y2, 0.1875},
+			{0.125, -0.5, 0.125, 0.1875, w9y2, 0.1875},
+			{0.3125, -0.5, 0.125, 0.375, w10y2, 0.1875},
+			{-0.375, -0.5, -0.0625, -0.3125, w11y2, 0},
+			{-0.1875, -0.5, -0.0625, -0.125, w12y2, 0},
+			{0, -0.5, -0.0625, 0.0625, w13y2, 0},
+			{0.1875, -0.5, -0.0625, 0.25, w14y2, 0},
+			{0.375, -0.5, -0.0625, 0.4375, w15y2, 0},
+			{-0.4375, -0.5, -0.25, -0.375, w16y2, -0.1875},
+			{-0.25, -0.5, -0.25, -0.1875, w17y2, -0.1875},
+			{-0.0625, -0.5, -0.25, 0, w18y2, -0.1875},
+			{0.125, -0.5, -0.25, 0.1875, w19y2, -0.1875},
+			{0.3125, -0.5, -0.25, 0.375, w20y2, -0.1875},
+			{-0.375, -0.5, -0.4375, -0.3125, w21y2, -0.375},
+			{-0.1875, -0.5, -0.4375, -0.125, w22y2, -0.375},
+			{0, -0.5, -0.4375, 0.0625, w23y2, -0.375},
+			{0.1875, -0.5, -0.4375, 0.25, w24y2, -0.375},
+			{0.375, -0.5, -0.4375, 0.4375, w25y2, -0.375},
 		},
 	},
-	groups = {dig_immediate=3, not_in_creative_inventory=1,plant=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,beetroot=4},
+		groups = {dig_immediate=3, not_in_creative_inventory=1, plant=1,attached_node=1, dig_by_water=1,destroy_by_lava_flow=1, dig_by_piston=1},
+		sounds = mcl_sounds.node_sound_leaves_defaults(),
+		_mcl_blast_resistance = 0,
+	})
+end
+
+minetest.register_node(":mcl_farming:wheat", {
+	description = ("Mature Wheat Plant"),
+	_doc_items_longdesc = ("Mature wheat plants are ready to be harvested for wheat and wheat seeds. They won't grow any further."),
+	sunlight_propagates = true,
+	paramtype = "light",
+	walkable = false,
+	drawtype = "nodebox",
+	tiles = {"mcl_farming_wheat_stage_7_3d.png"},
+	inventory_image = "mcl_farming_wheat_stage_7.png",
+	wield_image = "mcl_farming_wheat_stage_7.png",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.375, -0.5, 0.3125, -0.3125, 0.25, 0.375},
+			{-0.4375, 0.25, 0.3125, -0.3125, 0.5, 0.4375},
+			{-0.1875, -0.5, 0.3125, -0.125, 0.1875, 0.375},
+			{-0.25, 0.1875, 0.25, -0.125, 0.4375, 0.375},
+			{0, -0.5, 0.3125, 0.0625, 0.25, 0.375},
+			{-0.0625, 0.25, 0.3125, 0.0625, 0.5, 0.4375},
+			{0.1875, -0.5, 0.3125, 0.25, 0.1875, 0.375},
+			{0.125, 0.1875, 0.25, 0.25, 0.4375, 0.375},
+			{0.375, -0.5, 0.3125, 0.4375, 0.25, 0.375},
+			{0.3125, 0.25, 0.3125, 0.4375, 0.5, 0.4375},
+			{-0.4375, -0.5, 0.125, -0.375, 0.1875, 0.1875},
+			{-0.4375, 0.1875, 0.125, -0.3125, 0.4375, 0.25},
+			{-0.25, -0.5, 0.125, -0.1875, 0.25, 0.1875},
+			{-0.25, 0.25, 0.0625, -0.125, 0.5, 0.1875},
+			{-0.0625, -0.5, 0.125, 0, 0.1875, 0.1875},
+			{-0.0625, 0.1875, 0.125, 0.0625, 0.4375, 0.25},
+			{0.125, -0.5, 0.125, 0.1875, 0.25, 0.1875},
+			{0.125, 0.25, 0.0625, 0.25, 0.5, 0.1875},
+			{0.3125, -0.5, 0.125, 0.375, 0.1875, 0.1875},
+			{0.3125, 0.1875, 0.125, 0.4375, 0.4375, 0.25},
+			{-0.375, -0.5, -0.0625, -0.3125, 0.25, 0},
+			{-0.4375, 0.25, -0.0625, -0.3125, 0.5, 0.0625},
+			{-0.1875, -0.5, -0.0625, -0.125, 0.1875, 0},
+			{-0.25, 0.1875, -0.125, -0.125, 0.4375, 0},
+			{0, -0.5, -0.0625, 0.0625, 0.25, 0},
+			{-0.0625, 0.25, -0.0625, 0.0625, 0.5, 0.0625},
+			{0.1875, -0.5, -0.0625, 0.25, 0.1875, 0},
+			{0.125, 0.1875, -0.125, 0.25, 0.4375, 0},
+			{0.375, -0.5, -0.0625, 0.4375, 0.25, 0},
+			{0.3125, 0.25, -0.0625, 0.4375, 0.5, 0.0625},
+			{-0.4375, -0.5, -0.25, -0.375, 0.1875, -0.1875},
+			{-0.4375, 0.1875, -0.25, -0.3125, 0.4375, -0.125},
+			{-0.25, -0.5, -0.25, -0.1875, 0.25, -0.1875},
+			{-0.25, 0.25, -0.3125, -0.125, 0.5, -0.1875},
+			{-0.0625, -0.5, -0.25, 0, 0.1875, -0.1875},
+			{-0.0625, 0.1875, -0.25, 0.0625, 0.4375, -0.125},
+			{0.125, -0.5, -0.25, 0.1875, 0.25, -0.1875},
+			{0.125, 0.25, -0.3125, 0.25, 0.5, -0.1875},
+			{0.3125, -0.5, -0.25, 0.375, 0.1875, -0.1875},
+			{0.3125, 0.1875, -0.25, 0.4375, 0.4375, -0.125},
+			{-0.375, -0.5, -0.4375, -0.3125, 0.25, -0.375},
+			{-0.4375, 0.25, -0.4375, -0.3125, 0.5, -0.3125},
+			{-0.1875, -0.5, -0.4375, -0.125, 0.25, -0.375},
+			{-0.25, 0.1875, -0.5, -0.125, 0.4375, -0.375},
+			{0, -0.5, -0.4375, 0.0625, 0.25, -0.375},
+			{-0.0625, 0.25, -0.4375, 0.0625, 0.5, -0.3125},
+			{0.1875, -0.5, -0.4375, 0.25, 0.25, -0.375},
+			{0.125, 0.1875, -0.5, 0.25, 0.4375, -0.375},
+			{0.375, -0.5, -0.4375, 0.4375, 0.25, -0.375},
+			{0.3125, 0.25, -0.4375, 0.4375, 0.5, -0.3125},
+		},
+	},
+	drop = {
+		max_items = 4,
+		items = {
+			{ items = {'mcl_farming:wheat_seeds'} },
+			{ items = {'mcl_farming:wheat_seeds'}, rarity = 2},
+			{ items = {'mcl_farming:wheat_seeds'}, rarity = 5},
+			{ items = {'mcl_farming:wheat_item'} }
+		}
+	},
+	groups = {dig_immediate=3, not_in_creative_inventory=1, plant=1,attached_node=1, dig_by_water=1,destroy_by_lava_flow=1, dig_by_piston=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	_mcl_blast_resistance = 0,
 })
