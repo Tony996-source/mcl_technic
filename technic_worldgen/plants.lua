@@ -1249,8 +1249,8 @@ minetest.register_node(":mcl_flowers:dandelion", {
 		"flowers_dandelion_yellow_3d.png",
 		"flowers_dandelion_yellow_3d.png"
 	 },
-	inventory_image = "mcl_flowers_dandelion.png",
-	wield_image = "mcl_flowers_dandelion.png",
+	inventory_image = "mcl_flowers_dandelion_yellow.png",
+	wield_image = "mcl_flowers_dandelion_yellow.png",
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
