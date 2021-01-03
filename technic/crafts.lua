@@ -49,4 +49,9 @@ minetest.register_craft({
 	recipe = "technic:oil",
 })
 
-
+minetest.register_craft({
+	type = "cooking",
+	output = "mcl_core:charcoal_lump",
+	recipe = "group:wood",
+	cooktime = 10,
+})
