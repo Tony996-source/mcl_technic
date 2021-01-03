@@ -120,9 +120,13 @@ minetest.register_abm({
 						inv:add_item("dst", result_stack)
 					end
 				end
+				if mcl_experience.throw_experience then
+					local dir = vector.divide(minetest.facedir_to_dir(minetest.get_node(pos).param2),-1.95)
+					mcl_experience.throw_experience(vector.add(pos, dir), 1)
 			else
 				meta:set_int("src_time", 0)
 			end
+				end
 		end
 
 		if meta:get_float("fuel_time") < meta:get_float("fuel_totaltime") then

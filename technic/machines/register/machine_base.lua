@@ -121,6 +121,10 @@ function technic.register_base_machine(data)
 			local output_stacks = {}
 			for _, o in ipairs(output) do
 				table.insert(output_stacks, ItemStack(o))
+				if mcl_experience.throw_experience then
+					local dir = vector.divide(minetest.facedir_to_dir(minetest.get_node(pos).param2),-1.95)
+					mcl_experience.throw_experience(vector.add(pos, dir), 1)
+				end
 			end
 			local room_for_output = true
 			inv:set_size("dst_tmp", inv:get_size("dst"))
