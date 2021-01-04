@@ -3,7 +3,7 @@
 minetest.register_craft({
 	output = 'technic:mv_extractor',
 	recipe = {
-	{'mcl_core:andesite', 'mcl_core:andesite', 'mcl_core:andesite'},
+	{'mcl_core:andesite', 'technic:lv_extractor', 'mcl_core:andesite'},
 	{'mcl_core:diorite', 'technic:copper_ingot', 'mcl_core:diorite'},
 	{'mcl_core:diorite', 'technic:mv_cable', 'mcl_core:diorite'},
 	}

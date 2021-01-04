@@ -8,7 +8,7 @@
 minetest.register_craft({
 	output = 'technic:hv_electric_furnace',
 	recipe = {
-	{'technic:steel_ingot', 'technic:carbon_plate', 'technic:steel_ingot'},
+	{'technic:steel_ingot', 'technic:mv_electric_furnace', 'technic:steel_ingot'},
 	{'pipeworks:tube_1', 'mcl_core:gold_ingot', 'pipeworks:tube_1'},
 	{'technic:steel_ingot', 'technic:hv_cable', 'technic:steel_ingot'},
 	}
