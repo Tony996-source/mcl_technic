@@ -25,7 +25,7 @@ function technic.register_generator(data)
 	local tier = data.tier
 	local ltier = string.lower(tier)
 
-	local groups = {snappy=2, choppy=2, oddly_breakable_by_hand=2,
+	local groups = {pickaxey=1,axey=1, handy=1, swordy=1,
 		technic_machine=1, ["technic_"..ltier]=1}
 	if data.tube then
 		groups.tubedevice = 1
@@ -99,14 +99,14 @@ function technic.register_generator(data)
 			)..pipeworks.button_label
 		end
 		meta:set_string("formspec", 
-			"size[8, 9]"..
+			"size[9, 9]"..
 			"label[0, 0;"..minetest.formspec_escape(desc).."]"..
 			"list[current_name;src;3, 1;1, 1;]"..
 			mcl_formspec.get_itemslot_bg(3,1,1,1)..
 			"image[4, 1;1, 1;default_furnace_fire_bg.png^[lowpart:"..
 			(percent)..":default_furnace_fire_fg.png]"..
-			"list[current_player;main;0, 5;8, 4;]"..
-			mcl_formspec.get_itemslot_bg(0,5,8,4)..
+			"list[current_player;main;0, 5;9, 4;]"..
+			mcl_formspec.get_itemslot_bg(0,5,9,4)..
 			"listring[]"..
 			form_buttons
 		)
@@ -130,6 +130,8 @@ function technic.register_generator(data)
 		connect_sides = {"bottom", "back", "left", "right"},
 		legacy_facedir_simple = true,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 		tube = data.tube and tube or nil,
 		on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
@@ -198,6 +200,8 @@ function technic.register_generator(data)
 		connect_sides = {"bottom"},
 		legacy_facedir_simple = true,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
+		_mcl_blast_resistance = 6,
+	    _mcl_hardness = 1.5,
 		tube = data.tube and tube or nil,
 		drop = "technic:"..ltier.."_generator",
 		can_dig = technic.machine_can_dig,
@@ -245,14 +249,14 @@ function technic.register_generator(data)
 				)..pipeworks.button_label
 			end
 			meta:set_string("formspec", 
-				"size[8, 9]"..
+				"size[9, 9]"..
 				"label[0, 0;"..minetest.formspec_escape(desc).."]"..
 				"list[current_name;src;3, 1;1, 1;]"..
 				mcl_formspec.get_itemslot_bg(3,1,1,1)..
 				"image[4, 1;1, 1;default_furnace_fire_bg.png^[lowpart:"..
 				(percent)..":default_furnace_fire_fg.png]"..
-				"list[current_player;main;0, 5;8, 4;]"..
-				mcl_formspec.get_itemslot_bg(0,5,8,4)..
+				"list[current_player;main;0, 5;9, 4;]"..
+				mcl_formspec.get_itemslot_bg(0,5,9,4)..
 				"listring[]"..
 				form_buttons
 			)
@@ -281,14 +285,14 @@ function technic.register_generator(data)
 			local percent = math.floor(burn_time / burn_totaltime * 100)
 
 			meta:set_string("formspec", 
-				"size[8, 9]"..
+				"size[9, 9]"..
 				"label[0, 0;"..minetest.formspec_escape(desc).."]"..
 				"list[current_name;src;3, 1;1, 1;]"..
 				mcl_formspec.get_itemslot_bg(3,1,1,1)..
 				"image[4, 1;1, 1;default_furnace_fire_bg.png^[lowpart:"..
 				(percent)..":default_furnace_fire_fg.png]"..
-				"list[current_player;main;0, 5;8, 4;]"..
-				mcl_formspec.get_itemslot_bg(0,5,8,4)..
+				"list[current_player;main;0, 5;9, 4;]"..
+				mcl_formspec.get_itemslot_bg(0,5,9,4)..
 				"listring[]"..
 				form_buttons
 			)
