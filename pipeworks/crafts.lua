@@ -56,19 +56,18 @@ minetest.register_craft({
 -- Extra Crafts
 
 minetest.register_craft( {
-		output = "pipeworks:accelerator_tube_1 2",
-		recipe = {
-			{ "pipeworks:tube_1", "", "" },
-			{ "mesecons:redstone", "mcl_core:iron_ingot", "mesecons:redstone" },
-			{ "", "", "" }
-		},
-	})
+    type = "shapeless",
+	output = "pipeworks:accelerator_tube_1 2",
+	recipe = {
+		"pipeworks:tube_1", "mesecons:redstone", "mcl_core:iron_ingot", 
+			  "mesecons:redstone"
+	},
+})
 	
 minetest.register_craft( {
-		output = "pipeworks:priority_tube_1 6",
-		recipe = {
-			{ "pipeworks:tube_1", "", "" },
-			{ "mcl_core:gold_ingot", "", "mcl_core:gold_ingot" },
-			{ "", "", "" }
-		},
-	})
+    type = "shapeless",
+	output = "pipeworks:priority_tube_1 6",
+	recipe = {
+		"pipeworks:tube_1", "mcl_core:gold_ingot", "mcl_core:gold_ingot" 
+	},
+})

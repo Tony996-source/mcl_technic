@@ -8,28 +8,28 @@ mcl_craftguide.register_craft_type("grinding", {
 
 local grind_recipe = {
 	-- Dusts
-	{"mcl_core:coal_lump",         "technic:coal_dust 2"},
-	{"mcl_core:stone_with_iron",   "technic:iron_dust 2"},
-	{"mcl_core:stone_with_gold",   "technic:gold_dust 2"},
+	{"mcl_core:coal_lump",         "technic:coal_dust"},
+	{"mcl_core:stone_with_iron",   "technic:iron_dust"},
+	{"mcl_core:stone_with_gold",   "technic:gold_dust"},
 	{"mcl_core:gold_ingot",        "technic:gold_dust"},
 	{"mcl_core:iron_ingot",        "technic:iron_dust"},
 	
 -- Trees
-    {"mcl_core:tree",              "technic:sawdust 4"},
-    {"mcl_core:jungletree",        "technic:sawdust 4"},
-    {"mcl_core:birchtree",         "technic:sawdust 4"},
-    {"mcl_core:sprucetree",        "technic:sawdust 4"},
-    {"mcl_core:acaciatree",        "technic:sawdust 4"},
-    {"mcl_core:darktree",          "technic:sawdust 4"},
-    {"mcl_core:wood",              "technic:sawdust 2"},
-    {"mcl_core:junglewood",        "technic:sawdust 2"},
-    {"mcl_core:sprucewood",        "technic:sawdust 2"},
-    {"mcl_core:birchwood",         "technic:sawdust 2"},
-    {"mcl_core:darkwood",          "technic:sawdust 2"},
-    {"mcl_core:acaciawood",        "technic:sawdust 2"},
+    {"mcl_core:tree",              "technic:sawdust"},
+    {"mcl_core:jungletree",        "technic:sawdust"},
+    {"mcl_core:birchtree",         "technic:sawdust"},
+    {"mcl_core:sprucetree",        "technic:sawdust"},
+    {"mcl_core:acaciatree",        "technic:sawdust"},
+    {"mcl_core:darktree",          "technic:sawdust"},
+    {"mcl_core:wood",              "technic:sawdust"},
+    {"mcl_core:junglewood",        "technic:sawdust"},
+    {"mcl_core:sprucewood",        "technic:sawdust"},
+    {"mcl_core:birchwood",         "technic:sawdust"},
+    {"mcl_core:darkwood",          "technic:sawdust"},
+    {"mcl_core:acaciawood",        "technic:sawdust"},
     
 	-- Other
-	{"mcl_mobitems:bone",          "mcl_dye:white 2"},
+	{"mcl_mobitems:bone",          "mcl_dye:white"},
 	{"mcl_core:cobble",            "mcl_core:gravel"},
 	{"mcl_core:gravel",            "mcl_core:sand"},
 	{"mcl_core:sandstone",         "mcl_core:sand"},
@@ -37,7 +37,7 @@ local grind_recipe = {
     {"mcl_core:stone",             "technic:stone_dust"},
     {"technic:steel_ingot",        "technic:steel_dust"},
     {"technic:copper_ingot",       "technic:copper_dust"},
-    {"technic:mineral_copper",     "technic:copper_dust 2"},
+    {"technic:mineral_copper",     "technic:copper_dust"},
 }
 
 for _, grind_recipe in pairs(grind_recipe) do
@@ -63,10 +63,10 @@ local compress_recipe = {
 	{"mcl_core:snowblock",          "mcl_core:ice"},
 	{"mcl_core:sand",               "mcl_core:sandstone"},
 	{"mcl_core:redsand",            "mcl_core:redsandstone"},
-	{"technic:coal_dust 2",         "technic:graphite"},
-	{"technic:carbon_cloth",        "technic:carbon_plate 2"},
-    {"mcl_core:coalblock",          "mcl_core:diamond 2"},
-    {"technic:sawdust",             "mcl_core:paper 2"},
+	{"technic:coal_dust",           "technic:graphite"},
+	{"technic:carbon_cloth",        "technic:carbon_plate"},
+    {"mcl_core:coalblock",          "mcl_core:diamond"},
+    {"technic:sawdust",             "mcl_core:paper"},
 }
 
 for _, compress_recipe in pairs(compress_recipe) do
@@ -89,23 +89,24 @@ mcl_craftguide.register_craft_type("extracting", {
 })
 
 local extract_recipe = {
-	{"technic:coal_dust", "mcl_dye:black 4"},
-	{"mcl_core:cactus", "mcl_dye:green 4"},
-	{"mcl_flowers:blue_orchid", "mcl_dye:blue 4"},
-	{"mcl_flowers:oxeye_daisy", "mcl_dye:white 4"},
-	{"mcl_flowers:dandelion", "mcl_dye:yellow 4"},
-	{"mcl_flowers:tulip", "mcl_dye:orange 4"},
-	{"mcl_flowers:poppy", "mcl_dye:red 4"},
-	{"mcl_flowers:allium", "mcl_dye:purple 4"},
-	{"mcl_flowers:tulip_pink", "mcl_dye:pink 4"},
-	{"mcl_flowers:tulip_red", "mcl_dye:red 4"},
-	{"mcl_flowers:tulip_white", "mcl_dye:white 4"},
-	{"mcl_flowers:tulip_orange", "mcl_dye:orange 4"},
-	{"mcl_end:chorus_fruit_popped", "mcl_dye:purple 6"},
-	{"technic:oil", "pipeworks:oil_extract 6"},
-	{"technic:sawdust", "technic:oil 2"},
-	{"technic:stone_dust 5", "technic:lowgrade_iron_dust"},
-	{"mcl_core:gravel 5", "technic:lowgrade_gold_dust"},
+	{"technic:coal_dust",           "mcl_dye:black"},
+	{"mcl_core:cactus",             "mcl_dye:green"},
+	{"mcl_flowers:blue_orchid",     "mcl_dye:blue"},
+	{"mcl_flowers:oxeye_daisy",     "mcl_dye:white"},
+	{"mcl_flowers:dandelion",       "mcl_dye:yellow"},
+	{"mcl_flowers:tulip",           "mcl_dye:orange"},
+	{"mcl_flowers:poppy",           "mcl_dye:red"},
+	{"mcl_flowers:allium",          "mcl_dye:purple"},
+	{"mcl_flowers:tulip_pink",      "mcl_dye:pink"},
+	{"mcl_flowers:tulip_red",       "mcl_dye:red"},
+	{"mcl_flowers:tulip_white",     "mcl_dye:white"},
+	{"mcl_flowers:tulip_orange",    "mcl_dye:orange"},
+	{"mcl_end:chorus_fruit_popped", "mcl_dye:purple"},
+	{"technic:oil",                 "pipeworks:oil_extract"},
+	{"technic:sawdust",             "technic:oil"},
+	{"technic:stone_dust",          "technic:lowgrade_iron_dust"},
+	{"mcl_core:sand",               "technic:lowgrade_gold_dust"},
+	{"mcl_core:redsand",            "technic:lowgrade_copper_dust"},
 }
 
 for _, extract_recipe in pairs(extract_recipe) do
@@ -128,18 +129,18 @@ mcl_craftguide.register_craft_type("cutting", {
 })
 
 local cut_recipe = {
-	{"mcl_core:tree",                 "mcl_core:wood 6"},
-		{"mcl_core:jungletree",           "mcl_core:junglewood 6"},
-        {"mcl_core:birchtree",            "mcl_core:birchwood 6"},
-        {"mcl_core:sprucetree",           "mcl_core:sprucewood 6"},
-        {"mcl_core:acaciatree",           "mcl_core:acaciawood 6"},
-        {"mcl_core:darktree",             "mcl_core:darkwood 6"},
-        {"mcl_core:wood",                 "mcl_core:stick 6"},
-		{"mcl_core:junglewood",           "mcl_core:stick 6"},
-        {"mcl_core:birchwood",            "mcl_core:stick 6"},
-        {"mcl_core:sprucewood",           "mcl_core:stick 6"},
-        {"mcl_core:acaciawood",           "mcl_core:stick 6"},
-        {"mcl_core:darkwood",             "mcl_core:stick 6"},
+	    {"mcl_core:tree",                 "mcl_core:wood"},
+		{"mcl_core:jungletree",           "mcl_core:junglewood"},
+        {"mcl_core:birchtree",            "mcl_core:birchwood"},
+        {"mcl_core:sprucetree",           "mcl_core:sprucewood"},
+        {"mcl_core:acaciatree",           "mcl_core:acaciawood"},
+        {"mcl_core:darktree",             "mcl_core:darkwood"},
+        {"mcl_core:wood",                 "mcl_core:stick"},
+		{"mcl_core:junglewood",           "mcl_core:stick"},
+        {"mcl_core:birchwood",            "mcl_core:stick"},
+        {"mcl_core:sprucewood",           "mcl_core:stick"},
+        {"mcl_core:acaciawood",           "mcl_core:stick"},
+        {"mcl_core:darkwood",             "mcl_core:stick"},
 }
 
 for _, cut_recipe in pairs(cut_recipe) do
@@ -163,14 +164,14 @@ mcl_craftguide.register_craft_type("alloying", {
 mcl_craftguide.register_craft({
 	type   = "alloying",
 	width  = 3,
-	output = "technic:silicon_wafer 2",
+	output = "technic:silicon_wafer",
 	items  = {"mcl_core:sand", "technic:coal_dust"},
 })
 
 mcl_craftguide.register_craft({
 	type   = "alloying",
 	width  = 3,
-	output = "technic:doped_silicon_wafer 2",
+	output = "technic:doped_silicon_wafer",
 	items  = {"technic:silicon_wafer", "technic:gold_dust"},
 })
 
@@ -199,7 +200,7 @@ mcl_craftguide.register_craft({
 	type   = "alloying",
 	width  = 3,
 	output = "mcl_buckets:bucket_water",
-	items  = {"mcl_core:snow 9", "mcl_buckets:bucket_empty"},
+	items  = {"mcl_core:snow", "mcl_buckets:bucket_empty"},
 })
 
 mcl_craftguide.register_craft({

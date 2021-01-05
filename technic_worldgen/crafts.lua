@@ -12,7 +12,7 @@ minetest.register_craft({
 minetest.register_craft({
     type = 'shapeless',
 	output = 'technic:copper_ingot 9',
-	recipe = {'technic:copper_ingot'},
+	recipe = {'technic:copper_block'},
 })
 
 minetest.register_craft({

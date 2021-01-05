@@ -92,13 +92,20 @@ minetest.register_craftitem("technic:lowgrade_iron_dust", {
 	inventory_image = "technic_lowgrade_iron_dust.png",
 })
 
-minetest.register_craftitem("technic:steel_dust", {
-	description = ("Steel Dust"),
-	inventory_image = "technic_steel_dust.png",
+minetest.register_craftitem("technic:lowgrade_copper_dust", {
+	description = ("Lowgrade Copper Dust"),
+	inventory_image = "technic_lowgrade_copper_dust.png",
 })
 	
 minetest.register_craft({
 	type = "cooking",
 	recipe = "technic:lowgrade_iron_dust",
 	output = "mcl_core:iron_nugget",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "technic:copper_nugget",
+	recipe = "technic:lowgrade_copper_dust",
+	cooktime = 10,
 })

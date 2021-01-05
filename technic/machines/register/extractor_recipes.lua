@@ -26,7 +26,8 @@ end
 	{"technic:oil", "pipeworks:oil_extract 6"},
 	{"technic:sawdust", "technic:oil 2"},
 	{"technic:stone_dust 5", "technic:lowgrade_iron_dust"},
-	{"mcl_core:gravel 5", "technic:lowgrade_gold_dust"},
+	{"mcl_core:sand 10", "technic:lowgrade_gold_dust"},
+	{"mcl_core:redsand 10", "technic:lowgrade_copper_dust"},
 }
     
 	for _, data in ipairs(dye_recipes) do
