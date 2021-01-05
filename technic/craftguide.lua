@@ -38,6 +38,9 @@ local grind_recipe = {
     {"technic:steel_ingot",        "technic:steel_dust"},
     {"technic:copper_ingot",       "technic:copper_dust"},
     {"technic:mineral_copper",     "technic:copper_dust"},
+    {"mcl_core:iron_nugget",       "technic:lowgrade_iron_dust"},
+    {"mcl_core:gold_nugget",       "technic:lowgrade_gold_dust"},
+    {"technic:iron_nugget",        "technic:lowgrade_copper_dust"},
 }
 
 for _, grind_recipe in pairs(grind_recipe) do

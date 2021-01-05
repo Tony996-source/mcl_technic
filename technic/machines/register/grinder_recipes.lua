@@ -40,6 +40,9 @@ local recipes = {
     {"technic:steel_ingot",        "technic:steel_dust"},
     {"technic:copper_ingot",       "technic:copper_dust"},
     {"technic:mineral_copper",     "technic:copper_dust 2"},
+    {"mcl_core:iron_nugget",       "technic:lowgrade_iron_dust"},
+    {"mcl_core:gold_nugget",       "technic:lowgrade_gold_dust"},
+    {"technic:iron_nugget",        "technic:lowgrade_copper_dust"},
 }
 
 for _, data in pairs(recipes) do
