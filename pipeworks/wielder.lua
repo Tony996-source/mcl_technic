@@ -15,9 +15,12 @@ local function set_wielder_formspec(data, meta)
 			"label[1,0;"..minetest.formspec_escape(data.description).."]"..
 			"list[current_name;"..minetest.formspec_escape(data.wield_inv_name)..";"..((8-data.wield_inv_width)*0.5)..",1;"..data.wield_inv_width..","..data.wield_inv_height..";]"..
 			mcl_formspec.get_itemslot_bg(4-data.wield_inv_width*0.5,1,data.wield_inv_width,data.wield_inv_height)..
-			"list[current_player;main;0,"..(2+data.wield_inv_height)..";9,4;]" ..
+			"list[current_player;main;0,"..(2+data.wield_inv_height)..";9,3;9]" ..
+			"list[current_player;main;0,"..(5+data.wield_inv_height)..";9,1;]" ..
 			mcl_formspec.get_itemslot_bg(0,2+data.wield_inv_height,9,4)..
-			"listring[]")
+			"listring[current_name;"..data.wield_inv_name.."]" ..
+			"listring[current_player;main]"
+			)
 	meta:set_string("infotext", data.description)
 end
 

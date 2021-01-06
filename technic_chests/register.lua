@@ -218,14 +218,12 @@ function technic.chests:definition(name, data)
 	data.base_formspec = "size["..data.ovwidth..","..data.ovheight.."]"..
 			"label[0,-0.2;"..S("%s Chest"):format(name).."]"..
 			"list[context;main;"..data.hileft..",1;"..data.width..","..data.height..";]"..
-			
-	    "list[current_player;main;"..data.loleft..","..data.lotop1..";9,1;]"..
-	    mcl_formspec.get_itemslot_bg(data.loleft,data.lotop1,9,1)..
-	    
 			"list[current_player;main;"..data.loleft..","..data.lotop..";9,3;9]"..
+			"list[current_player;main;"..data.loleft..","..data.lotop1..";9,1;]"..
 			mcl_formspec.get_itemslot_bg(data.hileft,1,data.width,data.height)..
-			mcl_formspec.get_itemslot_bg(data.loleft,data.lotop,9,3)..
-			"listring[]"
+			mcl_formspec.get_itemslot_bg(data.loleft,data.lotop,9,4)..
+			"listring[current_player;main]"..
+			"listring[context;main]"
 	if data.sort then
 		data.base_formspec = data.base_formspec.."button["..data.hileft..","..(data.height+1.1)..";1,0.8;sort;"..S("Sort").."]"
 	end
