@@ -40,8 +40,10 @@ function technic.register_generator(data)
 		"list[current_name;src;3,1;1,1;]"..
 		mcl_formspec.get_itemslot_bg(3,1,1,1)..
 		"image[4,1;1,1;default_furnace_fire_bg.png]"..
-		"list[current_player;main;0,5;9,4;]"..
-		mcl_formspec.get_itemslot_bg(0,5,9,4)..
+		"list[current_player;main;0,5;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
+	    "list[current_player;main;0,8;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
 		"listring[]"
 	
 	local desc = S("Fuel-Fired %s Generator"):format(tier)
@@ -105,8 +107,10 @@ function technic.register_generator(data)
 			mcl_formspec.get_itemslot_bg(3,1,1,1)..
 			"image[4, 1;1, 1;default_furnace_fire_bg.png^[lowpart:"..
 			(percent)..":default_furnace_fire_fg.png]"..
-			"list[current_player;main;0, 5;9, 4;]"..
-			mcl_formspec.get_itemslot_bg(0,5,9,4)..
+		"list[current_player;main;0,5;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
+	    "list[current_player;main;0,8;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
 			"listring[]"..
 			form_buttons
 		)
@@ -255,8 +259,10 @@ function technic.register_generator(data)
 				mcl_formspec.get_itemslot_bg(3,1,1,1)..
 				"image[4, 1;1, 1;default_furnace_fire_bg.png^[lowpart:"..
 				(percent)..":default_furnace_fire_fg.png]"..
-				"list[current_player;main;0, 5;9, 4;]"..
-				mcl_formspec.get_itemslot_bg(0,5,9,4)..
+		"list[current_player;main;0,5;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
+	    "list[current_player;main;0,8;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
 				"listring[]"..
 				form_buttons
 			)
@@ -291,8 +297,10 @@ function technic.register_generator(data)
 				mcl_formspec.get_itemslot_bg(3,1,1,1)..
 				"image[4, 1;1, 1;default_furnace_fire_bg.png^[lowpart:"..
 				(percent)..":default_furnace_fire_fg.png]"..
-				"list[current_player;main;0, 5;9, 4;]"..
-				mcl_formspec.get_itemslot_bg(0,5,9,4)..
+		"list[current_player;main;0,5;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
+	    "list[current_player;main;0,8;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
 				"listring[]"..
 				form_buttons
 			)

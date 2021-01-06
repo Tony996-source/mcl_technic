@@ -28,8 +28,10 @@ local workshop_formspec =
 	"list[current_name;upgrade2;2,3;1,1;]"..
 	mcl_formspec.get_itemslot_bg(2,3,1,1)..
 	"label[1,4;"..S("Upgrade Slots").."]"..
-	"list[current_player;main;0,5;9,4;]"..
-	mcl_formspec.get_itemslot_bg(0,5,9,4)..
+	"list[current_player;main;0,5;9,3;9]"..
+	mcl_formspec.get_itemslot_bg(0,5,9,3)..
+	"list[current_player;main;0,8;9,1;]"..
+	mcl_formspec.get_itemslot_bg(0,8,9,1)..
 	"listring[current_player;main]"..
 	"listring[current_name;src]"..
 	"listring[current_player;main]"..

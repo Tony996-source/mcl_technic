@@ -28,8 +28,10 @@ minetest.register_node("pipeworks:trashcan", {
 				"label[1,0;Trash Can]"..
 				"list[context;trash;3.5,1;1,1;]"..
 				mcl_formspec.get_itemslot_bg(3.5,1,1,1)..
-				"list[current_player;main;0,3;9,4;]" ..
-				mcl_formspec.get_itemslot_bg(0,3,9,4)..
+		"list[current_player;main;0,3;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,3,9,3)..
+	    "list[current_player;main;0,6;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,6,9,1)..
 				"listring[]")
 		meta:set_string("infotext", "Trash Can")
 		meta:get_inventory():set_size("trash", 1)

@@ -124,8 +124,10 @@ function technic.register_battery_box(data)
 		"label[3,0;"..S("Charge").."]"..
 		"label[5,0;"..S("Discharge").."]"..
 		"label[1,3;"..S("Power level").."]"..
-		"list[current_player;main;0,5;9,4;]"..
-		mcl_formspec.get_itemslot_bg(0,5,9,4)..
+				"list[current_player;main;0,5;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
+	    "list[current_player;main;0,8;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
 		"listring[context;dst]"..
 		"listring[current_player;main]"..
 		"listring[context;src]"..

@@ -43,8 +43,10 @@ if pipeworks.enable_mese_tube then
 			"image[0,4;1,1;pipeworks_blue.png]"..
 			"image[0,5;1,1;pipeworks_red.png]"..
 			buttons_formspec..
-			"list[current_player;main;0,7;9,4;]" ..
-			mcl_formspec.get_itemslot_bg(0,7,9,4)..
+			"list[current_player;main;0,7;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,7,9,3)..
+	    "list[current_player;main;0,10;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,10,9,1)..
 			"listring[current_player;main]" ..
 			"listring[current_player;main]" ..
 			"listring[context;line1]" ..

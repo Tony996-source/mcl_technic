@@ -49,9 +49,12 @@ function technic.register_base_machine(data)
 		mcl_formspec.get_itemslot_bg(4-input_size,1,input_size,1)..
 		"list[current_name;dst;5,1;2,2;]"..
 		mcl_formspec.get_itemslot_bg(5,1,2,2)..
-		"list[current_player;main;0,5;9,4;]"..
-		mcl_formspec.get_itemslot_bg(0,5,9,4)..
+		"list[current_player;main;0,5;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
+	    "list[current_player;main;0,8;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
 		"label[0,0;"..machine_desc:format(tier).."]"..
+		"listring[current_player;main]"..
 		"listring[current_name;dst]"..
 		"listring[current_player;main]"..
 		"listring[current_name;src]"..
@@ -63,6 +66,7 @@ function technic.register_base_machine(data)
 			"list[current_name;upgrade2;2,3;1,1;]"..
 			mcl_formspec.get_itemslot_bg(2,3,1,1)..
 			"label[1,4;"..S("Upgrade Slots").."]"..
+			"listring[current_player;main]"..
 			"listring[current_name;upgrade1]"..
 			"listring[current_player;main]"..
 			"listring[current_name;upgrade2]"..

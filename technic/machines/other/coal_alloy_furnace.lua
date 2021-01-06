@@ -23,8 +23,10 @@ local formspec =
 	mcl_formspec.get_itemslot_bg(2,1,2,1)..
 	"list[current_name;dst;5,1;2,2;]"..
 	mcl_formspec.get_itemslot_bg(5,1,2,2)..
-	"list[current_player;main;0,5;9,4;]"..
-	mcl_formspec.get_itemslot_bg(0,5,9,4)..
+			"list[current_player;main;0,5;9,3;9]"..
+	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
+	    "list[current_player;main;0,8;9,1;]"..
+	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
 	"listring[current_name;dst]"..
 	"listring[current_player;main]"..
 	"listring[current_name;src]"..

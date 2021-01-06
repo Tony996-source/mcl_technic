@@ -778,22 +778,6 @@ for white  = 0, 1 do
 			end,
 		},
 		after_place_node = pipeworks.after_place,
-		on_blast = function(pos, intensity)
-			if not intensity or intensity > 1 + 3^0.5 then
-				minetest.remove_node(pos)
-				return {string.format("%s_%s", name, dropname)}
-			end
-			minetest.swap_node(pos, {name = "pipeworks:broken_tube_1"})
-			pipeworks.scan_for_tube_objects(pos)
-		end,
-		on_blast = function(pos, intensity)
-			if not intensity or intensity > 1 + 3^0.5 then
-				minetest.remove_node(pos)
-				return {string.format("%s_%s", name, dropname)}
-			end
-			minetest.swap_node(pos, {name = "pipeworks:broken_tube_1"})
-			pipeworks.scan_for_tube_objects(pos)
-		end,
 	})
 end
 end
@@ -801,78 +785,6 @@ end
 end
 end
 end
-
-------------------------------------
--- Overheated Lua controlled Tube --
-------------------------------------
-
-local tiles_burnt = table.copy(tiles_base)
-tiles_burnt[1] = tiles_burnt[1].."^(pipeworks_lua_tube_port_burnt.png^[transformR90)"
-tiles_burnt[2] = tiles_burnt[2].."^(pipeworks_lua_tube_port_burnt.png^[transformR90)"
-tiles_burnt[5] = tiles_burnt[5].."^(pipeworks_lua_tube_port_burnt.png^[transformR270)"
-tiles_burnt[6] = tiles_burnt[6].."^(pipeworks_lua_tube_port_burnt.png^[transformR90)"
-tiles_burnt[1] = tiles_burnt[1].."^(pipeworks_lua_tube_port_burnt.png^[transformR270)"
-tiles_burnt[2] = tiles_burnt[2].."^(pipeworks_lua_tube_port_burnt.png^[transformR270)"
-tiles_burnt[5] = tiles_burnt[5].."^(pipeworks_lua_tube_port_burnt.png^[transformR90)"
-tiles_burnt[6] = tiles_burnt[6].."^(pipeworks_lua_tube_port_burnt.png^[transformR270)"
-tiles_burnt[3] = tiles_burnt[3].."^(pipeworks_lua_tube_port_burnt.png^[transformR180)"
-tiles_burnt[4] = tiles_burnt[4].."^(pipeworks_lua_tube_port_burnt.png^[transformR180)"
-tiles_burnt[5] = tiles_burnt[5].."^(pipeworks_lua_tube_port_burnt.png^[transformR180)"
-tiles_burnt[6] = tiles_burnt[6].."^(pipeworks_lua_tube_port_burnt.png^[transformR180)"
-tiles_burnt[3] = tiles_burnt[3].."^pipeworks_lua_tube_port_burnt.png"
-tiles_burnt[4] = tiles_burnt[4].."^pipeworks_lua_tube_port_burnt.png"
-tiles_burnt[5] = tiles_burnt[5].."^pipeworks_lua_tube_port_burnt.png"
-tiles_burnt[6] = tiles_burnt[6].."^pipeworks_lua_tube_port_burnt.png"
-tiles_burnt[1] = tiles_burnt[1].."^(pipeworks_lua_tube_port_burnt.png^[transformR180)"
-tiles_burnt[2] = tiles_burnt[2].."^pipeworks_lua_tube_port_burnt.png"
-tiles_burnt[3] = tiles_burnt[3].."^(pipeworks_lua_tube_port_burnt.png^[transformR90)"
-tiles_burnt[4] = tiles_burnt[4].."^(pipeworks_lua_tube_port_burnt.png^[transformR270)"
-tiles_burnt[1] = tiles_burnt[1].."^pipeworks_lua_tube_port_burnt.png"
-tiles_burnt[2] = tiles_burnt[2].."^(pipeworks_lua_tube_port_burnt.png^[transformR180)"
-tiles_burnt[3] = tiles_burnt[3].."^(pipeworks_lua_tube_port_burnt.png^[transformR270)"
-tiles_burnt[4] = tiles_burnt[4].."^(pipeworks_lua_tube_port_burnt.png^[transformR90)"
-
-minetest.register_node("pipeworks:lua_tube_burnt", {
-	drawtype = "nodebox",
-	tiles = tiles_burnt,
-	is_burnt = true,
-	paramtype = "light",
-	groups = {pickaxey=1,axey=1, handy=1, swordy=1, tube = 1, tubedevice = 1, not_in_creative_inventory=1},
-	drop = "pipeworks:lua_tube",
-	sunlight_propagates = true,
-	selection_box = selection_box,
-	node_box = node_box,
-	on_construct = reset_meta,
-	on_receive_fields = on_receive_fields,
-	sounds = mcl_sounds.node_sound_wood_defaults(),
-	_mcl_blast_resistance = 0.3,
-	    _mcl_hardness = 0.3,
-	virtual_portstates = {red = false, blue = false, yellow = false,
-		green = false, black = false, white = false},
-	mesecons = {
-		effector = {
-			rules = mesecon.rules.alldirs,
-			action_change = function(pos, _, rule_name, new_state)
-				update_real_port_states(pos, rule_name, new_state)
-			end,
-		},
-	},
-	tubelike = 1,
-	tube = {
-		connect_sides = {front = 1, back = 1, left = 1, right = 1, top = 1, bottom = 1},
-		priority = 50,
-	},
-	after_place_node = pipeworks.after_place,
-	after_dig_node = pipeworks.after_dig,
-	on_blast = function(pos, intensity)
-		if not intensity or intensity > 1 + 3^0.5 then
-			minetest.remove_node(pos)
-			return {string.format("%s_%s", name, dropname)}
-		end
-		minetest.swap_node(pos, {name = "pipeworks:broken_tube_1"})
-		pipeworks.scan_for_tube_objects(pos)
-	end,
-})
 
 ------------------------
 -- Craft Registration --
