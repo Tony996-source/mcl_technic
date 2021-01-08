@@ -114,29 +114,7 @@ minetest.clear_craft({
 	},
 })
 
--- Register Missing Stairs and slabs
-
-mcl_stairs.register_stair_and_slab_simple(colour[1].."concrete", "mcl_colorblocks:concrete_"..colour[1], colour[3].."Concrete Stair", colour[3].."concrete Slab", colour[3].."Double concrete Slab")
-
-mcl_stairs.register_stair_and_slab_simple(colour[1].."hardened_clay", "mcl_colorblocks:hardened_clay_"..colour[1], colour[3].."hardened_clay Stair", colour[3].."hardened_clay Slab", colour[3].."Double hardened_clay Slab")
-
-minetest.register_craft({
-	output = 'mcl_colorblocks:concrete_' .. colour[1],
-	recipe = {
-		{'mcl_stairs:slab_' .. colour[1] .. 'concrete'},
-		{'mcl_stairs:slab_' .. colour[1] .. 'concrete'},
-	}
-})
-
 -- Register New Crafts
-
-minetest.register_craft({
-	output = 'mcl_colorblocks:hardened_clay_' .. colour[1],
-	recipe = {
-		{'mcl_stairs:slab_' .. colour[1] .. 'hardened_clay'},
-		{'mcl_stairs:slab_' .. colour[1] .. 'hardened_clay'},
-	}
-})
 
 minetest.register_craft({
 	type = "shapeless",

@@ -1,16 +1,30 @@
 minetest.register_node("pipeworks:trashcan", {
 	description = "Trash Can", 
-	drawtype = "normal", 
+	drawtype = "nodebox", 
 	tiles = {
+		"pipeworks_trashcan_top.png",
 		"pipeworks_trashcan_bottom.png",
-		"pipeworks_trashcan_bottom.png",
 		"pipeworks_trashcan_side.png",
 		"pipeworks_trashcan_side.png",
 		"pipeworks_trashcan_side.png",
-		"pipeworks_trashcan_side.png",
+		"pipeworks_trashcan_side.png"
 	}, 
 	groups = {pickaxey=1, axey=1, swordy=1, handy=1, tubedevice = 1, tubedevice_receiver = 1}, 
 	stack_max = 64,
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.375, -0.375, 0.5, 0.375},
+			{0.375, -0.5, -0.375, 0.5, 0.5, 0.375},
+			{-0.5, -0.5, -0.5, 0.5, 0.5, -0.375},
+			{-0.5, -0.5, 0.375, 0.5, 0.5, 0.5},
+			{-0.375, -0.5, -0.375, 0.375, 0.375, 0.375},
+		},
+	},
+	selection_box = {
+			type = "fixed",
+			fixed = {-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+		},
 	_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
 	tube = {

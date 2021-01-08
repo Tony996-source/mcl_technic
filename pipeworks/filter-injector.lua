@@ -42,14 +42,17 @@ local function set_filter_formspec(data, meta)
 			"label[1,0;"..minetest.formspec_escape(itemname).."]"..
 			"label[0,1;Prefer item types:]"..
 			"list[context;main;0,1.5;8,2;]"..
+			mcl_formspec.get_itemslot_bg(0,1.5,8,2)..
 			fs_helpers.cycling_button(meta, "button[0,3.5;4,1", "slotseq_mode",
 				{"Sequence slots by Priority",
 				 "Sequence slots Randomly",
 				 "Sequence slots by Rotation"})..
 			exmatch_button..
 			"list[current_player;main;0,4.5;9,3;9]" ..
-			mcl_formspec.get_itemslot_bg(0,7.5,9,1)..
-			"listring[]"
+			"list[current_player;main;0,4.5;9,1;]" ..
+			mcl_formspec.get_itemslot_bg(0,4.5,9,4)..
+			"listring[current_player;main]" ..
+			"listring[context;main]"
 	end
 	meta:set_string("formspec", formspec)
 end
@@ -387,7 +390,7 @@ for _, data in ipairs({
 			"pipeworks_"..data.name.."_top.png",
 		},
 		paramtype2 = "facedir",
-		groups = {snappy = 2, choppy = 2, oddly_breakable_by_hand = 2, mesecon = 2},
+		groups = {pickaxey=2, swordy=2, axey=2, handy=1, mesecon=2},
 		legacy_facedir_simple = true,
 		sounds = mcl_sounds.node_sound_wood_defaults(),
 		stack_max = 64,
