@@ -10,5 +10,5 @@ minetest.register_craft({
 })
 
 
-technic.register_alloy_furnace({tier = "HV", speed = 8, upgrade = 2, tube = 2, demand = {6000, 4000, 2000}})
+technic.register_alloy_furnace({tier = "HV", speed = 16, upgrade = 2, tube = 2, demand = {6000, 4000, 2000}})
 
