@@ -10,8 +10,8 @@ end
 
 local recipes = {
 	{"mcl_core:snowblock",          "mcl_core:ice"},
-	{"mcl_core:sand",               "mcl_core:sandstone"},
-	{"mcl_core:redsand",            "mcl_core:redsandstone"},
+	{"mcl_core:sand",               "mcl_core:sandstone 2"},
+	{"mcl_core:redsand",            "mcl_core:redsandstone 2"},
 	{"technic:coal_dust 2",         "technic:graphite"},
 	{"technic:carbon_cloth",        "technic:carbon_plate 2"},
     {"mcl_core:coalblock",          "mcl_core:diamond 2"},

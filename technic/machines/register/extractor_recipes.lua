@@ -24,10 +24,10 @@ end
 	{"mcl_flowers:tulip_orange", "mcl_dye:orange 4"},
 	{"mcl_end:chorus_fruit_popped", "mcl_dye:purple 6"},
 	{"technic:oil", "pipeworks:oil_extract 6"},
-	{"technic:sawdust", "technic:oil 2"},
+	{"technic:sawdust 2", "technic:oil"},
 	{"technic:stone_dust 5", "technic:lowgrade_iron_dust"},
-	{"mcl_core:sand 10", "technic:lowgrade_gold_dust"},
-	{"mcl_core:redsand 10", "technic:lowgrade_copper_dust"},
+	{"mcl_core:sand 5", "technic:lowgrade_gold_dust"},
+	{"mcl_core:redsand 5", "technic:lowgrade_copper_dust"},
 }
     
 	for _, data in ipairs(dye_recipes) do
