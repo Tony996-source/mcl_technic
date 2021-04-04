@@ -44,7 +44,9 @@ function technic.register_generator(data)
 	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
 	    "list[current_player;main;0,8;9,1;]"..
 	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
-		"listring[]"
+		"listring[current_player;main]"..
+		"listring[current_name;src]"..
+		"listring[current_player;main]"
 	
 	local desc = S("Fuel-Fired %s Generator"):format(tier)
 	
@@ -111,7 +113,9 @@ function technic.register_generator(data)
 	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
 	    "list[current_player;main;0,8;9,1;]"..
 	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
-			"listring[]"..
+			"listring[current_player;main]"..
+		"listring[current_name;src]"..
+		"listring[current_player;main]"..
 			form_buttons
 		)
 	end
@@ -263,7 +267,9 @@ function technic.register_generator(data)
 	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
 	    "list[current_player;main;0,8;9,1;]"..
 	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
-				"listring[]"..
+				"listring[current_player;main]"..
+		"listring[current_name;src]"..
+		"listring[current_player;main]"..
 				form_buttons
 			)
 			return true
@@ -301,7 +307,9 @@ function technic.register_generator(data)
 	    mcl_formspec.get_itemslot_bg(0,5,9,3)..
 	    "list[current_player;main;0,8;9,1;]"..
 	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
-				"listring[]"..
+				"listring[current_player;main]"..
+		"listring[current_name;src]"..
+		"listring[current_player;main]"..
 				form_buttons
 			)
 		end,

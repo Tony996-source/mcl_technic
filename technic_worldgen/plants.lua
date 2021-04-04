@@ -1,4 +1,16 @@
 --
+-- Item Overrides
+--
+
+minetest.override_item("mcl_flowers:tallgrass", {
+groups = {handy=1, shearsy=1, flammable=3, fire_encouragement=60, fire_flammability=100, attached_node=1,plant=1, place_flowerlike=2, non_mycelium_plant=1, dig_by_water=1, destroy_by_lava_flow=1, deco_block=1, flora=1},
+})
+
+minetest.override_item("mcl_flowers:fern", {
+groups = {handy=1, shearsy=1, flammable=3, fire_encouragement=60, fire_flammability=100, attached_node=1,plant=1, place_flowerlike=2, non_mycelium_plant=1, dig_by_water=1, destroy_by_lava_flow=1, deco_block=1, flora=1},
+})
+
+--
 -- 3D Papyrus
 --
 
@@ -106,7 +118,7 @@ minetest.register_node(":mcl_mushrooms:mushroom_brown", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,mushroom=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {dig_immediate=3,mushroom=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1, flora=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -131,7 +143,7 @@ minetest.register_node(":mcl_mushrooms:mushroom_red", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,mushroom=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {dig_immediate=3,mushroom=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1, flora=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -160,7 +172,7 @@ minetest.register_node(":mcl_flowers:tulip_red", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1, flora=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -203,7 +215,7 @@ minetest.register_node(":mcl_flowers:tulip_orange", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -246,7 +258,7 @@ minetest.register_node(":mcl_flowers:tulip_pink", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -289,7 +301,7 @@ minetest.register_node(":mcl_flowers:tulip_white", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -338,7 +350,7 @@ minetest.register_node(":mcl_flowers:allium", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -388,7 +400,7 @@ minetest.register_node(":mcl_flowers:azure_bluet", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -453,7 +465,7 @@ minetest.register_node(":mcl_flowers:oxeye_daisy", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -539,7 +551,7 @@ minetest.register_node(":mcl_flowers:dandelion", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -581,7 +593,7 @@ minetest.register_node(":mcl_flowers:blue_orchid", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",
@@ -651,7 +663,7 @@ minetest.register_node(":mcl_flowers:poppy", {
 	sunlight_propagates = true,
 	paramtype = "light",
 	walkable = false,
-	groups = {dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
+	groups = {flora=1, dig_immediate=3,flower=1,attached_node=1,dig_by_water=1,destroy_by_lava_flow=1,dig_by_piston=1,enderman_takable=1,deco_block=1},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 	node_box = {
 		type = "fixed",

@@ -12,3 +12,4 @@ mcl_dye?
 mcl_furnaces?
 mcl_formspec
 mcl_experience?
+xpanes

@@ -6,9 +6,9 @@ local S = technic.getter
 minetest.register_craft({
 	output = 'technic:coal_alloy_furnace',
 	recipe = {
-		{'mcl_core:brick', 'mcl_core:brick', 'mcl_core:brick'},
-		{'mcl_core:brick', '', 'mcl_core:brick'},
-		{'mcl_core:brick', 'mcl_core:brick', 'mcl_core:brick'},
+		{'mcl_core:brick_block', 'mcl_core:brick_block', 'mcl_core:brick_block'},
+		{'mcl_core:brick_block', '', 'mcl_core:brick_block'},
+		{'mcl_core:brick_block', 'mcl_core:brick_block', 'mcl_core:brick_block'},
 	}
 })
 

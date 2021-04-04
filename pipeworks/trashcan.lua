@@ -63,7 +63,7 @@ minetest.register_craft({
 	output = "pipeworks:trashcan",
 	recipe = {
 		{ "pipeworks:plastic_sheet", "pipeworks:plastic_sheet", "pipeworks:plastic_sheet" },
-		{ "mcl_core:iron_ingot", "", "mcl_core:iron_ingot" },
-		{ "mcl_core:iron_ingot", "mcl_core:iron_ingot", "mcl_core:iron_ingot" },
+		{ "group:wood", "", "group:wood" },
+		{ "group:wood", "group:wood", "group:wood" },
 	},
 })
