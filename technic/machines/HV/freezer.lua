@@ -9,4 +9,4 @@ minetest.register_craft({
 	}
 })
 
-technic.register_freezer({tier = "HV", demand = {1600, 1200, 800}, speed = 8, upgrade = 2, tube = 2})
+technic.register_freezer({tier = "HV", demand = {1600, 1200, 800}, speed = 20, upgrade = 2, tube = 2})

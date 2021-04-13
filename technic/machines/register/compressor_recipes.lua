@@ -15,7 +15,7 @@ local recipes = {
 	{"technic:coal_dust 2",         "technic:graphite"},
 	{"technic:carbon_cloth",        "technic:carbon_plate 2"},
     {"mcl_core:coalblock",          "mcl_core:diamond 2"},
-    {"technic:sawdust",             "mcl_core:paper 2"},
+    {"technic:sawdust",             "mcl_core:paper"},
 }
 
 for _, data in pairs(recipes) do

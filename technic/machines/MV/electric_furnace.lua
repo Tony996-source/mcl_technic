@@ -14,5 +14,5 @@ minetest.register_craft({
 	}
 })
 
-technic.register_electric_furnace({tier="MV", upgrade=1, tube=1, demand={2000, 1000, 500}, speed=4})
+technic.register_electric_furnace({tier="MV", upgrade=1, tube=1, demand={2000, 1000, 500}, speed=10})
 

@@ -9,5 +9,5 @@ minetest.register_craft({
 	}
 })
 
-technic.register_grinder({tier="HV", demand={1200, 900, 600}, speed=8, upgrade=2, tube=2})
+technic.register_grinder({tier="HV", demand={1200, 900, 600}, speed=20, upgrade=2, tube=2})
 

@@ -10,5 +10,5 @@ minetest.register_craft({
 	}
 })
 
-technic.register_solar_array({tier="HV", power=2000})
+technic.register_solar_array({tier="HV", power=142.86})
 

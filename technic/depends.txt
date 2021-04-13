@@ -5,8 +5,6 @@ screwdriver?
 mesecons?
 mesecons_button?
 mesecons_mvps?
-digilines?
-digiline_remote?
 intllib?
 mcl_dye?
 mcl_furnaces?

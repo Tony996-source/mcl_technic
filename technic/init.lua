@@ -1,16 +1,11 @@
--- Minetest 0.4.7 mod: technic
--- namespace: technic
--- (c) 2012-2013 by RealBadAngel <mk@realbadangel.pl>
 
 local load_start = os.clock()
 
 technic = rawget(_G, "technic") or {}
 technic.creative_mode = minetest.settings:get_bool("creative_mode")
 
-
 local modpath = minetest.get_modpath("technic")
 technic.modpath = modpath
-
 
 -- Boilerplate to support intllib
 if rawget(_G, "intllib") then
@@ -47,7 +42,6 @@ dofile(modpath.."/legacy.lua")
 dofile(modpath.."/craftguide.lua")
 
 dofile(modpath.."/redef.lua")
-
 
 if minetest.settings:get_bool("log_mods") then
 	print(S("[Technic] Loaded in %f seconds"):format(os.clock() - load_start))

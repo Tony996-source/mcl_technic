@@ -18,7 +18,7 @@ minetest.register_ore({
 	wherein         = stonelike,
 	clust_scarcity = 1660,
 	clust_num_ores = 4,
-	clust_size     = 2,
+	clust_size     = 3,
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
@@ -34,7 +34,7 @@ minetest.register_ore({
 	clust_num_ores = 4,
 	clust_size     = 3,
 	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(20),
+	y_max          = mcl_worlds.layer_to_y(30),
 })
 
 minetest.register_ore({
@@ -45,7 +45,7 @@ minetest.register_ore({
 	clust_num_ores = 4,
 	clust_size     = 3,
 	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(20),
+	y_max          = mcl_worlds.layer_to_y(30),
 })
 
 minetest.register_ore({
@@ -56,5 +56,38 @@ minetest.register_ore({
 	clust_num_ores = 4,
 	clust_size     = 3,
 	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(20),
+	y_max          = mcl_worlds.layer_to_y(45),
 })
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_core:stone_with_iron",
+	wherein         = stonelike,
+	clust_scarcity = 1660,
+	clust_num_ores = 4,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(50),
+})
+
+minetest.register_ore({
+        ore_type       = "scatter",
+        ore            = "mcl_nether:quartz_ore",
+        wherein         = {"mcl_nether:netherrack"},
+        clust_scarcity = 1650,
+        clust_num_ores = 8,
+        clust_size     = 4,
+        y_min = mcl_vars.mg_nether_min,
+        y_max = mcl_vars.mg_nether_max,
+    })
+    
+minetest.register_ore({
+        ore_type       = "scatter",
+        ore            = "mcl_nether:quartz_ore",
+        wherein         = {"mcl_nether:netherrack"},
+        clust_scarcity = 1650,
+        clust_num_ores = 8,
+        clust_size     = 4,
+        y_min = mcl_vars.mg_nether_min,
+        y_max = mcl_vars.mg_nether_max,
+    })

@@ -14,5 +14,5 @@ minetest.register_craft({
 	}
 })
 
-technic.register_solar_array({tier="LV", power=10})
+technic.register_solar_array({tier="LV", power=35.715})
 
