@@ -129,9 +129,9 @@ function technic.register_battery_box(data)
 	    "list[current_player;main;0,8;9,1;]"..
 	    mcl_formspec.get_itemslot_bg(0,8,9,1)..
 	    "listring[current_player;main]"..
-		"listring[context;dst]"..
-		"listring[current_player;main]"..
 		"listring[context;src]"..
+		"listring[current_player;main]"..
+		"listring[context;dst]"..
 		"listring[current_player;main]"
 
 	if digilines_path then
