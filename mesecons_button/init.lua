@@ -288,3 +288,15 @@ mesecon.register_button(
 		false,
 		S("A diamond button is a redstone component made out of diamond which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 2.5 seconds."),
 		"mesecons_button_push_")
+		
+mesecon.register_button(
+		"emerald",
+		S("Emerald Button"),
+		"mesecons_emerald_button.png",
+		"mcl_core:emerald",
+		mcl_sounds.node_sound_stone_defaults(),
+		{material_emerald=1,handy=1,pickaxey=1},
+		3,
+		false,
+		S("A emerald button is a redstone component made out of emerald which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 3 seconds."),
+		"mesecons_button_push_")

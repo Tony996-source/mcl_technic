@@ -245,5 +245,18 @@ mesecon.register_pressure_plate(
 	{{"mcl_core:diamond", "mcl_core:diamond"}},
 	mcl_sounds.node_sound_stone_defaults(),
 	{pickaxey=1, material_diamond=1},
-	{ player = true, mob = true },
+	{ player = true },
 	S("A diamond pressure plate is a redstone component which supplies its surrounding blocks with redstone power while a player or mob stands on top of it. It is not triggered by anything else."))
+	
+mesecon.register_pressure_plate(
+	"mesecons_pressureplates:pressure_plate_emerald",
+	S("Emerald Pressure Plate"),
+	{"mesecons_emerald_pressureplate.png"},
+	{"mesecons_emerald_pressureplate.png"},
+	"mesecons_emerald_pressureplate.png",
+	nil,
+	{{"mcl_core:emerald", "mcl_core:emerald"}},
+	mcl_sounds.node_sound_stone_defaults(),
+	{pickaxey=1, material_emerald=1},
+	{ player = true },
+	S("A emerald pressure plate is a redstone component which supplies its surrounding blocks with redstone power while a player or mob stands on top of it. It is not triggered by anything else."))
