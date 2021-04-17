@@ -158,15 +158,15 @@ function mesecon.register_pressure_plate(basename, description, textures_off, te
 end
 
 local items = {
-	{ "iron", "mcl_core:iron_ingot", "technic_iron_pressureplate.png", S("Iron Pressure Plate") },
-	{ "gold", "mcl_core:gold_ingot", "technic_gold_pressureplate.png", S("Gold Pressure Plate") },
-	{ "copper", "technic:copper_ingot", "technic_copper_pressureplate.png", S("Copper Pressure Plate") },
-	{ "Steel", "technic:steel_ingot", "technic_steel_pressureplate.png", S("Steel Pressure Plate" )},
+	{ "iron", "mcl_core:iron_ingot", "mesecons_iron_pressureplate.png", S("Iron Pressure Plate") },
+	{ "gold", "mcl_core:gold_ingot", "mesecons_gold_pressureplate.png", S("Gold Pressure Plate") },
+	{ "copper", "technic:copper_ingot", "mesecons_copper_pressureplate.png", S("Copper Pressure Plate") },
+	{ "Steel", "technic:steel_ingot", "mesecons_steel_pressureplate.png", S("Steel Pressure Plate" )},
 }
 
 for i=1, #items do
 	mesecon.register_pressure_plate(
-		"technic_pressureplates:pressure_plate_"..items[i][1],
+		"mesecons_pressureplates:pressure_plate_"..items[i][1],
 		items[i][4],
 		{items[i][3]},
 		{items[i][3]},
@@ -180,38 +180,67 @@ for i=1, #items do
 
 end
 
-mesecon.register_pressure_plate(
-	"technic_pressureplates:pressure_plate_sandstone",
-	S("Sandstone Pressure Plate"),
-	{"technic_sandstone_pressureplate.png"},
-	{"technic_sandstone_pressureplate.png"},
-	"technic_sandstone_pressureplate.png",
-	nil,
-	{{"mcl_core:sandstone", "mcl_core:sandstone"}},
-	mcl_sounds.node_sound_stone_defaults(),
-	{pickaxey=1, material_stone=1},
-	{ player = true, mob = true },
-	S("A sandstone pressure plate is a redstone component which supplies its surrounding blocks with redstone power while a player or mob stands on top of it. It is not triggered by anything else."))
+local woods = {
+	{ "wood", "mcl_core:wood", "mesecons_wood_pressureplate.png", S("Oak Pressure Plate") },
+	{ "acaciawood", "mcl_core:acaciawood", "mesecons_acacia_pressureplate.png", S("Acacia Pressure Plate") },
+	{ "birchwood", "mcl_core:birchwood", "mesecons_birch_pressureplate.png", S("Birch Pressure Plate") },
+	{ "darkwood", "mcl_core:darkwood", "mesecons_big_oak_pressureplate.png", S("Dark Oak Pressure Plate" )},
+	{ "sprucewood", "mcl_core:sprucewood", "mesecons_spruce_pressureplate.png", S("Spruce Pressure Plate") },
+	{ "junglewood", "mcl_core:junglewood", "mesecons_jungle_pressureplate.png", S("Jungle Pressure Plate") },
+}
+
+for w=1, #woods do
+	mesecon.register_pressure_plate(
+		"mesecons_pressureplates:pressure_plate_"..woods[w][1],
+		woods[w][4],
+		{woods[w][3]},
+		{woods[w][3]},
+		woods[w][3],
+		nil,
+		{{woods[w][2], woods[w][2]}},
+		mcl_sounds.node_sound_wood_defaults(),
+		{axey=1, material_wood=1},
+		nil,
+		S("A wooden pressure plate is a redstone component which supplies its surrounding blocks with redstone power while any movable object (including dropped items, players and mobs) rests on top of it."))
+
+	minetest.register_craft({
+		type = "fuel",
+		recipe = "mesecons_pressureplates:pressure_plate_"..woods[w][1].."_off",
+		burntime = 15
+	})
+
+end
+
+local stones = {
+	{"stone", "mcl_core:stone", "mesecons_stone_pressureplate.png", S("Stone Pressure Plate") },
+	{"sandstone", "mcl_core:sandstone", "mesecons_sandstone_pressureplate.png", S("Sandstone Pressure Plate") },
+	{"red_sandstone", "mcl_core:redsandstone", "mesecons_red_sandstone_pressureplate.png", S("Red Sandstone Pressure Plate") },
+	{"andesite", "mcl_core:andesite", "mesecons_andesite_pressureplate.png", S("Andesite Pressure Plate") },
+	{"diorite", "mcl_core:diorite", "mesecons_diorite_pressureplate.png", S("Diorite Pressure Plate") },
+	{"granite", "mcl_core:granite", "mesecons_granite_pressureplate.png", S("Granite Pressure Plate") },
+}
+
+for s=1, #stones do
+    mesecon.register_pressure_plate(
+		"mesecons_pressureplates:pressure_plate_"..stones[s][1],
+		stones[s][4],
+		{stones[s][3]},
+		{stones[s][3]},
+		stones[s][3],
+		nil,
+		{{stones[s][2], stones[s][2]}},
+		mcl_sounds.node_sound_stone_defaults(),
+		{pickaxey=1, material_stone=1},
+		{ player = true, mob = true },
+		S("A "..stones[s][1].." pressure plate is a redstone component which supplies its surrounding blocks with redstone power while a player or mob stands on top of it. It is not triggered by anything else."))
+end
 
 mesecon.register_pressure_plate(
-	"technic_pressureplates:pressure_plate_red_sandstone",
-	S("Red Sandstone Pressure Plate"),
-	{"technic_red_sandstone_pressureplate.png"},
-	{"technic_red_sandstone_pressureplate.png"},
-	"technic_red_sandstone_pressureplate.png",
-	nil,
-	{{"mcl_core:redsandstone", "mcl_core:redsandstone"}},
-	mcl_sounds.node_sound_stone_defaults(),
-	{pickaxey=1, material_stone=1},
-	{ player = true, mob = true },
-	S("A red sandstone pressure plate is a redstone component which supplies its surrounding blocks with redstone power while a player or mob stands on top of it. It is not triggered by anything else."))
-	
-mesecon.register_pressure_plate(
-	"technic_pressureplates:pressure_plate_diamond",
+	"mesecons_pressureplates:pressure_plate_diamond",
 	S("Diamond Pressure Plate"),
-	{"technic_diamond_pressureplate.png"},
-	{"technic_diamond_pressureplate.png"},
-	"technic_diamond_pressureplate.png",
+	{"mesecons_diamond_pressureplate.png"},
+	{"mesecons_diamond_pressureplate.png"},
+	"mesecons_diamond_pressureplate.png",
 	nil,
 	{{"mcl_core:diamond", "mcl_core:diamond"}},
 	mcl_sounds.node_sound_stone_defaults(),

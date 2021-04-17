@@ -1,7 +1,7 @@
 -- WALL BUTTON
 -- A button that when pressed emits power for a short moment and then turns off again
 
-local S = minetest.get_translator("technic_button")
+local S = minetest.get_translator("mesecons_button")
 
 local button_sounds = {} -- remember button push sounds
 
@@ -27,7 +27,7 @@ mesecon.push_button = function(pos, node)
 		return
 	end
 	local def = minetest.registered_nodes[node.name]
-	minetest.set_node(pos, {name="technic_button:button_"..def._mcl_button_basename.."_on", param2=node.param2})
+	minetest.set_node(pos, {name="mesecons_button:button_"..def._mcl_button_basename.."_on", param2=node.param2})
 	mesecon.receptor_on(pos, button_get_output_rules(node))
 	local sfx = button_sounds[node.name]
 	if sfx then
@@ -101,7 +101,7 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 	if not button_sound then
 		button_sound = "mesecons_button_push"
 	end
-	button_sounds["technic_button:button_"..basename.."_off"] = button_sound
+	button_sounds["mesecons_button:button_"..basename.."_off"] = button_sound
 
 	if push_by_arrow then
 		groups_off.button_push_by_arrow = 1
@@ -112,12 +112,12 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 	if push_by_arrow then
 		tt = tt .. "\n" .. S("Pushable by arrow")
 	end
-	minetest.register_node("technic_button:button_"..basename.."_off", {
+	minetest.register_node("mesecons_button:button_"..basename.."_off", {
 		drawtype = "nodebox",
 		tiles = {texture},
-		wield_image = "technic_button_wield_mask.png^"..texture.."^technic_button_wield_mask.png^[makealpha:255,126,126",
+		wield_image = "mesecons_button_wield_mask.png^"..texture.."^mesecons_button_wield_mask.png^[makealpha:255,126,126",
 		-- FIXME: Use proper 3D inventory image
-		inventory_image = "technic_button_wield_mask.png^"..texture.."^technic_button_wield_mask.png^[makealpha:255,126,126",
+		inventory_image = "mesecons_button_wield_mask.png^"..texture.."^mesecons_button_wield_mask.png^[makealpha:255,126,126",
 		wield_scale = { x=1, y=1, z=1},
 		paramtype = "light",
 		paramtype2 = "wallmounted",
@@ -147,10 +147,10 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 		_mcl_hardness = 0.5,
 	})
 
-	minetest.register_node("technic_button:button_"..basename.."_on", {
+	minetest.register_node("mesecons_button:button_"..basename.."_on", {
 		drawtype = "nodebox",
 		tiles = {texture},
-		wield_image = "technic_button_wield_mask.png^"..texture.."^technic_button_wield_mask.png^[makealpha:255,126,126",
+		wield_image = "mesecons_button_wield_mask.png^"..texture.."^mesecons_button_wield_mask.png^[makealpha:255,126,126",
 		wield_scale = { x=1, y=1, z=0.5},
 		paramtype = "light",
 		paramtype2 = "wallmounted",
@@ -159,7 +159,7 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 		sunlight_propagates = true,
 		node_box = boxes_on,
 		groups = groups_on,
-		drop = 'technic_button:button_'..basename..'_off',
+		drop = 'mesecons_button:button_'..basename..'_off',
 		_doc_items_create_entry = false,
 		node_placement_prediction = "",
 		sounds = sounds,
@@ -171,7 +171,7 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 		_mcl_button_timer = button_timer,
 		on_timer = function(pos, elapsed)
 			local node = minetest.get_node(pos)
-			if node.name=="technic_button:button_"..basename.."_on" then --has not been dug
+			if node.name=="mesecons_button:button_"..basename.."_on" then --has not been dug
 				-- Is button pushable by arrow?
 				if push_by_arrow then
 					-- If there's an arrow stuck in the button, keep it pressed and check
@@ -188,7 +188,7 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 				end
 
 				-- Normal operation: Un-press the button
-				minetest.set_node(pos, {name="technic_button:button_"..basename.."_off",param2=node.param2})
+				minetest.set_node(pos, {name="mesecons_button:button_"..basename.."_off",param2=node.param2})
 				minetest.sound_play(button_sound, {pos=pos, pitch=0.9}, true)
 				mesecon.receptor_off(pos, button_get_output_rules(node))
 			end
@@ -199,64 +199,92 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 	})
 
 	minetest.register_craft({
-		output = "technic_button:button_"..basename.."_off",
+		output = "mesecons_button:button_"..basename.."_off",
 		recipe = {{ recipeitem }},
 	})
 end
 
-local items = {
-	{ "iron", "mcl_core:iron_ingot", "technic_iron_button.png", S("Iron Button") },
-	{ "gold", "mcl_core:gold_ingot", "technic_gold_button.png", S("Gold Button")},
-    { "copper", "technic:copper_ingot", "technic_copper_button.png", S("Copper Button") },
-    { "steel", "technic:steel_ingot", "technic_steel_button.png", S("Steel Button") },
+local metals = {
+	{ "iron", "mcl_core:iron_ingot", "mesecons_iron_button.png", S("Iron Button") },
+	{ "gold", "mcl_core:gold_ingot", "mesecons_gold_button.png", S("Gold Button")},
+    { "copper", "technic:copper_ingot", "mesecons_copper_button.png", S("Copper Button") },
+    { "steel", "technic:steel_ingot", "mesecons_steel_button.png", S("Steel Button") },
 }
 
-for i=1, #items do
+for m=1, #metals do
 	mesecon.register_button(
-		items[i][1],
-		items[i][4],
-		items[i][3],
-		items[i][2],
+		metals[m][1],
+		metals[m][4],
+		metals[m][3],
+		metals[m][2],
 		mcl_sounds.node_sound_metal_defaults(),
 		{material_metal=1,handy=1,pickaxey=1},
 		2,
 		false,
-		S("A "..items[i][1].." button is a redstone component made out of "..items[i][1].." which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 2 seconds."),
+		S("A "..metals[m][1].." button is a redstone component made out of "..metals[m][1].." which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 2 seconds."),
 		"mesecons_button_push_")
+end
+
+local woods = {
+	{ "wood", "mcl_core:wood", "mesecons_wood_button.png", S("Oak Button") },
+	{ "acaciawood", "mcl_core:acaciawood", "mesecons_acacia_button.png", S("Acacia Button") },
+	{ "birchwood", "mcl_core:birchwood", "mesecons_birch_button.png", S("Birch Button") },
+	{ "darkwood", "mcl_core:darkwood", "mesecons_big_oak_button.png", S("Dark Oak Button") },
+	{ "sprucewood", "mcl_core:sprucewood", "mesecons_spruce_button.png", S("Spruce Button") },
+	{ "junglewood", "mcl_core:junglewood", "mesecons_jungle_button.png", S("Jungle Button") },
+}
+
+for w=1, #woods do
+	mesecon.register_button(
+		woods[w][1],
+		woods[w][4],
+		woods[w][3],
+		woods[w][2],
+		mcl_sounds.node_sound_wood_defaults(),
+		{material_wood=1,handy=1,axey=1},
+		1.5,
+		true,
+		S("A wooden button is a redstone component made out of wood which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 1.5 seconds. Wooden buttons may also be pushed by arrows."),
+		"mesecons_button_push_wood")
+
+	minetest.register_craft({
+		type = "fuel",
+		recipe = "mesecons_button:button_"..woods[w][1].."_off",
+		burntime = 5,
+	})
+end
+
+local stones = {
+	{"stone", "mcl_core:stone", "mesecons_stone_button.png", S("Stone Button") },
+	{"sandstone", "mcl_core:sandstone", "mesecons_sandstone_button.png", S("Sandstone Button") },
+	{"red_sandstone", "mcl_core:redsandstone", "mesecons_red_sandstone_button.png", S("Red Sandstone Button") },
+	{"andesite", "mcl_core:andesite", "mesecons_andesite_button.png", S("Andesite Button") },
+	{"diorite", "mcl_core:diorite", "mesecons_diorite_button.png", S("Diorite Button") },
+	{"granite", "mcl_core:granite", "mesecons_granite_button.png", S("Granite Button") },
+}
+
+for s=1, #stones do
+    mesecon.register_button(
+		stones[s][1],
+		stones[s][4],
+		stones[s][3],
+		stones[s][2],
+		mcl_sounds.node_sound_wood_defaults(),
+		{material_wood=1,handy=1,axey=1},
+		1,
+		true,
+		S("A "..stones[s][1].." button is a redstone component made out of "..stones[s][1].." which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 1 seconds. Wooden buttons may also be pushed by arrows."),
+		"mesecons_button_push_wood")
 end
 
 mesecon.register_button(
 		"diamond",
 		S("Diamond Button"),
-		"technic_diamond_button.png",
+		"mesecons_diamond_button.png",
 		"mcl_core:diamond",
 		mcl_sounds.node_sound_stone_defaults(),
 		{material_diamond=1,handy=1,pickaxey=1},
-		3,
+		2.5,
 		false,
-		S("A diamond button is a redstone component made out of diamond which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 3 seconds."),
-		"mesecons_button_push_")
-	
-mesecon.register_button(
-		"red_sandstone",
-		S("Red Sandstone Button"),
-		"technic_red_sandstone_button.png",
-		"mcl_core:redsandstone",
-		mcl_sounds.node_sound_stone_defaults(),
-		{material_stone=1,handy=1,pickaxey=1},
-		1.5,
-		false,
-		S("A red sandstone button is a redstone component made out of red sandstone which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 1.5 seconds."),
-		"mesecons_button_push_")
-		
-mesecon.register_button(
-		"sandstone",
-		S("Sandstone Button"),
-		"technic_sandstone_button.png",
-		"mcl_core:sandstone",
-		mcl_sounds.node_sound_stone_defaults(),
-		{material_stone=1,handy=1,pickaxey=1},
-		1.5,
-		false,
-		S("A sandstone button is a redstone component made out of sandstone which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 1.5 seconds."),
+		S("A diamond button is a redstone component made out of diamond which can be pushed to provide redstone power. When pushed, it powers adjacent redstone components for 2.5 seconds."),
 		"mesecons_button_push_")
