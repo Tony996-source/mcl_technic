@@ -504,6 +504,16 @@ minetest.register_craft( {
 	},
 })
 
+
+minetest.register_craft( {
+	output = "pipeworks:mese_filter 2",
+	recipe = {
+	        { "mcl_core:iron_ingot", "mcl_core:iron_ingot", "pipeworks:plastic_sheet" },
+	        { "group:stick", "mesecons_torch:redstoneblock", "pipeworks:plastic_sheet" },
+	        { "mcl_core:iron_ingot", "mcl_core:iron_ingot", "pipeworks:plastic_sheet" }
+	},
+})
+
 --[[
 In the past the filter-injectors had real items in their inventories. This code
 puts them to the input to the filter-injector if possible. Else the items are
