@@ -10,4 +10,4 @@ dofile(modpath.."/crafts.lua")
 dofile(modpath.."/mapgen.lua")
 dofile(modpath.."/plants.lua")
 dofile(modpath.."/flowerpots.lua")
-
+dofile(modpath.."/trees.lua")

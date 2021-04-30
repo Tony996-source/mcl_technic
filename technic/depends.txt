@@ -8,6 +8,7 @@ mesecons_mvps?
 intllib?
 mcl_dye?
 mcl_furnaces?
-mcl_formspec
+mcl_formspec?
 mcl_experience?
-xpanes
+xpanes?
+mcl_colorblocks?

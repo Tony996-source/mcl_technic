@@ -39,3 +39,6 @@ minetest.register_node(":technic:copper_block", {
 	_mcl_hardness = 5,
 })
 
+minetest.override_item("mcl_nether:netheriteblock", {
+    tiles = {"netherite_block.png"},
+})
