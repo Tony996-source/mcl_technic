@@ -708,3 +708,20 @@ minetest.register_node(":mcl_flowers:poppy", {
 	on_place = on_place,
 	_mcl_blast_resistance = 0,
 })
+
+---------------------------------------------------
+---------------- Berry Bush -----------------------
+---------------------------------------------------
+
+minetest.override_item("mcl_sweet_berry:sweet_berry_bush_0", {
+    tiles = {"sweet_berry_bush_stage0.png"},
+})
+minetest.override_item("mcl_sweet_berry:sweet_berry_bush_1", {
+    tiles = {"sweet_berry_bush_stage1.png"},
+})
+minetest.override_item("mcl_sweet_berry:sweet_berry_bush_2", {
+    tiles = {"sweet_berry_bush_stage2.png"},
+})
+minetest.override_item("mcl_sweet_berry:sweet_berry_bush_3", {
+    tiles = {"sweet_berry_bush_stage3.png"},
+})
