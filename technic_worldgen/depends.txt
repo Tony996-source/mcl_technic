@@ -5,4 +5,3 @@ mcl_flowers?
 mcl_mushrooms?
 mcl_netherite?
 mcl_flowerpots?
-mcl_sweet_berry?
