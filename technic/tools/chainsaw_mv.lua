@@ -225,6 +225,17 @@ minetest.register_tool("technic:chainsaw_mv", {
 	end,
 })
 
+if minetest.get_modpath("mcl_copper") then
+minetest.register_craft({
+	output = "technic:chainsaw_mv",
+	recipe = {
+	{"mcl_core:iron_ingot", "group:button",   "technic:battery"},
+	{"mcl_core:iron_ingot", "mcl_copper:copper_ingot", "technic:mv_cable"},
+	{"",          "",         "mcl_core:iron_ingot"},
+	},
+
+})
+else
 minetest.register_craft({
 	output = "technic:chainsaw_mv",
 	recipe = {
@@ -234,4 +245,4 @@ minetest.register_craft({
 	},
 
 })
-
+end

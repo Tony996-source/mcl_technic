@@ -43,6 +43,7 @@ end
 minetest.register_craftitem(":technic:copper_dust", {
 	description = ("Copper Dust"),
 	inventory_image = "technic_copper_dust.png",
+	groups = { craftitem=1 },
 })
 
 minetest.override_item("mcl_nether:netheriteblock", {
@@ -52,4 +53,5 @@ minetest.override_item("mcl_nether:netheriteblock", {
 minetest.register_craftitem(":technic:copper_nugget", {
 	description = ("Copper Nugget"),
 	inventory_image = "technic_copper_nugget.png",
+	groups = { craftitem=1 },
 })

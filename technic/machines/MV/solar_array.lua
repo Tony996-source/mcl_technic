@@ -1,4 +1,13 @@
-
+if minetest.get_modpath("mcl_copper") then
+minetest.register_craft({
+	output = 'technic:solar_array_mv 1',
+	recipe = {
+	{'technic:solar_array_lv', 'technic:solar_array_lv', 'technic:solar_array_lv'},
+	{'mcl_core:iron_ingot', 'mcl_copper:copper_ingot', 'mcl_core:iron_ingot'},
+	{'',                  'technic:mv_cable',       ''},
+	}
+})
+else
 minetest.register_craft({
 	output = 'technic:solar_array_mv 1',
 	recipe = {
@@ -7,7 +16,7 @@ minetest.register_craft({
 	{'',                  'technic:mv_cable',       ''},
 	}
 })
-
+end
 technic.register_solar_array({tier="MV", power=71.43})
 
 -- compatibility alias for upgrading from old versions of technic

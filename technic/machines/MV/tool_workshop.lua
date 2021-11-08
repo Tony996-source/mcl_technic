@@ -6,7 +6,16 @@ minetest.register_alias("tool_workshop_mv", "technic:tool_workshop_mv")
 local S = technic.getter
 
 local tube_entry = "^pipeworks_tube_connection_metallic.png"
-
+if minetest.get_modpath("mcl_copper") then
+minetest.register_craft({
+	output = 'technic:tool_workshop_mv',
+	recipe = {
+	{'group:wood',  'mcl_core:diamond',  'group:wood'},
+	{'technic:carbon_cloth', 'mcl_copper:copper_ingot', 'technic:carbon_cloth'},
+	{'mcl_core:obsidian', 'technic:mv_cable', 'mcl_core:obsidian'},
+	}
+})
+else
 minetest.register_craft({
 	output = 'technic:tool_workshop_mv',
 	recipe = {
@@ -15,6 +24,7 @@ minetest.register_craft({
 	{'mcl_core:obsidian', 'technic:mv_cable', 'mcl_core:obsidian'},
 	}
 })
+end
 
 local workshop_demand = {5000, 3500, 2000}
 
