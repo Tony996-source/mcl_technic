@@ -63,6 +63,16 @@ local recipes = {
     {"technic:iron_nugget",        "technic:lowgrade_copper_dust"},
 }
 
+if minetest.get_modpath("mcl_raw_ores") then
+	table.insert(recipes, {"mcl_raw_ores:raw_gold",   "technic:gold_dust 2"})
+	table.insert(recipes, {"mcl_raw_ores:raw_iron",   "technic:iron_dust 2"})
+end
+
+if minetest.get_modpath("mcl_copper") then
+	table.insert(recipes, {"mcl_copper:raw_copper",     "technic:copper_dust 2"})
+	table.insert(recipes, {"mcl_copper:copper_ingot",   "technic:copper_dust"})
+end
+
 for _, data in pairs(recipes) do
 	technic.register_grinder_recipe({input = {data[1]}, output = data[2]})
 end
@@ -124,9 +134,11 @@ minetest.register_craft({
 	output = "mcl_core:iron_nugget",
 })
 
-minetest.register_craft({
-	type = "cooking",
-	output = "technic:copper_nugget",
-	recipe = "technic:lowgrade_copper_dust",
-	cooktime = 10,
+   minetest.register_craft({
+	   type = "cooking",
+	   output = "technic:copper_nugget",
+	   recipe = "technic:lowgrade_copper_dust",
+	   cooktime = 10,
 })
+
+

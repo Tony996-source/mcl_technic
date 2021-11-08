@@ -12,3 +12,5 @@ mcl_formspec?
 mcl_experience?
 xpanes?
 mcl_colorblocks?
+mcl_raw_ores?
+mcl_copper?

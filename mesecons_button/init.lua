@@ -199,8 +199,9 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 	})
 
 	minetest.register_craft({
+	    type = 'shapeless',
 		output = "mesecons_button:button_"..basename.."_off",
-		recipe = {{ recipeitem }},
+		recipe = { recipeitem, "mesecons:wire_00000000_off"},
 	})
 end
 

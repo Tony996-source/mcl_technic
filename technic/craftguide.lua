@@ -13,6 +13,10 @@ local grind_recipe = {
 	{"mcl_core:stone_with_gold",   "technic:gold_dust"},
 	{"mcl_core:gold_ingot",        "technic:gold_dust"},
 	{"mcl_core:iron_ingot",        "technic:iron_dust"},
+	{"mcl_raw_ores:raw_gold",      "technic:gold_dust"},
+	{"mcl_raw_ores:raw_iron",      "technic:iron_dust"},
+	{"mcl_copper:copper_ingot",    "technic:copper_dust"},
+	{"mcl_copper:raw_copper",      "technic:copper_dust"},
 	
 -- Trees
     {"mcl_core:tree",              "technic:sawdust"},
@@ -40,8 +44,10 @@ local grind_recipe = {
     {"technic:mineral_copper",     "technic:copper_dust"},
     {"mcl_core:iron_nugget",       "technic:lowgrade_iron_dust"},
     {"mcl_core:gold_nugget",       "technic:lowgrade_gold_dust"},
-    {"technic:iron_nugget",        "technic:lowgrade_copper_dust"},
+    {"technic:copper_nugget",      "technic:lowgrade_copper_dust"},
 }
+
+
 
 for _, grind_recipe in pairs(grind_recipe) do
 
@@ -53,7 +59,6 @@ mcl_craftguide.register_craft({
 	items  = {grind_recipe[1]},
 })
 end
-
 
 -- Compressing Guide
 
