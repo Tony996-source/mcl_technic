@@ -6,3 +6,4 @@ mcl_mushrooms?
 mcl_netherite?
 mcl_flowerpots?
 mcl_copper?
+mcl_deepslate?
