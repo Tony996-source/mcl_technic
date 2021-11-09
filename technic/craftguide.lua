@@ -39,9 +39,6 @@ local grind_recipe = {
 	{"mcl_core:sandstone",         "mcl_core:sand"},
 	{"mcl_core:redsandstone",      "mcl_core:redsand"},
     {"mcl_core:stone",             "technic:stone_dust"},
-    {"technic:steel_ingot",        "technic:steel_dust"},
-    {"technic:copper_ingot",       "technic:copper_dust"},
-    {"technic:mineral_copper",     "technic:copper_dust"},
     {"mcl_core:iron_nugget",       "technic:lowgrade_iron_dust"},
     {"mcl_core:gold_nugget",       "technic:lowgrade_gold_dust"},
     {"technic:copper_nugget",      "technic:lowgrade_copper_dust"},
@@ -69,12 +66,20 @@ mcl_craftguide.register_craft_type("compressing", {
 
 local compress_recipe = {
 	{"mcl_core:snowblock",          "mcl_core:ice"},
-	{"mcl_core:sand",               "mcl_core:sandstone"},
-	{"mcl_core:redsand",            "mcl_core:redsandstone"},
-	{"technic:coal_dust",           "technic:graphite"},
-	{"technic:carbon_cloth",        "technic:carbon_plate"},
-    {"mcl_core:coalblock",          "mcl_core:diamond"},
+	{"mcl_core:sand",               "mcl_core:sandstone 2"},
+	{"mcl_core:redsand",            "mcl_core:redsandstone 2"},
+	{"technic:coal_dust 2",         "technic:graphite"},
+	{"technic:carbon_cloth",        "technic:carbon_plate 2"},
+    {"mcl_core:coalblock",          "mcl_core:diamond 2"},
     {"technic:sawdust",             "mcl_core:paper"},
+    {"mcl_core:coal_lump 9",          "mcl_core:coalblock"},
+    {"mcl_core:gold_ingot 9",         "mcl_core:goldblock"},
+    {"mcl_core:iron_ingot 9",         "mcl_core:ironblock"},
+    {"mcl_copper:copper_ingot 9",     "mcl_copper:block"},
+    {"mcl_copper:raw_copper 9",       "mcl_copper:block_raw"},
+    {"mcl_core:diamond 9",            "mcl_core:diamondblock"},
+    {"mcl_dye:blue 9",                "mcl_core:lapisblock"},
+    {"mcl_core:emerald 9",            "mcl_core:emeraldblock"},
 }
 
 for _, compress_recipe in pairs(compress_recipe) do

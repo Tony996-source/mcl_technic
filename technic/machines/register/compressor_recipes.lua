@@ -16,6 +16,14 @@ local recipes = {
 	{"technic:carbon_cloth",        "technic:carbon_plate 2"},
     {"mcl_core:coalblock",          "mcl_core:diamond 2"},
     {"technic:sawdust",             "mcl_core:paper"},
+    {"mcl_core:coal_lump 9",          "mcl_core:coalblock"},
+    {"mcl_core:gold_ingot 9",         "mcl_core:goldblock"},
+    {"mcl_core:iron_ingot 9",         "mcl_core:ironblock"},
+    {"mcl_copper:copper_ingot 9",     "mcl_copper:block"},
+    {"mcl_copper:raw_copper 9",       "mcl_copper:block_raw"},
+    {"mcl_core:diamond 9",            "mcl_core:diamondblock"},
+    {"mcl_dye:blue 9",                "mcl_core:lapisblock"},
+    {"mcl_core:emerald 9",            "mcl_core:emeraldblock"},
 }
 
 for _, data in pairs(recipes) do

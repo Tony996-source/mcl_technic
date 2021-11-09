@@ -15,6 +15,8 @@ local recipes = {
 	{"mcl_core:stone_with_gold",   "technic:gold_dust 2"},
 	{"mcl_core:gold_ingot",        "technic:gold_dust"},
 	{"mcl_core:iron_ingot",        "technic:iron_dust"},
+	{"mcl_copper:raw_copper",      "technic:copper_dust 2"},
+    {"mcl_copper:copper_ingot",    "technic:copper_dust"},
 	
 -- Trees
     {"mcl_core:tree",                   "technic:sawdust 4"},
@@ -52,11 +54,10 @@ local recipes = {
 	{"mcl_mobitems:bone",          "mcl_dye:white 2"},
 	{"mcl_core:cobble",            "mcl_core:gravel"},
 	{"mcl_core:gravel",            "mcl_core:sand"},
-	{"mcl_core:sandstone",         "mcl_core:sand 2"},
-	{"mcl_core:redsandstone",      "mcl_core:redsand 2"},
+	{"mcl_core:sandstone",         "mcl_core:sand"},
+	{"mcl_core:redsandstone",      "mcl_core:redsand"},
     {"mcl_core:stone",             "technic:stone_dust"},
     {"technic:steel_ingot",        "technic:steel_dust"},
-    {"technic:mineral_copper",     "technic:copper_dust 2"},
     {"mcl_core:iron_nugget",       "technic:lowgrade_iron_dust"},
     {"mcl_core:gold_nugget",       "technic:lowgrade_gold_dust"},
 }
@@ -64,11 +65,6 @@ local recipes = {
 if minetest.get_modpath("mcl_raw_ores") then
 	table.insert(recipes, {"mcl_raw_ores:raw_gold",   "technic:gold_dust 2"})
 	table.insert(recipes, {"mcl_raw_ores:raw_iron",   "technic:iron_dust 2"})
-end
-
-if minetest.get_modpath("mcl_copper") then
-	table.insert(recipes, {"mcl_copper:raw_copper",     "technic:copper_dust 2"})
-	table.insert(recipes, {"mcl_copper:copper_ingot",   "technic:copper_dust"})
 end
 
 for _, data in pairs(recipes) do
@@ -132,11 +128,10 @@ minetest.register_craft({
 	output = "mcl_core:iron_nugget",
 })
 
-   minetest.register_craft({
-	   type = "cooking",
-	   output = "technic:copper_nugget",
-	   recipe = "technic:lowgrade_copper_dust",
-	   cooktime = 10,
+minetest.register_craft({
+	type = "cooking",
+	recipe = "technic:lowgrade_copper_dust",
+	output = "technic:copper_nugget",
 })
 
 
