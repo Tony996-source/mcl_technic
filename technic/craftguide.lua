@@ -225,6 +225,13 @@ mcl_craftguide.register_craft({
 	items  = {"technic:iron_dust", "technic:coal_dust"},
 })
 
+mcl_craftguide.register_craft({
+	type   = "alloying",
+	width  = 3,
+	output = "mcl_mobitems:leather",
+	items  = {"pipeworks:oil_extract", "technic:rubber"},
+})
+
 -- Freezing Guide
 
 mcl_craftguide.register_craft_type("freezing", {

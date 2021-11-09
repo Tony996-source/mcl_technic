@@ -56,6 +56,15 @@ minetest.register_craft({
 	cooktime = 10,
 })
 
+minetest.register_craft({
+	output = 'mcl_mobitems:leather',
+	recipe = {
+		{'mcl_mobitems:rotten_flesh', 'mcl_mobitems:rotten_flesh', 'mcl_mobitems:rotten_flesh'},
+		{'mcl_mobitems:rotten_flesh', 'mcl_mobitems:rotten_flesh', 'mcl_mobitems:rotten_flesh'},
+		{'mcl_mobitems:rotten_flesh', 'mcl_mobitems:rotten_flesh', 'mcl_mobitems:rotten_flesh'},
+	}
+})
+
 -- Copper
 
 if minetest.get_modpath("mcl_copper") then
