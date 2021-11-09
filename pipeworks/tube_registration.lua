@@ -112,14 +112,6 @@ local register_one_tube = function(name, tname, dropname, desc, plain, noctrs, e
 		after_place_node = pipeworks.after_place,
 		after_dig_node = pipeworks.after_dig,
 		on_rotate = false,
-		on_blast = function(pos, intensity)
-			if not intensity or intensity > 1 + 3^0.5 then
-				minetest.remove_node(pos)
-				return {string.format("%s_%s", name, dropname)}
-			end
-			minetest.swap_node(pos, {name = "pipeworks:broken_tube_1"})
-			pipeworks.scan_for_tube_objects(pos)
-		end,
 		check_for_pole = pipeworks.check_for_vert_tube,
 		check_for_horiz_pole = pipeworks.check_for_horiz_tube,
 		tubenumber = tonumber(tname)

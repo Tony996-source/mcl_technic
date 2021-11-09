@@ -17,7 +17,7 @@ end
 	{"mcl_flowers:dandelion", "mcl_dye:yellow 4"},
 	{"mcl_flowers:tulip", "mcl_dye:orange 4"},
 	{"mcl_flowers:poppy", "mcl_dye:red 4"},
-	{"mcl_flowers:allium", "mcl_dye:purple 4"},
+	{"mcl_flowers:allium", "mcl_dye:magenta 4"},
 	{"mcl_flowers:tulip_pink", "mcl_dye:pink 4"},
 	{"mcl_flowers:tulip_red", "mcl_dye:red 4"},
 	{"mcl_flowers:tulip_white", "mcl_dye:white 4"},

@@ -1,5 +1,5 @@
 -- MV Battery box
-if minetest.get_modpath("mcl_copper") then
+
 minetest.register_craft({
 	output = 'technic:mv_battery_box0',
 	recipe = {
@@ -8,16 +8,7 @@ minetest.register_craft({
 	{'technic:battery', 'technic:mv_cable', 'technic:battery'},
 	}
 })
-else
-minetest.register_craft({
-	output = 'technic:mv_battery_box0',
-	recipe = {
-	{'technic:battery', 'technic:lv_battery_box0', 'technic:battery'},
-	{'technic:battery', 'technic:copper_ingot', 'technic:battery'},
-	{'technic:battery', 'technic:mv_cable', 'technic:battery'},
-	}
-})
-end
+
 technic.register_battery_box({
 	tier           = "MV",
 	max_charge     = 200000,
