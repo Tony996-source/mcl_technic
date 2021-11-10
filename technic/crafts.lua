@@ -45,7 +45,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
-	output = "technic:rubber",
+	output = "technic:rubber 2",
 	recipe = "technic:oil",
 })
 
@@ -55,6 +55,24 @@ minetest.register_craft({
 	recipe = "group:wood",
 	cooktime = 10,
 })
+
+local saplings = {
+	{"sapling", ""},
+	{"darksapling",  ""},
+	{"junglesapling",  ""},
+	{"acaciasapling",  ""},
+	{"sprucesapling",  ""},
+	{"birchsapling",  ""},
+}
+
+for _, saplings in pairs(saplings) do
+
+minetest.register_craft({
+    type = "cooking",
+    output = "mcl_mobitems:slimeball",
+    recipe = "mcl_core:"..saplings[1],
+})
+end
 
 minetest.register_craft({
 	output = 'mcl_mobitems:leather',
