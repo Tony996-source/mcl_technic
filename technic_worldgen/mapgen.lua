@@ -1,6 +1,7 @@
 local stonelike = {"mcl_core:stone", "mcl_core:diorite", "mcl_core:andesite", "mcl_core:granite"}
 
--- Copper
+-- mcl_copper
+if minetest.get_modpath("mcl_copper") then
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "mcl_copper:copper_ingot",
@@ -21,6 +22,9 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
+end
+
+-- mcl_Deepslate
 
 if minetest.get_modpath("mcl_deepslate") then
 
@@ -166,7 +170,7 @@ minetest.register_ore({
 })
 end
 
--- Register Extra ore gen.
+-- Extra ore.
 
 minetest.register_ore({
 	ore_type       = "scatter",
