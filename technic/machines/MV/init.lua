@@ -18,8 +18,6 @@ dofile(path.."/extractor.lua")
 dofile(path.."/compressor.lua")
 dofile(path.."/tool_workshop.lua")
 
-
-
 -- The power radiator supplies appliances with inductive coupled power:
 -- Lighting and associated textures is taken directly from VanessaE's homedecor and made electric.
 -- This is currently useless, slow, and mostly copied

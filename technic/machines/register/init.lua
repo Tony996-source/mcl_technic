@@ -21,6 +21,7 @@ dofile(path.."/extractor_recipes.lua")
 dofile(path.."/compressor_recipes.lua")
 dofile(path.."/freezer_recipes.lua")
 dofile(path.."/sawmill_recipes.lua")
+dofile(path.."/recycler_recipes.lua")
 
 -- Multi-Machine Recipes
 dofile(path.."/grindings.lua")
@@ -33,3 +34,4 @@ dofile(path.."/extractor.lua")
 dofile(path.."/compressor.lua")
 dofile(path.."/freezer.lua")
 dofile(path.."/sawmill.lua")
+dofile(path.."/recycler.lua")
