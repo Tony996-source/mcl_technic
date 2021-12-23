@@ -21,6 +21,7 @@ local recipes = {
 {"mcl_core:iron_ingot", "technic:coal_dust", "technic:steel_ingot"},
 {"technic:iron_dust", "technic:coal_dust", "technic:steel_ingot"},
 {"pipeworks:oil_extract", "technic:rubber", "mcl_mobitems:leather"},
+{"mcl_core:gold_ingot 4", "mcl_nether:netherite_scrap 4", "mcl_nether:netherite_ingot"},
 }
 
 for _, data in pairs(recipes) do

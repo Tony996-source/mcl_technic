@@ -239,6 +239,13 @@ mcl_craftguide.register_craft({
 	items  = {"pipeworks:oil_extract", "technic:rubber"},
 })
 
+mcl_craftguide.register_craft({
+	type   = "alloying",
+	width  = 3,
+	output = "mcl_nether:netherite_ingot",
+	items  = {"mcl_nether:netherite_scrap", "mcl_core:gold_ingot"},
+})
+
 -- Freezing Guide
 
 mcl_craftguide.register_craft_type("freezing", {
