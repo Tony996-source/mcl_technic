@@ -273,3 +273,115 @@ mcl_craftguide.register_craft({
 	output = "mcl_core:snowblock",
 	items  = {"mcl_buckets:bucket_river_water"},
 })
+
+-- recycling
+
+mcl_craftguide.register_craft_type("recycling", {
+	description = "recycling",
+	icon = "technic_hv_recycler_front_active.png",
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_alloy_furnace"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_battery_box"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_compressor"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_electric_furnace"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_extractor"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_freezer"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_generator"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_grinder"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_quarry"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_recycler"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_sawmill"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:hv_solar_array"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:tool_workshop_hv"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:chainsaw_hv"},
+})
+
+mcl_craftguide.register_craft({
+	type   = "recycling",
+	width  = 2,
+	output = "mcl_nether:netherite_scrap",
+	items  = {"technic:vacuum_hv"},
+})

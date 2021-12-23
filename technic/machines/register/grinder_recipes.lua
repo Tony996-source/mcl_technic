@@ -67,6 +67,10 @@ if minetest.get_modpath("mcl_raw_ores") then
 	table.insert(recipes, {"mcl_raw_ores:raw_iron",   "technic:iron_dust 2"})
 end
 
+if minetest.get_modpath("mcl_deepslate") then
+	table.insert(recipes, {"mcl_deepslate:deepslate",   "mcl_deepslate:deepslate_cobbled"})
+end
+
 for _, data in pairs(recipes) do
 	technic.register_grinder_recipe({input = {data[1]}, output = data[2]})
 end
