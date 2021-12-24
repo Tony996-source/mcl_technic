@@ -1,7 +1,7 @@
 -- autorouting for pneumatic tubes
 
 local function is_tube(nodename)
-	return mcl_pipeworks.table_contains(mcl_mcl_pipeworks.tubenodes, nodename)
+	return mcl_pipeworks.table_contains(mcl_pipeworks.tubenodes, nodename)
 end
 
 --a function for determining which side of the node we are on
@@ -11,7 +11,7 @@ local function nodeside(node, tubedir)
 	end
 
 	local backdir = minetest.facedir_to_dir(node.param2)
-	local back = mcl_mcl_pipeworks.vector_dot(backdir, tubedir)
+	local back = mcl_pipeworks.vector_dot(backdir, tubedir)
 	if back == 1 then
 		return "back"
 	elseif back == -1 then
