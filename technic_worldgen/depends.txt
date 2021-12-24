@@ -1,9 +1,0 @@
-mcl_core
-technic?
-mcl_farming?
-mcl_flowers?
-mcl_mushrooms?
-mcl_netherite?
-mcl_flowerpots?
-mcl_copper
-mcl_deepslate?

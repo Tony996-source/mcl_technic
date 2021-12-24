@@ -1,0 +1,17 @@
+mcl_core
+mcl_copper
+mcl_pipeworks
+mcl_bucket?
+screwdriver?
+mesecons?
+mesecons_button?
+mesecons_mvps?
+intllib?
+mcl_dye?
+mcl_furnaces?
+mcl_formspec?
+mcl_experience?
+xpanes?
+mcl_colorblocks?
+mcl_raw_ores?
+
