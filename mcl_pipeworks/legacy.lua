@@ -21,8 +21,8 @@ if not minetest.get_modpath("auto_tree_tap") and
 
 	minetest.register_node(":auto_tree_tap:off", {
 		description = "Auto-Tap",
-		tiles = {"pipeworks_nodebreaker_top_off.png","pipeworks_nodebreaker_bottom_off.png","pipeworks_nodebreaker_side2_off.png","pipeworks_nodebreaker_side1_off.png",
-			"pipeworks_nodebreaker_back.png","pipeworks_nodebreaker_front_off.png"},
+		tiles = {"mcl_pipeworks_nodebreaker_top_off.png","mcl_pipeworks_nodebreaker_bottom_off.png","mcl_pipeworks_nodebreaker_side2_off.png","mcl_pipeworks_nodebreaker_side1_off.png",
+			"mcl_pipeworks_nodebreaker_back.png","mcl_pipeworks_nodebreaker_front_off.png"},
 		is_ground_content = true,
 		paramtype2 = "facedir",
 		groups = {snappy=2,choppy=2,oddly_breakable_by_hand=2, mesecon = 2,tubedevice=1, not_in_creative_inventory=1 },
