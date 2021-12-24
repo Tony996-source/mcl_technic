@@ -76,7 +76,7 @@ minetest.register_craftitem("mcl_technic:copper_dust", {
 })
 
 minetest.override_item("mcl_nether:netheriteblock", {
-    tiles = {"netherite_block.png"},
+    tiles = {"mcl_technic_netherite_block.png"},
 })
 
 minetest.register_craftitem("mcl_technic:copper_nugget", {
