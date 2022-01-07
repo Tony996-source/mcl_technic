@@ -6,9 +6,9 @@ local cable_entry = "^mcl_technic_cable_connection_overlay.png"
 
 minetest.register_craft({
 	recipe = {
-	{"mcl_technic:carbon_plate", "mcl_pipeworks:tube_1", "mcl_technic:carbon_plate"},
+	{"mcl_technic:steel_ingot", "mcl_pipeworks:tube_1", "mcl_technic:steel_ingot"},
 	{"mcl_technic:carbon_plate", "mcl_core:gold_ingot", "mcl_technic:diamond_drill_head"},
-	{"mcl_technic:carbon_plate", "mcl_technic:hv_cable", "mcl_technic:carbon_plate"}},
+	{"mcl_technic:steel_ingot", "mcl_technic:hv_cable", "mcl_technic:steel_ingot"}},
 	output = "mcl_technic:hv_quarry",
 })
 

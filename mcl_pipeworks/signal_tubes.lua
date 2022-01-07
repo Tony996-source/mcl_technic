@@ -3,6 +3,7 @@ if mcl_pipeworks.enable_detector_tube then
 			description = "Detecting Pneumatic Tube Segment on (you hacker you)",
 			inventory_image = "mcl_pipeworks_detector_tube_inv.png",
 			plain = { "mcl_pipeworks_detector_tube_plain.png" },
+			use_texture_alpha = "clip",
 			stack_max = 64,
 			_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
@@ -45,6 +46,7 @@ if mcl_pipeworks.enable_detector_tube then
 			description = "Detecting Pneumatic Tube Segment",
 			inventory_image = "mcl_pipeworks_detector_tube_inv.png",
 			plain = { "mcl_pipeworks_detector_tube_plain.png" },
+			use_texture_alpha = "clip",
 			stack_max = 64,
 			_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
@@ -133,6 +135,7 @@ if mcl_pipeworks.enable_conductor_tube then
 			plain = { "mcl_pipeworks_conductor_tube_plain.png" },
 			noctr = { "mcl_pipeworks_conductor_tube_noctr.png" },
 			ends = { "mcl_pipeworks_conductor_tube_end.png" },
+			use_texture_alpha = "clip",
 			_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
 			node_def = {
@@ -149,6 +152,7 @@ if mcl_pipeworks.enable_conductor_tube then
 			plain = { "mcl_pipeworks_conductor_tube_on_plain.png" },
 			noctr = { "mcl_pipeworks_conductor_tube_on_noctr.png" },
 			ends = { "mcl_pipeworks_conductor_tube_on_end.png" },
+			use_texture_alpha = "clip",
 			_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
 			node_def = {
@@ -193,6 +197,7 @@ if digiline_enabled and mcl_pipeworks.enable_digiline_conductor_tube and
 		plain = {"mcl_pipeworks_conductor_tube_plain.png^mcl_pipeworks_digiline_conductor_tube_plain.png"},
 		noctr = {"mcl_pipeworks_conductor_tube_noctr.png^mcl_pipeworks_digiline_conductor_tube_noctr.png"},
 		ends = {"mcl_pipeworks_conductor_tube_end.png^mcl_pipeworks_digiline_conductor_tube_end.png"},
+		use_texture_alpha = "clip",
 		_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
 		node_def = {
@@ -212,6 +217,7 @@ if digiline_enabled and mcl_pipeworks.enable_digiline_conductor_tube and
 		plain = {"mcl_pipeworks_conductor_tube_on_plain.png^mcl_pipeworks_digiline_conductor_tube_plain.png"},
 		noctr = {"mcl_pipeworks_conductor_tube_on_noctr.png^mcl_pipeworks_digiline_conductor_tube_noctr.png"},
 		ends = {"mcl_pipeworks_conductor_tube_on_end.png^mcl_pipeworks_digiline_conductor_tube_end.png"},
+		use_texture_alpha = "clip",
 		_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
 		node_def = {

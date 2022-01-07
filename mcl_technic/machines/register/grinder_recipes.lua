@@ -11,6 +11,7 @@ end
 local recipes = {
 	-- Dusts
 	{"mcl_core:coal_lump",         "mcl_technic:coal_dust 2"},
+	{"mcl_core:charcoal_lump",     "mcl_technic:coal_dust 2"},
 	{"mcl_core:stone_with_iron",   "mcl_technic:iron_dust 2"},
 	{"mcl_core:stone_with_gold",   "mcl_technic:gold_dust 2"},
 	{"mcl_core:gold_ingot",        "mcl_technic:gold_dust"},
@@ -57,7 +58,7 @@ local recipes = {
 	{"mcl_core:sandstone",         "mcl_core:sand"},
 	{"mcl_core:redsandstone",      "mcl_core:redsand"},
     {"mcl_core:stone",             "mcl_technic:stone_dust"},
-    {"mcl_technic:steel_ingot",        "mcl_technic:steel_dust"},
+    {"mcl_technic:steel_ingot",    "mcl_technic:steel_dust"},
     {"mcl_core:iron_nugget",       "mcl_technic:lowgrade_iron_dust"},
     {"mcl_core:gold_nugget",       "mcl_technic:lowgrade_gold_dust"},
 }

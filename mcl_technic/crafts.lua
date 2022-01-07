@@ -12,6 +12,15 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = 'mcl_technic:diamond_drill_head',
+	recipe = {
+		{'mcl_core:diamond', 'mcl_core:iron_ingot', 'mcl_core:diamond'},
+		{'mcl_core:iron_ingot',               '',                'mcl_core:iron_ingot'},
+		{'mcl_core:diamond', 'mcl_core:iron_ingot', 'mcl_core:diamond'},
+	}
+})
+
 local isolation = mesecons_materials and "mesecons_materials:fiber" or "mcl_technic:rubber"
 
 
@@ -56,6 +65,15 @@ minetest.register_craft({
 	cooktime = 10,
 })
 
+minetest.register_craft({
+	output = "mcl_core:coalblock",
+	recipe = {
+		{"mcl_core:charcoal_lump", "mcl_core:charcoal_lump", "mcl_core:charcoal_lump"},
+		{"mcl_core:charcoal_lump", "mcl_core:charcoal_lump", "mcl_core:charcoal_lump"},
+		{"mcl_core:charcoal_lump", "mcl_core:charcoal_lump", "mcl_core:charcoal_lump"},
+	}
+})
+
 local saplings = {
 	{"sapling", ""},
 	{"darksapling",  ""},
@@ -84,6 +102,7 @@ minetest.register_craft({
 })
 
 -- Copper
+if minetest.get_modpath("mcl_copper") then
 
 minetest.register_craft({
     type = 'shapeless',
@@ -113,3 +132,6 @@ minetest.register_craft({
 	recipe = "mcl_technic:copper_dust",
 	cooktime = 10,
 })
+end
+
+

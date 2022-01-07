@@ -720,6 +720,7 @@ for white  = 0, 1 do
 		description = "Lua controlled Tube",
 		drawtype = "nodebox",
 		tiles = tiles,
+		use_texture_alpha = "clip",
 		paramtype = "light",
 		groups = groups,
 		drop = "pipeworks:lua_tube",

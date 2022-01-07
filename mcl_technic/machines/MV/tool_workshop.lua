@@ -11,8 +11,8 @@ minetest.register_craft({
 	output = 'mcl_technic:tool_workshop_mv',
 	recipe = {
 	{'group:wood',  'mcl_core:diamond',  'group:wood'},
-	{'mcl_technic:carbon_cloth', 'mcl_copper:copper_ingot', 'mcl_technic:carbon_cloth'},
-	{'mcl_core:obsidian', 'mcl_technic:mv_cable', 'mcl_core:obsidian'},
+	{'mcl_technic:carbon_plate', 'mcl_copper:copper_ingot', 'mcl_technic:carbon_plate'},
+	{'mcl_technic:steel_block', 'mcl_technic:mv_cable', 'mcl_technic:steel_block'},
 	}
 })
 

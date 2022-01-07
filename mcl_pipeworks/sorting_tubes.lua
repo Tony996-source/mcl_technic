@@ -71,6 +71,7 @@ if mcl_pipeworks.enable_mese_tube then
 			plain = {"mcl_pipeworks_mese_tube_plain_1.png", "mcl_pipeworks_mese_tube_plain_2.png", "mcl_pipeworks_mese_tube_plain_3.png",
 				"mcl_pipeworks_mese_tube_plain_4.png", "mcl_pipeworks_mese_tube_plain_5.png", "mcl_pipeworks_mese_tube_plain_6.png"},
 			ends = { "mcl_pipeworks_mese_tube_end.png" },
+			use_texture_alpha = "clip",
 			stack_max = 64,
 			_mcl_blast_resistance = 0.3,
 	    _mcl_hardness = 0.3,
