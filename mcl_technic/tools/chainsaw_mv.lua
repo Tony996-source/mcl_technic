@@ -229,19 +229,9 @@ if minetest.get_modpath("mcl_copper") then
 minetest.register_craft({
 	output = "mcl_technic:chainsaw_mv",
 	recipe = {
-	{"mcl_core:iron_ingot", "group:button",   "mcl_technic:battery"},
-	{"mcl_core:iron_ingot", "mcl_copper:copper_ingot", "mcl_technic:mv_cable"},
-	{"",          "",         "mcl_core:iron_ingot"},
-	},
-
-})
-else
-minetest.register_craft({
-	output = "mcl_technic:chainsaw_mv",
-	recipe = {
-	{"mcl_core:iron_ingot", "group:button",   "mcl_technic:battery"},
-	{"mcl_core:iron_ingot", "mcl_technic:copper_ingot", "mcl_technic:mv_cable"},
-	{"",          "",         "mcl_core:iron_ingot"},
+	{"mcl_pipeworks:plastic_sheet", "mcl_technic:chainsaw_lv",   "mcl_technic:battery"},
+	{"mcl_pipeworks:plastic_sheet", "mcl_copper:copper_ingot",   "mcl_technic:mv_cable"},
+	{"",                            "",                          "mcl_pipeworks:plastic_sheet"},
 	},
 
 })

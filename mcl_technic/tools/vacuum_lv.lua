@@ -54,8 +54,8 @@ minetest.register_tool("mcl_technic:vacuum_lv", {
 minetest.register_craft({
 	output = 'mcl_technic:vacuum_lv',
 	recipe = {
-	{'mcl_technic:rubber', 'mcl_technic:carbon_plate', 'group:button'},
-	{'mcl_technic:rubber', 'mcl_core:iron_ingot', 'mcl_technic:battery'},
-	{'mcl_core:iron_ingot', 'mcl_core:iron_ingot', ''},
+	{'mcl_technic:rubber',  'mcl_technic:carbon_plate', 'mcl_core:iron_ingot'},
+	{'mcl_technic:rubber',  'mcl_core:iron_ingot',      'mcl_technic:battery'},
+	{'mcl_core:iron_ingot', 'mcl_core:iron_ingot',      ''},
 	}
 })
