@@ -70,6 +70,19 @@ minetest.register_node("mcl_technic:steel_block", {
 	_mcl_hardness = 5,
 })
 
+minetest.register_node("mcl_technic:charcoalblock", {
+	description = S("Block of Charcoal"),
+	_doc_items_longdesc = S("Blocks of charcoal are useful as a compact storage of charcoal and very useful as a furnace fuel. A block of charcoal is as efficient as 10 carcoal."),
+	tiles = {"mcl_technic_charcoal_block.png"},
+	is_ground_content = false,
+	stack_max = 64,
+	groups = {pickaxey=1, flammable=1, building_block=1, material_stone=1, fire_encouragement=5, fire_flammability=5},
+	sounds = mcl_sounds.node_sound_stone_defaults(),
+	_mcl_blast_resistance = 6,
+	_mcl_hardness = 5,
+})
+
+
 minetest.register_craftitem("mcl_technic:copper_dust", {
 	description = ("Copper Dust"),
 	inventory_image = "mcl_technic_copper_dust.png",

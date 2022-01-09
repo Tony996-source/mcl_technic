@@ -71,7 +71,7 @@ local compress_recipe = {
 	{"mcl_technic:coal_dust",     "mcl_technic:graphite"},
 	{"mcl_technic:carbon_cloth",  "mcl_technic:carbon_plate"},
     {"mcl_core:coalblock",        "mcl_core:diamond"},
-    {"mcl_core:charcoal_lump",    "mcl_core:coalblock"},
+    {"mcl_core:charcoal_lump",    "mcl_technic:charcoalblock"},
     {"mcl_technic:sawdust",       "mcl_core:paper"},
     {"mcl_core:coal_lump",        "mcl_core:coalblock"},
     {"mcl_core:gold_ingot",       "mcl_core:goldblock"},

@@ -58,6 +58,15 @@ minetest.register_craft({
 	recipe = "mcl_technic:oil",
 })
 
+minetest.clear_craft({output = "mcl_core:charcoal_lump"})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "mcl_core:charcoal_lump 4",
+	recipe = "group:tree",
+	cooktime = 10,
+})
+
 minetest.register_craft({
 	type = "cooking",
 	output = "mcl_core:charcoal_lump",
@@ -66,12 +75,24 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "mcl_core:coalblock",
+	output = "mcl_technic:charcoalblock",
 	recipe = {
 		{"mcl_core:charcoal_lump", "mcl_core:charcoal_lump", "mcl_core:charcoal_lump"},
 		{"mcl_core:charcoal_lump", "mcl_core:charcoal_lump", "mcl_core:charcoal_lump"},
 		{"mcl_core:charcoal_lump", "mcl_core:charcoal_lump", "mcl_core:charcoal_lump"},
 	}
+})
+
+minetest.register_craft({
+    type = 'shapeless',
+	output = 'mcl_core:charcoal_lump 9',
+	recipe = {'mcl_technic:charcoalblock'},
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "mcl_technic:charcoalblock",
+	burntime = 800,
 })
 
 local saplings = {
