@@ -175,7 +175,7 @@ local function set_port_states(pos, ports)
 		if ports.white  and not vports.white  and not mesecon.is_powered(pos, rules.white)  then ign.white  = true end
 		meta:set_string("ignore_offevents", minetest.serialize(ign))
 
-		minetest.swap_node(pos, {name = new_name, param2 = node.param2})
+		minetest.swap_node(pos,node)
 
 		if ports.red    ~= vports.red    then set_port(pos, rules.red,    ports.red)    end
 		if ports.blue   ~= vports.blue   then set_port(pos, rules.blue,   ports.blue)   end
@@ -514,9 +514,9 @@ local function reset_meta(pos, code, errmsg)
 	code = minetest.formspec_escape(code or "")
 	errmsg = minetest.formspec_escape(tostring(errmsg or ""))
 	meta:set_string("formspec", "size[12,10]"..
-		"background[-0.2,-0.25;12.4,10.75;mcl_pipeworks_background.png]"..
+		"background[-0.2,-0.25;12.4,10.75;mcl_pipeworks_luac_background.png]"..
 		"textarea[0.2,0.2;12.2,9.5;code;;"..code.."]"..
-		"image_button[4.75,8.75;2.5,1;mcl_pipeworks_runbutton.png;program;]"..
+		"image_button[4.75,8.75;2.5,1;mcl_pipeworks_luac_runbutton.png;program;]"..
 		"image_button_exit[11.72,-0.25;0.425,0.4;mcl_pipeworks_close_window.png;exit;]"..
 		"label[0.1,9;"..errmsg.."]")
 	meta:set_int("luac_id", math.random(1, 65535))
@@ -716,14 +716,14 @@ for white  = 0, 1 do
 		}
 	}
 
-	minetest.register_node("mcl_pipeworks:lua_tube", {
+	minetest.register_node("mcl_pipeworks:lua_tube" ..cid, {
 		description = "Lua controlled Tube",
 		drawtype = "nodebox",
 		tiles = tiles,
 		use_texture_alpha = "clip",
 		paramtype = "light",
 		groups = groups,
-		drop = "pipeworks:lua_tube",
+		drop = "mcl_pipeworks:lua_tube" ..cid,
 		sunlight_propagates = true,
 		selection_box = selection_box,
 		stack_max = 64,
@@ -793,6 +793,6 @@ end
 
 minetest.register_craft({
 	type = "shapeless",
-	output = "mcl_pipeworks:lua_tube",
+	output = "mcl_pipeworks:lua_tube000000",
 	recipe = {"mesecons:redstone", "mcl_pipeworks:tube_1", "mesecons:redstone"},
 })
