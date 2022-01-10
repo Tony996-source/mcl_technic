@@ -11,7 +11,7 @@ end
 local recipes = {
 	-- Dusts
 	{"mcl_core:coal_lump",         "mcl_technic:coal_dust 2"},
-	{"mcl_core:charcoal_lump",     "mcl_technic:coal_dust 2"},
+	{"mcl_core:charcoal_lump",     "mcl_technic:charcoal_dust 2"},
 	{"mcl_core:stone_with_iron",   "mcl_technic:iron_dust 2"},
 	{"mcl_core:stone_with_gold",   "mcl_technic:gold_dust 2"},
 	{"mcl_core:gold_ingot",        "mcl_technic:gold_dust"},
@@ -96,6 +96,7 @@ end
 
 -- Sorted alphibeticaly
 register_dust("Coal",            nil)
+register_dust("Charcoal",        nil)
 register_dust("Gold",            "mcl_core:gold_ingot")
 register_dust("Stone",           "mcl_core:stone")
 register_dust("Iron",            "mcl_core:iron_ingot")
@@ -103,6 +104,12 @@ register_dust("Iron",            "mcl_core:iron_ingot")
 minetest.register_craft({
 	type = "fuel",
 	recipe = "mcl_technic:coal_dust",
+	burntime = 50,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "mcl_technic:charcoal_dust",
 	burntime = 50,
 })
 

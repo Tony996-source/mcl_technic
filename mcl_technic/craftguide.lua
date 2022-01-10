@@ -9,6 +9,7 @@ mcl_craftguide.register_craft_type("grinding", {
 local grind_recipe = {
 	-- Dusts
 	{"mcl_core:coal_lump",         "mcl_technic:coal_dust"},
+	{"mcl_core:charcoal_lump",     "mcl_technic:charcoal_dust"},
 	{"mcl_core:stone_with_iron",   "mcl_technic:iron_dust"},
 	{"mcl_core:stone_with_gold",   "mcl_technic:gold_dust"},
 	{"mcl_core:gold_ingot",        "mcl_technic:gold_dust"},
@@ -187,6 +188,9 @@ mcl_craftguide.register_craft_type("alloying", {
 
 local alloy_recipe = {
 	    {"mcl_core:sand", "mcl_technic:coal_dust", "mcl_technic:silicon_wafer"},
+	    {"mcl_core:sand", "mcl_technic:charcoal_dust", "mcl_technic:silicon_wafer"},
+        {"mcl_core:redsand", "mcl_technic:coal_dust", "mcl_technic:silicon_wafer"},
+        {"mcl_core:redsand", "mcl_technic:charcoal_dust", "mcl_technic:silicon_wafer"},
 	    {"mcl_technic:silicon_wafer", "mcl_technic:gold_dust", "mcl_technic:doped_silicon_wafer"},
 	    {"mcl_core:obsidian", "mcl_buckets:bucket_empty", "mcl_buckets:bucket_lava"},
 	    {"mcl_core:ice", "mcl_buckets:bucket_empty", "mcl_buckets:bucket_water"},
@@ -196,19 +200,6 @@ local alloy_recipe = {
 	    {"mcl_technic:iron_dust", "mcl_technic:coal_dust", "mcl_technic:steel_ingot"},
 	    {"mcl_pipeworks:oil_extract", "mcl_technic:rubber", "mcl_mobitems:leather"},
 	    {"mcl_core:gold_ingot", "mcl_nether:netherite_scrap", "mcl_nether:netherite_ingot"},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-	    {"", "", ""},
-
 }
 
 for _, alloy_recipe in pairs(alloy_recipe) do
