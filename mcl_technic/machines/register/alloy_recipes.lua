@@ -20,7 +20,7 @@ local recipes = {
 {"mcl_core:snow 9", "mcl_buckets:bucket_empty", "mcl_buckets:bucket_water"},
 {"mcl_core:iron_ingot", "mcl_technic:coal_dust", "mcl_technic:steel_ingot"},
 {"mcl_technic:iron_dust", "mcl_technic:coal_dust", "mcl_technic:steel_ingot"},
-{"pipeworks:oil_extract", "mcl_technic:rubber", "mcl_mobitems:leather"},
+{"mcl_pipeworks:oil_extract", "mcl_technic:rubber", "mcl_mobitems:leather"},
 {"mcl_core:gold_ingot 4", "mcl_nether:netherite_scrap 4", "mcl_nether:netherite_ingot"},
 }
 
