@@ -13,6 +13,7 @@ local recipes = {
 	{"mcl_core:sand",               "mcl_core:sandstone 2"},
 	{"mcl_core:redsand",            "mcl_core:redsandstone 2"},
 	{"mcl_technic:coal_dust 2",     "mcl_technic:graphite"},
+	{"mcl_technic:charcoal_dust 2", "mcl_technic:graphite"},
 	{"mcl_technic:carbon_cloth",    "mcl_technic:carbon_plate 2"},
     {"mcl_core:coalblock",          "mcl_core:diamond 2"},
     {"mcl_core:charcoal_lump 9",    "mcl_technic:charcoalblock"},
