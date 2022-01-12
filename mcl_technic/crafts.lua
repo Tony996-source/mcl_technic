@@ -154,3 +154,36 @@ minetest.register_craft({
 	cooktime = 10,
 })
 end
+
+local colour = {
+--     Node          dye       Description    Glass Colour
+	{"white",      "white",      "White",      "white"},
+	{"silver",     "grey",       "Silver",     "silver"},
+	{"grey",       "dark_grey",  "Grey",       "gray"},
+	{"black",      "black",      "Black",      "black"},
+	{"purple",     "violet",     "Purple",     "purple"},
+	{"blue",       "blue",       "Blue",       "blue"},
+	{"cyan",       "cyan",       "Cyan",       "cyan"},
+	{"green",      "dark_green", "Green",      "green"},
+	{"lime",       "green",      "Lime",       "lime"},
+	{"yellow",     "yellow",     "Yellow",     "yellow"},
+	{"brown",      "brown",      "Brown",      "brown"},
+	{"orange",     "orange",     "Orange",     "orange"},
+	{"red",        "red",        "Red",        "red"},
+	{"magenta",    "magenta",    "Magenta",    "magenta"},
+	{"pink",       "pink",       "Pink",       "pink"},
+    {"light_blue", "lightblue",  "Light Blue", "light_blue"},
+}
+
+for _, colour in pairs(colour) do
+
+  minetest.register_craft({
+	output = 'mcl_colorblocks:concrete_'..colour[1].." 8",
+	recipe = {
+		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1]},
+		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_buckets:bucket_water', 'mcl_colorblocks:concrete_powder_'..colour[1]},
+		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1]},
+	},
+	replacements = {{"mcl_buckets:bucket_water", "mcl_buckets:bucket_water"}, },
+})
+end
