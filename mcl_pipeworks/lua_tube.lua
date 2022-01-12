@@ -796,3 +796,12 @@ minetest.register_craft({
 	output = "mcl_pipeworks:lua_tube000000",
 	recipe = {"mesecons:redstone", "mcl_pipeworks:tube_1", "mesecons:redstone"},
 })
+
+minetest.register_craft( {
+	output = "mcl_pipeworks:lua_tube000000 6",
+	recipe = {
+	        { "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet" },
+	        { "mesecons:redstone", "", "mesecons:redstone" },
+	        { "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet" }
+	},
+})

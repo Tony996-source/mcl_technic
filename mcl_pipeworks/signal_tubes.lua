@@ -72,6 +72,13 @@ if mcl_pipeworks.enable_detector_tube then
 			{ "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet" }
 		},
 	})
+	
+	minetest.register_craft( {
+	    type = "shapeless",
+		output = "mcl_pipeworks:detector_tube_off_1",
+		recipe = {"mcl_mobitems:slimeball", "mesecons:redstone", "mesecons:redstone", "mcl_pipeworks:tube_1"
+		}
+	})
 end
 
 local digiline_enabled = minetest.get_modpath("digilines") ~= nil

@@ -154,5 +154,3 @@ minetest.register_craft({
 	cooktime = 10,
 })
 end
-
-

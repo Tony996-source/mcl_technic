@@ -40,6 +40,7 @@ if mcl_pipeworks.enable_priority_tube then
 			{ "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet" }
 		},
 	})
+	
 end
 
 if mcl_pipeworks.enable_accelerator_tube then

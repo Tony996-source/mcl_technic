@@ -171,5 +171,4 @@ if mcl_pipeworks.enable_mese_tube then
 			{ "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet", "mcl_pipeworks:plastic_sheet" }
 		},
 	})
-
 end
