@@ -99,7 +99,7 @@ mcl_technic.register_can({
 	can_name = "mcl_technic:lava_can",
 	can_description = S("Lava Can"),
 	can_inventory_image = "mcl_technic_lava_can.png",
-	can_capacity = 8,
+	can_capacity = 16,
 	liquid_source_name = "mcl_core:lava_source",
 	liquid_flowing_name = "mcl_core:lava_flowing",
 })
