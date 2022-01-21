@@ -66,7 +66,7 @@ minetest.register_node("mcl_technic:coal_alloy_furnace_active", {
 	paramtype2 = "facedir",
 	light_source = 8,
 	drop = "mcl_technic:coal_alloy_furnace",
-	groups = {pickaxey=1,axey=1, handy=1, swordy=1, not_in_creative_inventory=1},
+	groups = {pickaxey=1,axey=1, handy=1, swordy=1, not_in_creative_inventory=1, xp=1},
 	legacy_facedir_simple = true,
 	sounds = mcl_sounds.node_sound_wood_defaults(),
 	_mcl_blast_resistance = 6,
@@ -121,13 +121,14 @@ minetest.register_abm({
 						inv:set_list("src", result.new_input)
 						inv:add_item("dst", result_stack)
 					end
-				end
-				if mcl_experience.throw_experience then
+					if mcl_experience.throw_xp then
 					local dir = vector.divide(minetest.facedir_to_dir(minetest.get_node(pos).param2),-1.95)
-					mcl_experience.throw_experience(vector.add(pos, dir), 1)
+					mcl_experience.throw_xp(vector.add(pos, dir), 1)
 			else
 				meta:set_int("src_time", 0)
 			end
+				end
+				
 				end
 		end
 

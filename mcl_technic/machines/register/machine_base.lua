@@ -35,7 +35,7 @@ function mcl_technic.register_base_machine(data)
 	local tier = data.tier
 	local ltier = string.lower(tier)
 
-	local groups = {pickaxey=1,axey=1, handy=1, swordy=1, mcl_technic_machine = 1, ["mcl_technic_"..ltier] = 1}
+	local groups = {pickaxey=1,axey=1, handy=1, swordy=1, mcl_technic_machine = 1, ["mcl_technic_"..ltier] = 1, xp=10}
 	if data.tube then
 		groups.tubedevice = 1
 		groups.tubedevice_receiver = 1
@@ -124,9 +124,9 @@ function mcl_technic.register_base_machine(data)
 			local output_stacks = {}
 			for _, o in ipairs(output) do
 				table.insert(output_stacks, ItemStack(o))
-				if mcl_experience.throw_experience then
+				if mcl_experience.throw_xp then
 					local dir = vector.divide(minetest.facedir_to_dir(minetest.get_node(pos).param2),-1.95)
-					mcl_experience.throw_experience(vector.add(pos, dir), 1)
+					mcl_experience.throw_xp(vector.add(pos, dir), 1)
 				end
 			end
 			local room_for_output = true
