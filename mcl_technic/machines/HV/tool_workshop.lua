@@ -87,6 +87,10 @@ local run = function(pos, node)
 		meta:set_string("infotext", S("%s Active"):format(machine_name))
 		srcstack:add_wear(-8000)
 		inv:set_stack("src", 1, srcstack)
+		if mcl_experience.throw_xp then
+					local dir = vector.divide(minetest.facedir_to_dir(minetest.get_node(pos).param2),-1.95)
+					mcl_experience.throw_xp(vector.add(pos, dir), 1)
+				end
 	end
 	return
 	meta:set_int("HV_EU_demand", workshop_demand[EU_upgrade+1])
