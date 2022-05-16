@@ -54,7 +54,7 @@ function mcl_technic.register_solar_array(data)
 		paramtype = "light",
 		node_box = {
 			type = "fixed",
-			fixed = {-0.5, -0.5, -0.5, 0.5, 0, 0.5},
+			fixed = {-0.5, -0.5, -0.5, 0.5, -0.375000, 0.5},
 		},
 		on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
