@@ -18,6 +18,7 @@ local recipes = {
 	{"mcl_core:iron_ingot",        "mcl_technic:iron_dust"},
 	{"mcl_copper:raw_copper",      "mcl_technic:copper_dust 2"},
     {"mcl_copper:copper_ingot",    "mcl_technic:copper_dust"},
+    {"mcl_core:diamond",           "mcl_technic:diamond_dust 2"},
 	
 -- Trees
     {"mcl_core:tree",                   "mcl_technic:sawdust 8"},
@@ -100,6 +101,7 @@ register_dust("Charcoal",        nil)
 register_dust("Gold",            "mcl_core:gold_ingot")
 register_dust("Stone",           "mcl_core:stone")
 register_dust("Iron",            "mcl_core:iron_ingot")
+register_dust("Diamond",         "mcl_core:diamond")
 
 minetest.register_craft({
 	type = "fuel",

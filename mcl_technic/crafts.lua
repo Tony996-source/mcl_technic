@@ -6,18 +6,18 @@ local mesecons_materials = minetest.get_modpath("mesecons_materials")
 minetest.register_craft({
 	output = 'mcl_technic:diamond_drill_head',
 	recipe = {
-		{'mcl_core:iron_ingot', 'mcl_core:diamond', 'mcl_core:iron_ingot'},
-		{'mcl_core:diamond',               '',                'mcl_core:diamond'},
-		{'mcl_core:iron_ingot', 'mcl_core:diamond', 'mcl_core:iron_ingot'},
+		{'mcl_core:iron_ingot', 'mcl_technic:diamond_dust', 'mcl_core:iron_ingot'},
+		{'mcl_technic:diamond_dust',               '',                'mcl_technic:diamond_dust'},
+		{'mcl_core:iron_ingot', 'mcl_technic:diamond_dust', 'mcl_core:iron_ingot'},
 	}
 })
 
 minetest.register_craft({
 	output = 'mcl_technic:diamond_drill_head',
 	recipe = {
-		{'mcl_core:diamond', 'mcl_core:iron_ingot', 'mcl_core:diamond'},
+		{'mcl_technic:diamond_dust', 'mcl_core:iron_ingot', 'mcl_technic:diamond_dust'},
 		{'mcl_core:iron_ingot',               '',                'mcl_core:iron_ingot'},
-		{'mcl_core:diamond', 'mcl_core:iron_ingot', 'mcl_core:diamond'},
+		{'mcl_technic:diamond_dust', 'mcl_core:iron_ingot', 'mcl_technic:diamond_dust'},
 	}
 })
 

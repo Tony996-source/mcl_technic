@@ -29,6 +29,7 @@ local recipes = {
     {"mcl_core:emerald 9",          "mcl_core:emeraldblock"},
     {"mcl_mobitems:rotten_flesh 9", "mcl_mobitems:leather"},
     {"mcl_technic:copper_nugget 9", "mcl_copper:copper_ingot"},
+    {"mcl_technic:diamond_dust 2",  "mcl_core:diamond"},
 }
 
 for _, data in pairs(recipes) do

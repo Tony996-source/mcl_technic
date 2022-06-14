@@ -43,6 +43,7 @@ local grind_recipe = {
     {"mcl_core:iron_nugget",       "mcl_technic:lowgrade_iron_dust"},
     {"mcl_core:gold_nugget",       "mcl_technic:lowgrade_gold_dust"},
     {"mcl_technic:copper_nugget",  "mcl_technic:lowgrade_copper_dust"},
+    {"mcl_core:diamond",           "mcl_techic:diamond_dust"},
 }
 
 
@@ -86,6 +87,7 @@ local compress_recipe = {
     {"mcl_core:emerald",          "mcl_core:emeraldblock"},
     {"mcl_mobitems:rotten_flesh", "mcl_mobitems:leather"},
     {"mcl_technic:copper_nugget", "mcl_copper:copper_ingot"},
+    {"mcl_tecnic:diamond_dust",   "mcl_core:diamond"},
 }
 
 for _, compress_recipe in pairs(compress_recipe) do
