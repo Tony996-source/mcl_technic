@@ -43,7 +43,7 @@ local grind_recipe = {
     {"mcl_core:iron_nugget",       "mcl_technic:lowgrade_iron_dust"},
     {"mcl_core:gold_nugget",       "mcl_technic:lowgrade_gold_dust"},
     {"mcl_technic:copper_nugget",  "mcl_technic:lowgrade_copper_dust"},
-    {"mcl_core:diamond",           "mcl_techic:diamond_dust"},
+    {"mcl_core:diamond",           "mcl_technic:diamond_dust"},
 }
 
 
