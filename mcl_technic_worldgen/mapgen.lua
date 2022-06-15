@@ -4,7 +4,7 @@ local stonelike = {"mcl_core:stone", "mcl_core:diorite", "mcl_core:andesite", "m
 if minetest.get_modpath("mcl_copper") then
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "mcl_copper:copper_ingot",
+	ore            = "mcl_copper:stone_with_copper",
 	wherein         = stonelike,
 	clust_scarcity = 830,
 	clust_num_ores = 5,
@@ -14,7 +14,7 @@ minetest.register_ore({
 })
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "mcl_copper:copper_ingot",
+	ore            = "mcl_copper:stone_with_copper",
 	wherein         = stonelike,
 	clust_scarcity = 1660,
 	clust_num_ores = 4,
