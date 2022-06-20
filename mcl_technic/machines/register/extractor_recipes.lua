@@ -11,6 +11,7 @@ end
 	-- register recipes with the same crafting ratios as `dye` provides
 	local dye_recipes = {
 	{"mcl_technic:coal_dust",       "mcl_dye:black 4"},
+	{"mcl_technic:charcoal_dust",   "mcl_dye:black 4"},
 	{"mcl_core:cactus",             "mcl_dye:dark_green 4"},
 	{"mcl_core:reeds",              "mcl_dye:dark_green 4"},
 	{"mcl_flowers:blue_orchid",     "mcl_dye:blue 4"},
