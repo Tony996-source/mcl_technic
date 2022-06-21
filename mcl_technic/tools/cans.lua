@@ -89,9 +89,9 @@ mcl_technic.register_can({
 minetest.register_craft({
 	output = 'mcl_technic:water_can 1',
 	recipe = {
-		{'mcl_core:iron_ingot', 'mcl_technic:rubber','mcl_core:iron_ingot'},
-		{'mcl_technic:carbon_plate', '', 'mcl_technic:carbon_plate'},
-		{'mcl_core:iron_ingot', 'mcl_technic:carbon_plate', 'mcl_core:iron_ingot'},
+		{'mcl_core:iron_ingot',      'mcl_technic:rubber',       'mcl_core:iron_ingot'},
+		{'mcl_technic:carbon_plate', '',                         'mcl_technic:carbon_plate'},
+		{'mcl_core:iron_ingot',      'mcl_technic:carbon_plate', 'mcl_core:iron_ingot'},
 	}
 })
 
@@ -107,8 +107,8 @@ mcl_technic.register_can({
 minetest.register_craft({
 	output = 'mcl_technic:lava_can 1',
 	recipe = {
-		{'mcl_core:iron_ingot', 'mcl_core:gold_ingot','mcl_core:iron_ingot'},
-		{'mcl_core:gold_ingot', '', 'mcl_core:gold_ingot'},
+		{'mcl_core:iron_ingot', 'mcl_core:gold_ingot', 'mcl_core:iron_ingot'},
+		{'mcl_core:gold_ingot', '',                    'mcl_core:gold_ingot'},
 		{'mcl_core:iron_ingot', 'mcl_core:gold_ingot', 'mcl_core:iron_ingot'},
 	}
 })
