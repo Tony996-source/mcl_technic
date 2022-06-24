@@ -36,6 +36,8 @@ end
 	{"mcl_flowers:peony",           "mcl_dye:pink 8"},
 	{"mcl_flowers:lilac",           "mcl_dye:magenta 8"},
 	{"mcl_flowers:sunflower",       "mcl_dye:yellow 8"},
+	{"mcl_core:stonebrickmossy 9",  "mcl_core:moss"},
+	{"mcl_core:mossycobble 9",      "mcl_core:moss"},
 }
     
 	for _, data in ipairs(dye_recipes) do

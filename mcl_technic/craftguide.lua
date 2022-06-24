@@ -136,6 +136,8 @@ local extract_recipe = {
 	{"mcl_flowers:peony",           "mcl_dye:pink"},
 	{"mcl_flowers:lilac",           "mcl_dye:magenta"},
 	{"mcl_flowers:sunflower",       "mcl_dye:yellow"},
+	{"mcl_core:stonebrickmossy",  "mcl_core:moss"},
+	{"mcl_core:mossycobble",      "mcl_core:moss"},
 }
 
 for _, extract_recipe in pairs(extract_recipe) do
