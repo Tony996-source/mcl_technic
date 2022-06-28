@@ -189,27 +189,14 @@ for _, colour in pairs(colour) do
 end
 
 -- Register Cracked Stone
-
-local axe = {   
- -- material,         Description
-	{"wood",          "Axe Wood"},
-	{"stone",         "Axe Stone"},
-	{"iron",          "Axe Iron"},
-	{"gold",          "Axe Gold"},
-	{"diamond",       "Axe Diamond"},
-	{"netherite",     "Axe Netherite"},
-	
-}
-
-for _, axe in pairs(axe) do
 	
 minetest.register_craft({
         type = "shapeless",
 		output = "mcl_technic:cracked_stone",
-		recipe = {"mcl_core:stone", "mcl_tools:axe_"..axe[1]},
-		replacements = {{"mcl_tools:axe_"..axe[1], "mcl_tools:axe_"..axe[1]}}
+		recipe = {"mcl_core:stone", "group:axe"},
+		replacements = {{"group:axe", "group:axe"}}
 })
-end
+
 
 minetest.register_craft({
 	output = 'mcl_core:mossycobble',
