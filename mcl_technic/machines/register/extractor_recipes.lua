@@ -38,7 +38,7 @@ end
 	{"mcl_flowers:sunflower",       "mcl_dye:yellow 8"},
 	{"mcl_core:stonebrickmossy 9",  "mcl_core:moss"},
 	{"mcl_core:mossycobble 9",      "mcl_core:moss"},
-	{"mcl_farming:wheat_item",      "mcl_farming:wheat_seeds"},
+	{"mcl_farming:wheat_item",      "mcl_farming:wheat_seeds 2"},
 }
     
 	for _, data in ipairs(dye_recipes) do
