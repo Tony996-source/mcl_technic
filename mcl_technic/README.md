@@ -10,6 +10,12 @@ Technic chests code is licensed under the GNU LGPLv2+.
 
 Texture licenses:
 
+Tony996 MIT
+  * hv machines
+  * mv machines
+  * lv machines
+  * copper dust
+
 BlockMen modified by Zefram (CC BY-SA 3.0):
   * technic_chernobylite_block.png
   * technic_corium_flowing_animated.png
