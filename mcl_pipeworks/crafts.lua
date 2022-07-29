@@ -15,7 +15,7 @@ minetest.register_craftitem("mcl_pipeworks:plastic_sheet", {
 
 minetest.register_craft({
 	type = "cooking",
-	output = "plastic_sheet",
+	output = "mcl_pipeworks:plastic_sheet",
 	recipe = "mcl_pipeworks:oil_extract",
 })
 
