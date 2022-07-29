@@ -64,7 +64,7 @@ minetest.register_ore({
 		clust_scarcity = 830,
 		clust_num_ores = 5,
 		clust_size     = 3,
-		y_min          = mcl_mapgen.overworld.min,
+		y_min          = mcl_vars.mg_overworld_min,
 		y_max          = mcl_worlds.layer_to_y(39),
 	})
 minetest.register_ore({

@@ -6,5 +6,4 @@ mcl_technic.worldgen = {
 }
 
 dofile(modpath.."/mapgen.lua")
-dofile(modpath.."/plants.lua")
 dofile(modpath.."/trees.lua")

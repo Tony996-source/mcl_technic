@@ -5,11 +5,6 @@ minetest.register_craftitem("mcl_pipeworks:oil_extract", {
 	inventory_image = "mcl_pipeworks_oil_extract.png",
 })
 
-minetest.register_craftitem("mcl_pipeworks:paraffin", {
-	description = "Unprocessed paraffin",
-	inventory_image = "mcl_pipeworks_paraffin.png",
-})
-
 minetest.register_craftitem("mcl_pipeworks:plastic_sheet", {
 	description = "Plastic sheet",
 	inventory_image = "mcl_pipeworks_plastic_sheet.png",
@@ -17,28 +12,16 @@ minetest.register_craftitem("mcl_pipeworks:plastic_sheet", {
 
 -- crafts
 
-minetest.register_craft({
-	type = "cooking",
-	output = "mcl_pipeworks:plastic_sheet",
-	recipe = "mcl_pipeworks:paraffin",
-})
-
 
 minetest.register_craft({
 	type = "cooking",
-	output = "mcl_pipeworks:paraffin",
+	output = "plastic_sheet",
 	recipe = "mcl_pipeworks:oil_extract",
 })
 
 minetest.register_craft({
 	type = "fuel",
 	recipe = "mcl_pipeworks:oil_extract",
-	burntime = 30,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "mcl_pipeworks:paraffin",
 	burntime = 30,
 })
 
