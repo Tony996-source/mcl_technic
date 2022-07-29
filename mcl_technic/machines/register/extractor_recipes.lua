@@ -39,6 +39,12 @@ end
 	{"mcl_core:stonebrickmossy 9",  "mcl_core:moss"},
 	{"mcl_core:mossycobble 9",      "mcl_core:moss"},
 	{"mcl_farming:wheat_item",      "mcl_farming:wheat_seeds 2"},
+	{"mcl_core:leaves",             "mcl_pipeworks:oil_extract 4"},
+	{"mcl_core:darkleaves",         "mcl_pipeworks:oil_extract 4"},
+	{"mcl_core:jungleleaves",       "mcl_pipeworks:oil_extract 4"},
+	{"mcl_core:acacialeaves",       "mcl_pipeworks:oil_extract 4"},
+	{"mcl_core:spruceleaves",       "mcl_pipeworks:oil_extract 4"},
+	{"mcl_core:birchleaves",        "mcl_pipeworks:oil_extract 4"},
 }
     
 	for _, data in ipairs(dye_recipes) do

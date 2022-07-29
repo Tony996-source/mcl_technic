@@ -139,6 +139,12 @@ local extract_recipe = {
 	{"mcl_core:stonebrickmossy",    "mcl_core:moss"},
 	{"mcl_core:mossycobble",        "mcl_core:moss"},
 	{"mcl_farming:wheat_item",      "mcl_farming:wheat_seeds"},
+	{"mcl_core:leaves",             "mcl_pipeworks:oil_extract"},
+	{"mcl_core:darkleaves",         "mcl_pipeworks:oil_extract"},
+	{"mcl_core:jungleleaves",       "mcl_pipeworks:oil_extract"},
+	{"mcl_core:acacialeaves",       "mcl_pipeworks:oil_extract"},
+	{"mcl_core:spruceleaves",       "mcl_pipeworks:oil_extract"},
+	{"mcl_core:birchleaves",        "mcl_pipeworks:oil_extract"},
 }
 
 for _, extract_recipe in pairs(extract_recipe) do
