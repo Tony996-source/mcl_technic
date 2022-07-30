@@ -83,6 +83,7 @@ minetest.register_node("mcl_technic:charcoalblock", {
 })
 
 
+
 minetest.register_craftitem("mcl_technic:copper_dust", {
 	description = ("Copper Dust"),
 	inventory_image = "mcl_technic_copper_dust.png",
@@ -98,3 +99,5 @@ minetest.register_craftitem("mcl_technic:copper_nugget", {
 })
 
 mcl_stairs.register_stair_and_slab_simple("cracked_stone", "mcl_technic:cracked_stone", "Cracked Stone Stair", "Cracked Stone Slab", "Double Cracked Stone Slab")
+
+
