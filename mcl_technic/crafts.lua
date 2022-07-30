@@ -212,3 +212,9 @@ minetest.register_craft({
 	},
 	replacements = {{"mcl_buckets:bucket_water", "mcl_buckets:bucket_water"},},
 })
+
+minetest.register_craft({
+    type = 'shapeless',
+	output = 'extra_mobs:glow_ink_sac',
+	recipe = {'mcl_dye:black', 'mcl_nether:glowstone_dust'},
+})
