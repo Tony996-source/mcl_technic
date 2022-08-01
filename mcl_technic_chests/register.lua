@@ -280,7 +280,6 @@ function mcl_technic.chests:definition(name, data)
 	_mcl_hardness = 2.5,
 		after_place_node = locked_after_place,
 		after_dig_node = mcl_pipeworks.after_dig,
-
 		on_construct = function(pos)
 			local meta = minetest.get_meta(pos)
 			meta:set_string("infotext", S("%s Chest"):format(name))

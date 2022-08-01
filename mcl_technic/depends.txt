@@ -17,3 +17,6 @@ mcl_raw_ores?
 mcl_deepslate?
 mcl_nether?
 extra_mobs?
+mcl_init?
+mcl_sounds?
+mcl_enchanting?
