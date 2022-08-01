@@ -287,7 +287,7 @@ function mcl_technic.chests:definition(name, data)
 			local inv = meta:get_inventory()
 			inv:set_size("main", data.width * data.height)
 		end,
-		can_dig = self.can_dig,
+		
 		on_receive_fields = get_receive_fields(name, data),
 		on_metadata_inventory_move = self.on_inv_move,
 		on_metadata_inventory_put = self.on_inv_put,
