@@ -198,17 +198,21 @@ minetest.register_craft({
 
 
 minetest.register_craft({
-	output = 'mcl_core:mossycobble',
+	output = 'mcl_core:mossycobble 8',
 	recipe = {
-		{'mcl_core:cobble', 'mcl_buckets:bucket_water'},
+		{'mcl_core:cobble', 'mcl_core:cobble',          'mcl_core:cobble'},
+		{'mcl_core:cobble', 'mcl_buckets:bucket_water', 'mcl_core:cobble'},
+		{'mcl_core:cobble', 'mcl_core:cobble',          'mcl_core:cobble'},
 	},
 	replacements = {{"mcl_buckets:bucket_water", "mcl_buckets:bucket_water"},},
 })
 
 minetest.register_craft({
-	output = 'mcl_core:stonebrickmossy',
+	output = 'mcl_core:stonebrickmossy 8',
 	recipe = {
-		{'mcl_core:stonebrick', 'mcl_buckets:bucket_water'},
+		{'mcl_core:stonebrick', 'mcl_core:stonebrick',      'mcl_core:stonebrick'},
+		{'mcl_core:stonebrick', 'mcl_buckets:bucket_water', 'mcl_core:stonebrick'},
+		{'mcl_core:stonebrick', 'mcl_core:stonebrick',      'mcl_core:stonebrick'},
 	},
 	replacements = {{"mcl_buckets:bucket_water", "mcl_buckets:bucket_water"},},
 })
