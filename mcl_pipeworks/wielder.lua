@@ -442,7 +442,7 @@ if mcl_pipeworks.enable_deployer then
 			local wieldstack = virtplayer:get_wielded_item()
 			virtplayer:set_wielded_item((minetest.registered_items[wieldstack:get_name()] or {on_place=minetest.item_place}).on_place(wieldstack, virtplayer, pointed_thing) or wieldstack)
 		end,
-		eject_drops = true,
+		eject_drops = false,
 	})
 	minetest.register_craft({
 		output = "mcl_pipeworks:deployer_off",
@@ -482,7 +482,7 @@ if mcl_pipeworks.enable_dispenser then
 				{on_drop=minetest.item_drop}).on_drop(wieldstack, virtplayer, virtplayer:get_pos()) or
 				wieldstack)
 		end,
-		eject_drops = true,
+		eject_drops = false,
 	})
 	minetest.register_craft({
 		output = "mcl_pipeworks:dispenser_off",

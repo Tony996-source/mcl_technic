@@ -107,28 +107,7 @@ function mcl_pipeworks.after_place(pos)
 	mcl_pipeworks.scan_for_tube_objects(pos)
 end
 
-function drop_item_stack(pos, stack)
-	if not stack or stack:is_empty() then return end
-	local drop_offset = vector.new(math.random() - 0.5, 0, math.random() - 0.5)
-	minetest.add_item(vector.add(pos, drop_offset), stack)
-end
-
-function mcl_pipeworks.after_dig(pos, oldnode, oldmetadata, digger)
-	if oldmetadata and oldmetadata.inventory then
-		-- process after_dig_node callback
-		local main = oldmetadata.inventory.main
-		if not main then return end
-		for _, stack in pairs(main) do
-			drop_item_stack(pos, stack)
-		end
-	else
-		local meta = minetest.get_meta(pos)
-		local inv = meta:get_inventory()
-		for i = 1, inv:get_size("main") do
-			drop_item_stack(pos, inv:get_stack("main", i))
-		end
-		meta:from_table()
-	end
+function mcl_pipeworks.after_dig(pos)
 	mcl_pipeworks.scan_for_tube_objects(pos)
 end
 
