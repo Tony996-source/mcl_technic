@@ -20,6 +20,8 @@ local recipes = {
     {"mcl_core:charcoal_lump 9",    "mcl_technic:charcoalblock"},
     {"mcl_technic:sawdust 8",       "mcl_core:paper"},
     {"mcl_core:coal_lump 9",        "mcl_core:coalblock"},
+    {"mcl_raw_ores:raw_gold 9",     "mcl_raw_ores:raw_gold_block"},
+    {"mcl_raw_ores:raw_iron 9",     "mcl_raw_ores:raw_iron_block"},
     {"mcl_core:gold_ingot 9",       "mcl_core:goldblock"},
     {"mcl_core:iron_ingot 9",       "mcl_core:ironblock"},
     {"mcl_copper:copper_ingot 9",   "mcl_copper:block"},
@@ -31,6 +33,7 @@ local recipes = {
     {"mcl_mobitems:rotten_flesh 9", "mcl_mobitems:leather"},
     {"mcl_technic:copper_nugget 9", "mcl_copper:copper_ingot"},
     {"mcl_technic:diamond_dust 2",  "mcl_core:diamond"},
+    {"mesecons:redstone 9",         "mesecons_torch:redstoneblock"}
 }
 
 for _, data in pairs(recipes) do

@@ -44,16 +44,6 @@ minetest.register_ore({
 		y_min          = mcl_worlds.layer_to_y(81),
 		y_max          = mcl_worlds.layer_to_y(128),
 	})
-minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mcl_core:stone_with_coal",
-		wherein         = stonelike,
-		clust_scarcity = 500*3,
-		clust_num_ores = 5,
-		clust_size     = 3,
-		y_min          = mcl_worlds.layer_to_y(81),
-		y_max          = mcl_worlds.layer_to_y(128),
-	})
 	
 -- Iron
 
@@ -78,41 +68,8 @@ minetest.register_ore({
 		y_max          = mcl_worlds.layer_to_y(63),
 	})
 	
-minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mcl_core:stone_with_iron",
-		wherein         = stonelike,
-		clust_scarcity = 1660,
-		clust_num_ores = 4,
-		clust_size     = 2,
-		y_min          = mcl_worlds.layer_to_y(40),
-		y_max          = mcl_worlds.layer_to_y(63),
-	})
-	
 -- Gold
 
-minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mcl_core:stone_with_gold",
-		wherein         = stonelike,
-		clust_scarcity = 13000,
-		clust_num_ores = 4,
-		clust_size     = 2,
-		y_min          = mcl_worlds.layer_to_y(31),
-		y_max          = mcl_worlds.layer_to_y(33),
-	})
-	
-minetest.register_ore({
-		ore_type       = "scatter",
-		ore            = "mcl_core:stone_with_gold",
-		wherein         = stonelike,
-		clust_scarcity = 13000,
-		clust_num_ores = 4,
-		clust_size     = 2,
-		y_min          = mcl_worlds.layer_to_y(31),
-		y_max          = mcl_worlds.layer_to_y(33),
-	})
-	
 minetest.register_ore({
 		ore_type       = "scatter",
 		ore            = "mcl_core:stone_with_gold",
@@ -158,10 +115,14 @@ minetest.register_ore({
 		y_max          = mcl_worlds.layer_to_y(15),
 	})
 
--- mcl_Deepslate
+-----------------------------------------------------------------------------------------------
+----------------------------------- mcl_Deepslate----------------------------------------------
+-----------------------------------------------------------------------------------------------
 
 if minetest.get_modpath("mcl_deepslate") then
 
+-- Copper in Deepslate
+
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "mcl_deepslate:deepslate_with_copper",
@@ -182,6 +143,23 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
+
+-- Raw Copper block
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_copper:block_raw",
+	wherein         = "mcl_deepslate:deepslate",
+	clust_scarcity = 830,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(39),
+})
+
+
+-- Coal in Deepslate
+
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "mcl_deepslate:deepslate_with_coal",
@@ -202,6 +180,36 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
+
+-- Coal Block
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_core:coalblock",
+	wherein         = "mcl_deepslate:deepslate",
+	clust_scarcity = 830,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(39),
+})
+
+
+-- Charcoal Block
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_technic:charcoalblock",
+	wherein         = "mcl_deepslate:deepslate",
+	clust_scarcity = 830,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(39),
+})
+
+-- Iron in Deepslate
+
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "mcl_deepslate:deepslate_with_iron",
@@ -222,6 +230,22 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
+
+-- Raw Iron Block
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_raw_ores:raw_iron_block",
+	wherein         = "mcl_deepslate:deepslate",
+	clust_scarcity = 830,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(39),
+})
+
+--Gold in Deepslate
+
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "mcl_deepslate:deepslate_with_gold",
@@ -242,9 +266,12 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
+
+-- Raw Gold Block
+
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "mcl_deepslate:deepslate_with_gold",
+	ore            = "mcl_raw_ores:raw_gold_block",
 	wherein         = "mcl_deepslate:deepslate",
 	clust_scarcity = 830,
 	clust_num_ores = 5,
@@ -252,16 +279,9 @@ minetest.register_ore({
 	y_min          = mcl_vars.mg_overworld_min,
 	y_max          = mcl_worlds.layer_to_y(39),
 })
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "mcl_deepslate:deepslate_with_gold",
-	wherein         = "mcl_deepslate:deepslate",
-	clust_scarcity = 1660,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min          = mcl_worlds.layer_to_y(40),
-	y_max          = mcl_worlds.layer_to_y(63),
-})
+
+-- Emerald in Deepslate
+
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "mcl_deepslate:deepslate_with_emerald",
@@ -282,6 +302,9 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
+
+-- Diamond in Deepslate
+
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "mcl_deepslate:deepslate_with_diamond",
@@ -302,6 +325,10 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
+
+
+-- Lapis in Deepslate
+
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "mcl_deepslate:deepslate_with_lapis",
@@ -322,64 +349,10 @@ minetest.register_ore({
 	y_min          = mcl_worlds.layer_to_y(40),
 	y_max          = mcl_worlds.layer_to_y(63),
 })
+
 end
 
--- Extra ore.
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "mcl_core:stone_with_lapis",
-	wherein         = stonelike,
-	clust_scarcity = 1000,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(30),
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "mcl_core:stone_with_diamond",
-	wherein         = stonelike,
-	clust_scarcity = 1000,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(30),
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "mcl_core:stone_with_gold",
-	wherein         = stonelike,
-	clust_scarcity = 1000,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(45),
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "mcl_core:stone_with_gold",
-	wherein         = stonelike,
-	clust_scarcity = 1000,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(45),
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "mcl_core:stone_with_iron",
-	wherein         = stonelike,
-	clust_scarcity = 1660,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min          = mcl_vars.mg_overworld_min,
-	y_max          = mcl_worlds.layer_to_y(50),
-})
+-- Nether
 
 minetest.register_ore({
         ore_type       = "scatter",
