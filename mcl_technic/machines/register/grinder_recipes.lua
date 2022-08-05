@@ -102,6 +102,7 @@ register_dust("Gold",            "mcl_core:gold_ingot")
 register_dust("Stone",           "mcl_core:stone")
 register_dust("Iron",            "mcl_core:iron_ingot")
 register_dust("Diamond",         "mcl_core:diamond")
+register_dust("Copper",          "mcl_copper:copper_ingot")
 
 minetest.register_craft({
 	type = "fuel",

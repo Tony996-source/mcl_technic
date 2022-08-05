@@ -244,6 +244,17 @@ minetest.register_ore({
 	y_max          = mcl_worlds.layer_to_y(39),
 })
 
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mcl_raw_ores:raw_iron_block",
+	wherein         = "mcl_deepslate:deepslate",
+	clust_scarcity = 1660,
+	clust_num_ores = 4,
+	clust_size     = 3,
+	y_min          = mcl_vars.mg_overworld_min,
+	y_max          = mcl_worlds.layer_to_y(63),
+})
+
 --Gold in Deepslate
 
 minetest.register_ore({
