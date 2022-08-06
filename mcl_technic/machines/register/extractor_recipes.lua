@@ -45,6 +45,7 @@ end
 	{"mcl_core:acacialeaves",       "mcl_pipeworks:oil_extract 4"},
 	{"mcl_core:spruceleaves",       "mcl_pipeworks:oil_extract 4"},
 	{"mcl_core:birchleaves",        "mcl_pipeworks:oil_extract 4"},
+	{"mcl_mangrove:mangroveleaves", "mcl_pipeworks:oil_extract 4"},
 }
     
 	for _, data in ipairs(dye_recipes) do

@@ -27,6 +27,8 @@ local recipes = {
     {"mcl_core:sprucetree",             "mcl_technic:sawdust 8"},
     {"mcl_core:acaciatree",             "mcl_technic:sawdust 8"},
     {"mcl_core:darktree",               "mcl_technic:sawdust 8"},
+    {"mcl_mangrove:mangrove_tree",      "mcl_technic:sawdust 8"},
+    {"mcl_mangrove:mangrove_wood",      "mcl_technic:sawdust 2"},
     {"mcl_core:wood",                   "mcl_technic:sawdust 2"},
     {"mcl_core:junglewood",             "mcl_technic:sawdust 2"},
     {"mcl_core:sprucewood",             "mcl_technic:sawdust 2"},

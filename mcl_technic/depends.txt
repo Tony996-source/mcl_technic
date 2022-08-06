@@ -20,3 +20,4 @@ extra_mobs?
 mcl_init?
 mcl_sounds?
 mcl_enchanting?
+mcl_mangrove?

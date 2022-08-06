@@ -32,6 +32,8 @@ local grind_recipe = {
     {"mcl_core:birchwood",         "mcl_technic:sawdust"},
     {"mcl_core:darkwood",          "mcl_technic:sawdust"},
     {"mcl_core:acaciawood",        "mcl_technic:sawdust"},
+    {"mcl_mangrove:mangrove_tree", "mcl_technic:sawdust"},
+    {"mcl_mangrove:mangrove_wood", "mcl_technic:sawdust"},
     
 	-- Other
 	{"mcl_mobitems:bone",          "mcl_dye:white"},
@@ -145,6 +147,7 @@ local extract_recipe = {
 	{"mcl_core:acacialeaves",       "mcl_pipeworks:oil_extract"},
 	{"mcl_core:spruceleaves",       "mcl_pipeworks:oil_extract"},
 	{"mcl_core:birchleaves",        "mcl_pipeworks:oil_extract"},
+	{"mcl_mangrove:mangroveleaves", "mcl_pipeworks:oil_extract"},
 }
 
 for _, extract_recipe in pairs(extract_recipe) do

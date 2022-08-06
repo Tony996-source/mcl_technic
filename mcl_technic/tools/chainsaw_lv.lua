@@ -7,29 +7,32 @@ local chainsaw_charge_per_node = 12
 -- if this is disabled.
 local chainsaw_leaves = true
 
--- The default trees
 local timber_nodenames = {
-	["mcl_core:acaciatree"] = true,
-	["mcl_core:birchtree"]  = true,
-	["mcl_core:jungletree"]  = true,
-	["mcl_core:papyrus"]     = true,
-	["mcl_core:cactus"]      = true,
-	["mcl_core:tree"]        = true,
-	["mcl_core:apple"]       = true,
-	["mcl_core:sprucetree"]    = true,
-	["mcl_core:darktree"]     = true,
+	["mcl_core:acaciatree"]        = true,
+	["mcl_core:birchtree"]         = true,
+	["mcl_core:jungletree"]        = true,
+	["mcl_core:papyrus"]           = true,
+	["mcl_core:cactus"]            = true,
+	["mcl_core:tree"]              = true,
+	["mcl_core:apple"]             = true,
+	["mcl_core:sprucetree"]        = true,
+	["mcl_core:darktree"]          = true,
+	["mcl_mangrove:mangrove_tree"] = true,
+	["mcl_mangrove:hanging_propagule"] = true
 }
 
 if chainsaw_leaves then
-	timber_nodenames["mcl_core:acacialeaves"] = true
-	timber_nodenames["mcl_core:birchleaves"] = true
-	timber_nodenames["mcl_core:leaves"] = true
-	timber_nodenames["mcl_core:jungleleaves"] = true
-	timber_nodenames["mcl_core:spruceleaves"] = true
-	timber_nodenames["mcl_core:darkleaves"] = true
-	timber_nodenames["mcl_cocoas:cocoa_1"] = true
-	timber_nodenames["mcl_cocoas:cocoa_2"] = true
-	timber_nodenames["mcl_cocoas:cocoa_3"] = true
+	timber_nodenames["mcl_core:acacialeaves"]          = true
+	timber_nodenames["mcl_core:birchleaves"]           = true
+	timber_nodenames["mcl_core:leaves"]                = true
+	timber_nodenames["mcl_core:jungleleaves"]          = true
+	timber_nodenames["mcl_core:spruceleaves"]          = true
+	timber_nodenames["mcl_core:darkleaves"]            = true
+	timber_nodenames["mcl_cocoas:cocoa_1"]             = true
+	timber_nodenames["mcl_cocoas:cocoa_2"]             = true
+	timber_nodenames["mcl_cocoas:cocoa_3"]             = true
+	timber_nodenames["mcl_mangrove:mangroveleaves"]    = true
+	timber_nodenames["mcl_mangrove:mangrove_roots"]    = true
 end
 
 local S = mcl_technic.getter

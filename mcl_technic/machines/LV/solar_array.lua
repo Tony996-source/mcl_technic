@@ -8,9 +8,9 @@
 minetest.register_craft({
 	output = 'mcl_technic:solar_array_lv 1',
 	recipe = {
-	{'mcl_technic:solar_panel', 'mcl_technic:solar_panel', 'mcl_technic:solar_panel'},
-	{'mcl_core:iron_ingot', 'mcl_core:iron_ingot', 'mcl_core:iron_ingot'},
-	{'',                      'mcl_technic:lv_cable',       ''},
+	{'mcl_core:iron_ingot', 'mcl_technic:solar_panel', 'mcl_core:iron_ingot'},
+	{'mcl_core:iron_ingot', 'mcl_core:iron_ingot',     'mcl_core:iron_ingot'},
+	{'',                    'mcl_technic:lv_cable',    ''},
 	}
 })
 
