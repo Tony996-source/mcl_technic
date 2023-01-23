@@ -68,8 +68,8 @@ minetest.register_ore({
 		clust_scarcity = 13000,
 		clust_num_ores = 4,
 		clust_size     = 2,
-		y_min          = mcl_worlds.layer_to_y(31),
-		y_max          = mcl_worlds.layer_to_y(33),
+		y_min          = mcl_vars.mg_overworld_min,
+		y_max          = mcl_worlds.layer_to_y(40),
 	})
 	
 -- Diamond

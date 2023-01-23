@@ -1,4 +1,4 @@
-Technic button mod.
+Mesecons button mod.
 This mod adds the buttons for MineClone 2.
 
 MEDIA FILE CREDITS:

@@ -21,7 +21,7 @@ local boxes_on = {
 }
 
 -- Push the button
-mesecon.push_button = function(pos, node)
+function mesecon.push_button(pos, node)
 	-- No-op if button is already pushed
 	if mesecon.is_receptor_on(node) then
 		return
@@ -37,7 +37,7 @@ mesecon.push_button = function(pos, node)
 	timer:start(def._mcl_button_timer)
 end
 
-local on_button_place = function(itemstack, placer, pointed_thing)
+local function on_button_place(itemstack, placer, pointed_thing)
 	if pointed_thing.type ~= "node" then
 		-- no interaction possible with entities
 		return itemstack
@@ -86,7 +86,7 @@ end
 
 local buttonuse = S("Use the button to push it.")
 
-mesecon.register_button = function(basename, description, texture, recipeitem, sounds, plusgroups, button_timer, push_by_arrow, longdesc, button_sound)
+function mesecon.register_button(basename, description, texture, recipeitem, sounds, plusgroups, button_timer, push_by_arrow, longdesc, button_sound)
 	local groups_off = table.copy(plusgroups)
 	groups_off.attached_node=1
 	groups_off.dig_by_water=1
@@ -112,7 +112,7 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 	if push_by_arrow then
 		tt = tt .. "\n" .. S("Pushable by arrow")
 	end
-	minetest.register_node("mesecons_button:button_"..basename.."_off", {
+	minetest.register_node(":mesecons_button:button_"..basename.."_off", {
 		drawtype = "nodebox",
 		tiles = {texture},
 		wield_image = "mesecons_button_wield_mask.png^"..texture.."^mesecons_button_wield_mask.png^[makealpha:255,126,126",
@@ -147,7 +147,7 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 		_mcl_hardness = 0.5,
 	})
 
-	minetest.register_node("mesecons_button:button_"..basename.."_on", {
+	minetest.register_node(":mesecons_button:button_"..basename.."_on", {
 		drawtype = "nodebox",
 		tiles = {texture},
 		wield_image = "mesecons_button_wield_mask.png^"..texture.."^mesecons_button_wield_mask.png^[makealpha:255,126,126",
@@ -199,17 +199,16 @@ mesecon.register_button = function(basename, description, texture, recipeitem, s
 	})
 
 	minetest.register_craft({
-	    type = 'shapeless',
 		output = "mesecons_button:button_"..basename.."_off",
-		recipe = { recipeitem, "mesecons:wire_00000000_off"},
+		recipe = {{ recipeitem }},
 	})
 end
 
 local metals = {
-	{ "iron", "mcl_core:iron_ingot", "mesecons_iron_button.png", S("Iron Button") },
-	{ "gold", "mcl_core:gold_ingot", "mesecons_gold_button.png", S("Gold Button")},
-    { "copper", "technic:copper_ingot", "mesecons_copper_button.png", S("Copper Button") },
-    { "steel", "technic:steel_ingot", "mesecons_steel_button.png", S("Steel Button") },
+	{ "iron", "mcl_core:iron_ingot", "default_steel_block.png", S("Iron Button") },
+	{ "gold", "mcl_core:gold_ingot", "default_gold_block.png", S("Gold Button")},
+    { "copper", "technic:copper_ingot", "mcl_copper_block.png", S("Copper Button") },
+    { "steel", "technic:steel_ingot", "mcl_technic_steel_block.png", S("Steel Button") },
 }
 
 for m=1, #metals do
@@ -227,12 +226,16 @@ for m=1, #metals do
 end
 
 local woods = {
-	{ "wood", "mcl_core:wood", "mesecons_wood_button.png", S("Oak Button") },
-	{ "acaciawood", "mcl_core:acaciawood", "mesecons_acacia_button.png", S("Acacia Button") },
-	{ "birchwood", "mcl_core:birchwood", "mesecons_birch_button.png", S("Birch Button") },
-	{ "darkwood", "mcl_core:darkwood", "mesecons_big_oak_button.png", S("Dark Oak Button") },
-	{ "sprucewood", "mcl_core:sprucewood", "mesecons_spruce_button.png", S("Spruce Button") },
-	{ "junglewood", "mcl_core:junglewood", "mesecons_jungle_button.png", S("Jungle Button") },
+	{ "wood", "mcl_core:wood", "default_wood.png", S("Oak Button") },
+	{ "acaciawood", "mcl_core:acaciawood", "default_acacia_wood.png", S("Acacia Button") },
+	{ "birchwood", "mcl_core:birchwood", "mcl_core_planks_birch.png", S("Birch Button") },
+	{ "darkwood", "mcl_core:darkwood", "mcl_core_planks_big_oak.png", S("Dark Oak Button") },
+	{ "sprucewood", "mcl_core:sprucewood", "mcl_core_planks_spruce.png", S("Spruce Button") },
+	{ "junglewood", "mcl_core:junglewood", "default_junglewood.png", S("Jungle Button") },
+	
+	{ "mangrove_wood", "mcl_mangrove:mangrove_wood", "mcl_mangrove_planks.png", S("Mangrove Button") },
+	{ "crimson_hyphae_wood", "mcl_crimson:crimson_hyphae_wood", "crimson_hyphae_wood.png", S("Crimson Button") },
+	{ "warped_hyphae_wood", "mcl_crimson:warped_hyphae_wood", "warped_hyphae_wood.png", S("Warped Button") },
 }
 
 for w=1, #woods do
@@ -256,12 +259,12 @@ for w=1, #woods do
 end
 
 local stones = {
-	{"stone", "mcl_core:stone", "mesecons_stone_button.png", S("Stone Button") },
-	{"sandstone", "mcl_core:sandstone", "mesecons_sandstone_button.png", S("Sandstone Button") },
-	{"red_sandstone", "mcl_core:redsandstone", "mesecons_red_sandstone_button.png", S("Red Sandstone Button") },
-	{"andesite", "mcl_core:andesite", "mesecons_andesite_button.png", S("Andesite Button") },
-	{"diorite", "mcl_core:diorite", "mesecons_diorite_button.png", S("Diorite Button") },
-	{"granite", "mcl_core:granite", "mesecons_granite_button.png", S("Granite Button") },
+	{"stone", "mcl_core:stone", "default_stone.png", S("Stone Button") },
+	{"sandstone", "mcl_core:sandstone", "mcl_core_sandstone_top.png", S("Sandstone Button") },
+	{"red_sandstone", "mcl_core:redsandstone", "mcl_core_red_sandstone_top.png", S("Red Sandstone Button") },
+	{"andesite", "mcl_core:andesite", "mcl_core_andesite.png", S("Andesite Button") },
+	{"diorite", "mcl_core:diorite", "mcl_core_diorite.png", S("Diorite Button") },
+	{"granite", "mcl_core:granite", "mcl_core_granite.png", S("Granite Button") },
 }
 
 for s=1, #stones do
@@ -281,7 +284,7 @@ end
 mesecon.register_button(
 		"diamond",
 		S("Diamond Button"),
-		"mesecons_diamond_button.png",
+		"default_diamond_block.png",
 		"mcl_core:diamond",
 		mcl_sounds.node_sound_stone_defaults(),
 		{material_diamond=1,handy=1,pickaxey=1},
@@ -293,7 +296,7 @@ mesecon.register_button(
 mesecon.register_button(
 		"emerald",
 		S("Emerald Button"),
-		"mesecons_emerald_button.png",
+		"mcl_core_emerald_block.png",
 		"mcl_core:emerald",
 		mcl_sounds.node_sound_stone_defaults(),
 		{material_emerald=1,handy=1,pickaxey=1},

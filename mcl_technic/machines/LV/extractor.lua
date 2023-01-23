@@ -6,7 +6,7 @@ minetest.register_craft({
 	recipe = {
 	{'mcl_core:andesite', 'mcl_core:andesite', 'mcl_core:andesite'},
 	{'mcl_core:andesite', 'mcl_core:iron_ingot', 'mcl_core:andesite'},
-	{'',                     'mcl_technic:lv_cable',               ''},
+	{'mcl_core:andesite', 'mcl_technic:lv_cable', 'mcl_core:andesite'},
 	}
 })
 

@@ -126,12 +126,6 @@ minetest.register_craft({
 if minetest.get_modpath("mcl_copper") then
 
 minetest.register_craft({
-    type = 'shapeless',
-	output = 'mcl_copper:copper_ingot 9',
-	recipe = {'mcl_technic:copper_block'},
-})
-
-minetest.register_craft({
 	output = 'mcl_copper:copper_ingot',
 	recipe = {
 		{'mcl_technic:copper_nugget', 'mcl_technic:copper_nugget', 'mcl_technic:copper_nugget'},
