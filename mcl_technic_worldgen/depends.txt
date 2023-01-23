@@ -1,4 +1,5 @@
 mcl_core
+mcl_mapgen_core
 mcl_technic?
 mcl_farming?
 mcl_flowers?
