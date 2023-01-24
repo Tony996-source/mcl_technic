@@ -1,8 +1,0 @@
-transporter_multiplier (Transporter Cost Multiplier) int 20
-transporter_two_way_multiplier (Transporter Two Way Cost Multiplier) int 2
-transporter_minimum_y (Minimum global Y) int -31000
-transporter_maximum_y (Maximum global Y) int 31000
-transporter_minimum_z (Minimum global Z) int -31000
-transporter_maximum_z (Maximum global Z) int 31000
-transporter_minimum_x (Minimum global X) int -31000
-transporter_maximum_x (Maximum global X) int 31000

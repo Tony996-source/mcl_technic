@@ -4,7 +4,7 @@
 minetest.register_craft({
 	output = 'mcl_technic:solar_array_hv 1',
 	recipe = {
-	{'mcl_technic:steel_ingot', 'mcl_technic:solar_array_mv', 'mcl_technic:steel_ingot'},
+	{'mcl_technic:solar_array_mv', 'mcl_technic:solar_array_mv', 'mcl_technic:solar_array_mv'},
 	{'mcl_technic:steel_ingot', 'mcl_core:gold_ingot',        'mcl_technic:steel_ingot'},
 	{'',                        'mcl_technic:hv_cable',       ''},
 	}
