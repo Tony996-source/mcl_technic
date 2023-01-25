@@ -52,11 +52,23 @@ minetest.register_craft({
 	burntime = 400,
 })
 
+if minetest.get_modpath("mcl_rubber") then
+
+minetest.register_craft({
+	type = "cooking",
+	output = "mcl_rubber:rubber 2",
+	recipe = "mcl_technic:oil",
+})
+
+else
+
 minetest.register_craft({
 	type = "cooking",
 	output = "mcl_technic:rubber 2",
 	recipe = "mcl_technic:oil",
 })
+
+end
 
 minetest.clear_craft({output = "mcl_core:charcoal_lump"})
 

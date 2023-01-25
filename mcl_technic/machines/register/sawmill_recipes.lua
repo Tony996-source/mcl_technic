@@ -44,6 +44,11 @@ local recipes = {
     {"mcl_core:spruce_bark",            "mcl_core:sprucewood 6"},
 }
 
+if minetest.get_modpath("mcl_rubber") then
+	table.insert(recipes, {"mcl_rubber:rubbertree",          "mcl_rubber:rubberwood 6"})
+	table.insert(recipes, {"mcl_rubber:stripped_rubbertree", "mcl_rubber:rubberwood 6"})
+	table.insert(recipes, {"mcl_rubber:rubberwood",          "mcl_core:stick 6"})
+end
 
     
 	for _, data in ipairs(recipes) do

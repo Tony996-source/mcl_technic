@@ -39,6 +39,7 @@ if chainsaw_leaves then
 	timber_nodenames["mcl_cocoas:cocoa_3"]             = true
 	timber_nodenames["mcl_mangrove:mangroveleaves"]    = true
 	timber_nodenames["mcl_mangrove:mangrove_roots"]    = true
+	timber_nodenames["mcl_core:vine"]                  = true
 end
 
 local S = mcl_technic.getter

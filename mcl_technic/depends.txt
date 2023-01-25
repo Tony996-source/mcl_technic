@@ -21,3 +21,4 @@ mcl_init?
 mcl_sounds?
 mcl_enchanting?
 mcl_mangrove?
+mcl_rubber?

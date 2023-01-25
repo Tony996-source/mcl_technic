@@ -7,9 +7,14 @@ function mcl_technic.register_extractor_recipe(data)
 	data.time = data.time or 4
 	mcl_technic.register_recipe("extracting", data)
 end
-
+if minetest.get_modpath("mcl_rubber") then	
 	-- register recipes with the same crafting ratios as `dye` provides
 	local dye_recipes = {
+	
+    {"mcl_rubber:rubberleaves",     "mcl_pipeworks:oil_extract 4"},
+    {"mcl_rubber:rubber_raw",       "mcl_pipeworks:oil_extract"},
+	{"mcl_technic:sawdust 4",       "mcl_rubber:rubber_raw" or "mcl_technic:oil"},
+    {"mcl_technic:oil",             "mcl_pipeworks:oil_extract 2"},
 	{"mcl_technic:coal_dust",       "mcl_dye:black 4"},
 	{"mcl_technic:charcoal_dust",   "mcl_dye:black 4"},
 	{"mcl_core:cactus",             "mcl_dye:dark_green 4"},
@@ -25,8 +30,7 @@ end
 	{"mcl_flowers:tulip_white",     "mcl_dye:white 4"},
 	{"mcl_flowers:tulip_orange",    "mcl_dye:orange 4"},
 	{"mcl_end:chorus_fruit_popped", "mcl_dye:purple 4"},
-	{"mcl_technic:oil",             "mcl_pipeworks:oil_extract 2"},
-	{"mcl_technic:sawdust 2",       "mcl_technic:oil"},
+
 	{"mcl_technic:stone_dust 5",    "mcl_technic:lowgrade_iron_dust"},
 	{"mcl_core:sand 5",             "mcl_technic:lowgrade_gold_dust"},
 	{"mcl_core:redsand 5",          "mcl_technic:lowgrade_copper_dust"},
@@ -50,4 +54,5 @@ end
     
 	for _, data in ipairs(dye_recipes) do
 		mcl_technic.register_extractor_recipe({input = {data[1]}, output = data[2]})
+	end
 	end

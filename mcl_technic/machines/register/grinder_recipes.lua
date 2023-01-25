@@ -7,8 +7,14 @@ function mcl_technic.register_grinder_recipe(data)
 	data.time = data.time or 3
 	mcl_technic.register_recipe("grinding", data)
 end
-
+if minetest.get_modpath("mcl_rubber") then
 local recipes = {
+
+
+    {"mcl_rubber:rubbertree",            "mcl_technic:sawdust 8"},
+    {"mcl_rubber:stripped_rubbertree",   "mcl_technic:sawdust 8"},
+    {"mcl_rubber:rubberwood",            "mcl_technic:sawdust 8"},
+ 
 	-- Dusts
 	{"mcl_core:coal_lump",         "mcl_technic:coal_dust 2"},
 	{"mcl_core:charcoal_lump",     "mcl_technic:charcoal_dust 2"},
@@ -151,4 +157,4 @@ minetest.register_craft({
 	output = "mcl_technic:copper_nugget",
 })
 
-
+end
