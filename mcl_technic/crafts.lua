@@ -184,11 +184,12 @@ local colour = {
 for _, colour in pairs(colour) do
 
   minetest.register_craft({
+    type = "shapeless",
 	output = 'mcl_colorblocks:concrete_'..colour[1].." 8",
 	recipe = {
-		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1]},
-		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_buckets:bucket_water', 'mcl_colorblocks:concrete_powder_'..colour[1]},
-		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1]},
+		'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1],
+		'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_buckets:bucket_water', 'mcl_colorblocks:concrete_powder_'..colour[1],
+		'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1],
 	},
 	replacements = {{"mcl_buckets:bucket_water", "mcl_buckets:bucket_water"}, },
 })
@@ -198,7 +199,7 @@ end
 	
 minetest.register_craft({
         type = "cooking",
-		output = "mcl_technic:cracked_stone",
+		output = "mcl_technic:cracked_deepslate",
 		recipe = "mcl_deepslate:deepslate",
 })
 
