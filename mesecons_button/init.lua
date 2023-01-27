@@ -200,7 +200,7 @@ function mesecon.register_button(basename, description, texture, recipeitem, sou
 
 	minetest.register_craft({
 		output = "mesecons_button:button_"..basename.."_off",
-		recipe = {{ recipeitem }},
+		recipe = {{ recipeitem, "mesecons:redstone" }},
 	})
 end
 

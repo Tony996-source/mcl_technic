@@ -61,7 +61,7 @@ local recipes = {
     {"mcl_core:spruce_bark",            "mcl_technic:sawdust 8"},
     
 	-- Other
-	{"mcl_mobitems:bone",          "mcl_dye:white 2"},
+	{"mcl_mobitems:bone",          "mcl_bone_meal:bone_meal 6"},
 	{"mcl_core:cobble",            "mcl_core:gravel"},
 	{"mcl_core:gravel",            "mcl_core:sand"},
 	{"mcl_core:sandstone",         "mcl_core:sand"},

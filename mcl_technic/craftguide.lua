@@ -58,7 +58,7 @@ local grind_recipe = {
     {"mcl_core:spruce_bark",            "mcl_technic:sawdust"},
     
 	-- Other
-	{"mcl_mobitems:bone",          "mcl_dye:white"},
+	{"mcl_mobitems:bone",          "mcl_bone_meal:bone_meal"},
 	{"mcl_core:cobble",            "mcl_core:gravel"},
 	{"mcl_core:gravel",            "mcl_core:sand"},
 	{"mcl_core:sandstone",         "mcl_core:sand"},
@@ -149,6 +149,7 @@ local extract_recipe = {
 	{"mcl_core:cactus",             "mcl_dye:dark_green"},
 	{"mcl_core:reeds",              "mcl_dye:dark_green"},
 	{"mcl_flowers:blue_orchid",     "mcl_dye:blue"},
+	{"mcl_core:lapis",              "mcl_dye:blue"},
 	{"mcl_flowers:oxeye_daisy",     "mcl_dye:white"},
 	{"mcl_flowers:dandelion",       "mcl_dye:yellow"},
 	{"mcl_flowers:tulip",           "mcl_dye:orange"},
@@ -159,6 +160,10 @@ local extract_recipe = {
 	{"mcl_flowers:tulip_white",     "mcl_dye:white"},
 	{"mcl_flowers:tulip_orange",    "mcl_dye:orange"},
 	{"mcl_end:chorus_fruit_popped", "mcl_dye:purple"},
+	{"mcl_mobitems:ink_sac",        "mcl_dye:black"},
+	{"mcl_cocoas:cocoa_beans",      "mcl_dye:brown"},
+	{"mcl_bone_meal:bone_meal",     "mcl_dye:white"},
+	{"mcl_flowers:azure_bluet",     "mcl_dye:grey"},
 
 	{"mcl_technic:stone_dust",      "mcl_technic:lowgrade_iron_dust"},
 	{"mcl_core:sand",               "mcl_technic:lowgrade_gold_dust"},
@@ -169,9 +174,9 @@ local extract_recipe = {
 	{"mcl_flowers:peony",           "mcl_dye:pink"},
 	{"mcl_flowers:lilac",           "mcl_dye:magenta"},
 	{"mcl_flowers:sunflower",       "mcl_dye:yellow"},
-	{"mcl_core:stonebrickmossy",    "mcl_core:moss"},
-	{"mcl_core:mossycobble",        "mcl_core:moss"},
-	{"mcl_farming:wheat_item",      "mcl_farming:wheat_seeds"},
+	{"mcl_core:stonebrickmossy",  "mcl_core:moss"},
+	{"mcl_core:mossycobble",      "mcl_core:moss"},
+	{"mcl_farming:wheat_item",      "mcl_farming:wheat_seeds "},
 	{"mcl_core:leaves",             "mcl_pipeworks:oil_extract"},
 	{"mcl_core:darkleaves",         "mcl_pipeworks:oil_extract"},
 	{"mcl_core:jungleleaves",       "mcl_pipeworks:oil_extract"},
@@ -179,6 +184,16 @@ local extract_recipe = {
 	{"mcl_core:spruceleaves",       "mcl_pipeworks:oil_extract"},
 	{"mcl_core:birchleaves",        "mcl_pipeworks:oil_extract"},
 	{"mcl_mangrove:mangroveleaves", "mcl_pipeworks:oil_extract"},
+	{"mcl_core:dirt_with_grass".      "mcl_mobitems:bone"},
+	{"mcl_core:dirt_with_grass_snow". "mcl_mobitems:bone"},
+	{"mcl_core:grass_path".           "mcl_mobitems:bone"},
+	{"mcl_core:mycelium".             "mcl_mobitems:bone"},
+	{"mcl_core:mycelium_snow".        "mcl_mobitems:bone"},
+	{"mcl_core:podzol".               "mcl_mobitems:bone"},
+	{"mcl_core:podzol_snow".          "mcl_mobitems:bone"},
+	{"mcl_core:dirt".                 "mcl_mobitems:bone"},
+	{"mcl_core:coarse_dirt"           "mcl_mobitems:bone"},
+	{"mcl_deepslate:tuff"             "mcl_mobitems:bone"},
 }
 
 for _, extract_recipe in pairs(extract_recipe) do
