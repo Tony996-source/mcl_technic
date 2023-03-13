@@ -51,6 +51,19 @@ minetest.register_tool("mcl_technic:vacuum_lv", {
 	end,
 })
 
+if minetest.get_modpath("mcl_rubber") then
+
+minetest.register_craft({
+	output = 'mcl_technic:vacuum_lv',
+	recipe = {
+	{'mcl_rubber:rubber',  'mcl_technic:carbon_plate', 'mcl_core:iron_ingot'},
+	{'mcl_rubber:rubber',  'mcl_core:iron_ingot',      'mcl_technic:battery'},
+	{'mcl_core:iron_ingot', 'mcl_core:iron_ingot',      ''},
+	}
+})
+
+else
+
 minetest.register_craft({
 	output = 'mcl_technic:vacuum_lv',
 	recipe = {
@@ -59,3 +72,4 @@ minetest.register_craft({
 	{'mcl_core:iron_ingot', 'mcl_core:iron_ingot',      ''},
 	}
 })
+end

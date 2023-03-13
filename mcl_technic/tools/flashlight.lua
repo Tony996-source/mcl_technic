@@ -17,6 +17,19 @@ minetest.register_tool("mcl_technic:flashlight", {
 	on_refill = mcl_technic.refill_RE_charge,
 })
 
+if minetest.get_modpath("mcl_rubber") then
+
+minetest.register_craft({
+	output = "mcl_technic:flashlight",
+	recipe = {
+		{"mcl_rubber:rubber", "mcl_core:glass", "mcl_rubber:rubber"},
+		{"mcl_core:iron_ingot", "mcl_technic:battery", "group:button"},
+		{"", "", ""}
+	}
+})
+
+else
+
 minetest.register_craft({
 	output = "mcl_technic:flashlight",
 	recipe = {
@@ -25,6 +38,8 @@ minetest.register_craft({
 		{"", "", ""}
 	}
 })
+
+end
 
 
 local player_positions = {}
