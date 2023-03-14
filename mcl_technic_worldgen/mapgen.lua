@@ -360,3 +360,5 @@ minetest.register_ore({
         y_min = mcl_vars.mg_nether_min,
         y_max = mcl_vars.mg_nether_max,
     })
+
+
