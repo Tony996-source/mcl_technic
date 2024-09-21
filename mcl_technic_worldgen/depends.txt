@@ -1,5 +1,4 @@
 mcl_core
-mcl_mapgen_core
 mcl_technic?
 mcl_farming?
 mcl_flowers?
@@ -8,4 +7,3 @@ mcl_netherite?
 mcl_flowerpots?
 mcl_copper?
 mcl_deepslate?
-mcl_raw_ores?

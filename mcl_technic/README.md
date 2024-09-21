@@ -15,8 +15,6 @@ Tony996 MIT
   * mv machines
   * lv machines
   * copper dust
-  * diamond dust
-  * mcl_technic_power_meter0 - 8
 
 BlockMen modified by Zefram (CC BY-SA 3.0):
   * technic_chernobylite_block.png

@@ -27,7 +27,6 @@ local recipes = {
 	{"mcl_technic:tool_workshop_hv",    "mcl_nether:netherite_scrap"},
 	{"mcl_technic:chainsaw_hv",         "mcl_nether:netherite_scrap"},
 	{"mcl_technic:vacuum_hv",           "mcl_nether:netherite_scrap"},
-	{"mcl_technic:hv_cable 3",          "mcl_nether:netherite_scrap"},
 }
 
 

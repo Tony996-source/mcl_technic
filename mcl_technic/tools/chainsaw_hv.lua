@@ -1,31 +1,25 @@
 -- Configuration
 
-local chainsaw_max_charge = 30000 -- Maximum charge of the saw
+local chainsaw_max_charge      = 60000 -- Maximum charge of the saw
 -- Gives 2500 nodes on a single charge (about 50 complete normal trees)
-local chainsaw_charge_per_node = 12
+local chainsaw_charge_per_node = 6
+-- Cut down tree leaves.  Leaf decay may cause slowness on large trees
+-- if this is disabled.
+local chainsaw_leaves = true
 
-local chainsaw_leaves = true -- Cut down tree leaves.
--- Leaf decay may cause slowness on large trees if this is disabled.
-
-local chainsaw_vines = true -- Cut down vines
-
-local timber_nodenames = {} -- Cuttable nodes
-
-local max_saw_radius = 12 -- max x/z distance away from starting position to allow cutting
--- Prevents forest destruction, increase for extra wide trees
-
-
-	timber_nodenames["mcl_core:acaciatree"]        = true
-	timber_nodenames["mcl_core:birchtree"]         = true
-	timber_nodenames["mcl_core:jungletree"]        = true
-	timber_nodenames["mcl_core:papyrus"]           = true
-	timber_nodenames["mcl_core:cactus"]            = true
-	timber_nodenames["mcl_core:tree"]              = true
-	timber_nodenames["mcl_core:apple"]             = true
-	timber_nodenames["mcl_core:sprucetree"]        = true
-	timber_nodenames["mcl_core:darktree"]          = true
-	timber_nodenames["mcl_mangrove:mangrove_tree"] = true
-	timber_nodenames["mcl_mangrove:hanging_propagule"] = true
+local timber_nodenames = {
+	["mcl_core:acaciatree"]        = true,
+	["mcl_core:birchtree"]         = true,
+	["mcl_core:jungletree"]        = true,
+	["mcl_core:papyrus"]           = true,
+	["mcl_core:cactus"]            = true,
+	["mcl_core:tree"]              = true,
+	["mcl_core:apple"]             = true,
+	["mcl_core:sprucetree"]        = true,
+	["mcl_core:darktree"]          = true,
+	["mcl_mangrove:mangrove_tree"] = true,
+	["mcl_mangrove:hanging_propagule"] = true
+}
 
 if chainsaw_leaves then
 	timber_nodenames["mcl_core:acacialeaves"]          = true
@@ -39,7 +33,6 @@ if chainsaw_leaves then
 	timber_nodenames["mcl_cocoas:cocoa_3"]             = true
 	timber_nodenames["mcl_mangrove:mangroveleaves"]    = true
 	timber_nodenames["mcl_mangrove:mangrove_roots"]    = true
-	timber_nodenames["mcl_core:vine"]                  = true
 end
 
 local S = mcl_technic.getter
@@ -63,9 +56,60 @@ local function handle_drops(drops)
 	end
 end
 
+--- Iterator over positions to try to saw around a sawed node.
+-- This returns positions in a 3x1x3 area around the position, plus the
+-- position above it.  This does not return the bottom position to prevent
+-- the chainsaw from cutting down nodes below the cutting position.
+-- @param pos Sawing position.
+local function iterSawTries(pos)
+	-- Copy position to prevent mangling it
+	local pos = vector.new(pos)
+	local i = 0
+
+	return function()
+		i = i + 1
+		-- Given a (top view) area like so (where 5 is the starting position):
+		-- X -->
+		-- Z 123
+		-- | 456
+		-- V 789
+		-- This will return positions 1, 4, 7, 2, 8 (skip 5), 3, 6, 9,
+		-- and the position above 5.
+		if i == 1 then
+			-- Move to starting position
+			pos.x = pos.x - 1
+			pos.z = pos.z - 1
+		elseif i == 4 or i == 7 then
+			-- Move to next X and back to start of Z when we reach
+			-- the end of a Z line.
+			pos.x = pos.x + 1
+			pos.z = pos.z - 2
+		elseif i == 5 then
+			-- Skip the middle position (we've already run on it)
+			-- and double-increment the counter.
+			pos.z = pos.z + 2
+			i = i + 1
+		elseif i <= 9 then
+			-- Go to next Z.
+			pos.z = pos.z + 1
+		elseif i == 10 then
+			-- Move back to center and up.
+			-- The Y+ position must be last so that we don't dig
+			-- straight upward and not come down (since the Y-
+			-- position isn't checked).
+			pos.x = pos.x - 1
+			pos.z = pos.z - 1
+			pos.y = pos.y + 1
+		else
+			return nil
+		end
+		return pos
+	end
+end
+
 -- This function does all the hard work. Recursively we dig the node at hand
 -- if it is in the table and then search the surroundings for more stuff to dig.
-local function recursive_dig(pos, origin, remaining_charge)
+local function recursive_dig(pos, remaining_charge)
 	if remaining_charge < chainsaw_charge_per_node then
 		return remaining_charge
 	end
@@ -80,27 +124,13 @@ local function recursive_dig(pos, origin, remaining_charge)
 	minetest.remove_node(pos)
 	remaining_charge = remaining_charge - chainsaw_charge_per_node
 
-	-- Check for snow on pine trees, sand/gravel on leaves, etc
-	minetest.check_for_falling(pos)
-
 	-- Check surroundings and run recursively if any charge left
-	for y=-1, 1 do
-		if (pos.y + y) >= origin.y then
-			for x=-1, 1 do
-				if (pos.x + x) <= (origin.x + max_saw_radius) and (pos.x + x) >= (origin.x - max_saw_radius) then
-					for z=-1, 1 do
-						if (pos.z + z) <= (origin.z + max_saw_radius) and (pos.z + z) >= (origin.z - max_saw_radius) then
-							local npos = {x=pos.x+x, y=pos.y+y, z=pos.z+z}
-							if remaining_charge < chainsaw_charge_per_node then
-								return remaining_charge
-							end
-							if timber_nodenames[minetest.get_node(npos).name] then
-								remaining_charge = recursive_dig(npos, origin, remaining_charge)
-							end
-						end
-					end
-				end
-			end
+	for npos in iterSawTries(pos) do
+		if remaining_charge < chainsaw_charge_per_node then
+			break
+		end
+		if timber_nodenames[minetest.get_node(npos).name] then
+			remaining_charge = recursive_dig(npos, remaining_charge)
 		end
 	end
 	return remaining_charge
@@ -143,7 +173,7 @@ end
 -- Chainsaw entry point
 local function chainsaw_dig(pos, current_charge)
 	-- Start sawing things down
-	local remaining_charge = recursive_dig(pos, pos, current_charge)
+	local remaining_charge = recursive_dig(pos, current_charge)
 	minetest.sound_play("chainsaw", {pos = pos, gain = 1.0,
 			max_hear_distance = 10})
 
@@ -165,6 +195,7 @@ local function chainsaw_dig(pos, current_charge)
 
 	return remaining_charge
 end
+
 
 minetest.register_tool("mcl_technic:chainsaw_hv", {
 	description = S("HV Chainsaw"),
@@ -200,6 +231,7 @@ minetest.register_tool("mcl_technic:chainsaw_hv", {
 	end,
 })
 
+
 minetest.register_craft({
 	output = "mcl_technic:chainsaw_hv",
 	recipe = {
@@ -209,15 +241,4 @@ minetest.register_craft({
 	},
 
 })
--- Add cuttable nodes after all mods loaded
-minetest.after(0, function ()
-	for k, v in pairs(minetest.registered_nodes) do
-		if v.groups.tree then
-			timber_nodenames[k] = true
-		elseif chainsaw_leaves and (v.groups.leaves or v.groups.leafdecay or v.groups.leafdecay_drop) then
-			timber_nodenames[k] = true
-		elseif chainsaw_vines and v.groups.vines then
-			timber_nodenames[k] = true
-		end
-	end
-end)
+

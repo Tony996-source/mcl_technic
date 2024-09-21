@@ -1,1 +1,1 @@
-A mod adding electricity and machines to Minetest subgame (mineclone 5).
+A mod adding electricity and machines to Minetest subgame (mineclone 2).

@@ -29,11 +29,6 @@ local recipes = {
 {"mcl_core:gold_ingot 4",     "mcl_nether:netherite_scrap 4", "mcl_nether:netherite_ingot"},
 }
 
-if minetest.get_modpath("mcl_rubber") then
-   table.insert(recipes, {"mcl_pipeworks:oil_extract", "mcl_rubber:rubber_raw", "mcl_mobitems:leather"})
-  end
-
 for _, data in pairs(recipes) do
 	mcl_technic.register_alloy_recipe({input = {data[1], data[2]}, output = data[3], time = data[4]})
 end
-

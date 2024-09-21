@@ -86,19 +86,6 @@ mcl_technic.register_can({
 	liquid_flowing_name = "mcl_core:water_flowing",
 })
 
-if minetest.get_modpath("mcl_rubber") then
-
-minetest.register_craft({
-	output = 'mcl_technic:water_can 1',
-	recipe = {
-		{'mcl_core:iron_ingot',      'mcl_rubber:rubber',       'mcl_core:iron_ingot'},
-		{'mcl_technic:carbon_plate', '',                         'mcl_technic:carbon_plate'},
-		{'mcl_core:iron_ingot',      'mcl_technic:carbon_plate', 'mcl_core:iron_ingot'},
-	}
-})
-
-else
-
 minetest.register_craft({
 	output = 'mcl_technic:water_can 1',
 	recipe = {
@@ -108,8 +95,6 @@ minetest.register_craft({
 	}
 })
 
-end
-
 mcl_technic.register_can({
 	can_name = "mcl_technic:lava_can",
 	can_description = S("Lava Can"),
@@ -117,15 +102,6 @@ mcl_technic.register_can({
 	can_capacity = 16,
 	liquid_source_name = "mcl_core:lava_source",
 	liquid_flowing_name = "mcl_core:lava_flowing",
-})
-
-minetest.register_craft({
-	output = 'mcl_technic:lava_can 1',
-	recipe = {
-		{'mcl_core:iron_ingot', 'mcl_core:gold_ingot', 'mcl_core:iron_ingot'},
-		{'mcl_core:gold_ingot', '',                    'mcl_core:gold_ingot'},
-		{'mcl_core:iron_ingot', 'mcl_core:gold_ingot', 'mcl_core:iron_ingot'},
-	}
 })
 
 minetest.register_craft({

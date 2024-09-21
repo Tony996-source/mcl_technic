@@ -48,9 +48,9 @@ minetest.register_craftitem("mcl_technic:steel_ingot", {
 	inventory_image = "mcl_technic_steel_ingot.png",
 })
 
-minetest.register_node("mcl_technic:cracked_deepslate", {
-	description = "Cracked Deepslate",
-	tiles = {"mcl_technic_cracked_deepslate.png"},
+minetest.register_node("mcl_technic:cracked_stone", {
+	description = "Cracked Stone",
+	tiles = {"mcl_technic_cracked_stone.png"},
 	is_ground_content = false,
 	stack_max = 64,
 	groups = {pickaxey=1, stone=1, building_block=1, material_stone=1},
@@ -98,6 +98,6 @@ minetest.register_craftitem("mcl_technic:copper_nugget", {
 	inventory_image = "mcl_technic_copper_nugget.png",
 })
 
-mcl_stairs.register_stair_and_slab_simple("cracked_deepslate", "mcl_technic:cracked_deepslate", "Cracked Deepslate Stair", "Cracked Deepslate Slab", "Double Cracked Deepslate Slab")
+mcl_stairs.register_stair_and_slab_simple("cracked_stone", "mcl_technic:cracked_stone", "Cracked Stone Stair", "Cracked Stone Slab", "Double Cracked Stone Slab")
 
 

@@ -186,6 +186,26 @@ local function set_port_states(pos, ports)
 	end
 end
 
+
+-----------------
+-- Overheating --
+-----------------
+local function burn_controller(pos)
+	local node = minetest.get_node(pos)
+	node.name = "mcl_pipeworks:lua_tube_burnt"
+	minetest.swap_node(pos, node)
+	minetest.get_meta(pos):set_string("lc_memory", "");
+	-- Wait for pending operations
+	minetest.after(0.2, mesecon.receptor_off, pos, mesecon.rules.flat)
+end
+
+local function overheat(pos, meta)
+	if mesecon.do_overheat(pos) then -- If too hot
+		burn_controller(pos)
+		return true
+	end
+end
+
 ------------------------
 -- Ignored off events --
 ------------------------
@@ -443,11 +463,17 @@ local function save_memory(pos, meta, mem)
 
 	if (#memstring <= memsize_max) then
 		meta:set_string("lc_memory", memstring)
+	else
+		print("Error: lua_tube memory overflow. "..memsize_max.." bytes available, "
+				..#memstring.." required. Controller overheats.")
+		burn_controller(pos)
+	end
 end
-end
+
 
 local function run(pos, event)
 	local meta = minetest.get_meta(pos)
+	if overheat(pos) then return end
 	if ignore_event(event, meta) then return end
 
 	-- Load code & mem from meta

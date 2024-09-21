@@ -18,7 +18,7 @@ local recipes = {
     {"mcl_core:coalblock",          "mcl_core:diamond 2"},
     {"mcl_technic:charcoalblock",   "mcl_core:diamond 2"},
     {"mcl_core:charcoal_lump 9",    "mcl_technic:charcoalblock"},
-    {"mcl_technic:sawdust 4",       "mcl_core:paper"},
+    {"mcl_technic:sawdust 8",       "mcl_core:paper"},
     {"mcl_core:coal_lump 9",        "mcl_core:coalblock"},
     {"mcl_raw_ores:raw_gold 9",     "mcl_raw_ores:raw_gold_block"},
     {"mcl_raw_ores:raw_iron 9",     "mcl_raw_ores:raw_iron_block"},

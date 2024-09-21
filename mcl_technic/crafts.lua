@@ -52,23 +52,11 @@ minetest.register_craft({
 	burntime = 400,
 })
 
-if minetest.get_modpath("mcl_rubber") then
-
-minetest.register_craft({
-	type = "cooking",
-	output = "mcl_rubber:rubber 2",
-	recipe = "mcl_technic:oil",
-})
-
-else
-
 minetest.register_craft({
 	type = "cooking",
 	output = "mcl_technic:rubber 2",
 	recipe = "mcl_technic:oil",
 })
-
-end
 
 minetest.clear_craft({output = "mcl_core:charcoal_lump"})
 
@@ -138,6 +126,12 @@ minetest.register_craft({
 if minetest.get_modpath("mcl_copper") then
 
 minetest.register_craft({
+    type = 'shapeless',
+	output = 'mcl_copper:copper_ingot 9',
+	recipe = {'mcl_technic:copper_block'},
+})
+
+minetest.register_craft({
 	output = 'mcl_copper:copper_ingot',
 	recipe = {
 		{'mcl_technic:copper_nugget', 'mcl_technic:copper_nugget', 'mcl_technic:copper_nugget'},
@@ -184,12 +178,11 @@ local colour = {
 for _, colour in pairs(colour) do
 
   minetest.register_craft({
-    type = "shapeless",
 	output = 'mcl_colorblocks:concrete_'..colour[1].." 8",
 	recipe = {
-		'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1],
-		'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_buckets:bucket_water', 'mcl_colorblocks:concrete_powder_'..colour[1],
-		'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1],
+		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1]},
+		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_buckets:bucket_water', 'mcl_colorblocks:concrete_powder_'..colour[1]},
+		{'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1], 'mcl_colorblocks:concrete_powder_'..colour[1]},
 	},
 	replacements = {{"mcl_buckets:bucket_water", "mcl_buckets:bucket_water"}, },
 })
@@ -199,7 +192,7 @@ end
 	
 minetest.register_craft({
         type = "cooking",
-		output = "mcl_technic:cracked_deepslate",
+		output = "mcl_technic:cracked_stone",
 		recipe = "mcl_deepslate:deepslate",
 })
 
